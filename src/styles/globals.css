@@ -183,15 +183,15 @@ img { display: block; max-width: 100%; }
 
 .site-mixer.is-docked {
   left: auto;
-  right: 70px;
-  bottom: 20px;
+  right: 76px;
+  bottom: 22px;
   translate: 0;
-  width: 44px;
-  min-height: 44px;
+  width: 132px;
+  min-height: 48px;
   grid-template-columns: 1fr;
   justify-items: center;
   gap: 0;
-  padding: 0;
+  padding: 0 12px;
   border-radius: 999px;
 }
 
@@ -521,17 +521,63 @@ img { display: block; max-width: 100%; }
 
 .site-mixer.is-docked .mixer-collapse {
   position: static;
-  width: 44px;
-  height: 44px;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   color: var(--white);
-  background: rgba(255, 248, 252, 0.09);
-  border: 1px solid rgba(255, 248, 252, 0.18);
-  box-shadow: 0 0 18px rgba(255, 79, 163, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 79, 163, 0.18), rgba(157, 78, 221, 0.14)),
+    rgba(255, 248, 252, 0.08);
+  border: 1px solid rgba(255, 185, 224, 0.28);
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(255, 79, 163, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.14);
 }
 
 .mixer-collapse:hover {
   color: var(--white);
   background: rgba(255, 248, 252, 0.12);
+}
+
+.mixer-dock-icon {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: end;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 5px;
+  border-radius: 999px;
+  color: #160516;
+  background: linear-gradient(135deg, #ffb8de, #c77dff);
+  box-shadow: 0 0 18px rgba(255, 79, 163, 0.32);
+}
+
+.mixer-dock-icon svg {
+  align-self: center;
+  flex: 0 0 auto;
+}
+
+.mixer-dock-icon i {
+  width: 2px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(22, 5, 22, 0.76);
+}
+
+.mixer-dock-icon i:nth-of-type(2) { height: 12px; }
+.mixer-dock-icon i:nth-of-type(3) { height: 9px; }
+
+.mixer-dock-label {
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .icon-button {
@@ -1998,18 +2044,18 @@ img { display: block; max-width: 100%; }
   }
   .site-mixer.is-docked {
     left: auto;
-    right: 14px;
+    right: 16px;
     bottom: 76px;
     translate: 0;
-    width: 44px;
-    min-height: 44px;
+    width: 128px;
+    min-height: 46px;
     grid-template-columns: 1fr;
-    padding: 0;
+    padding: 0 10px;
     border-radius: 999px;
   }
   .site-mixer.is-docked .mixer-collapse {
-    width: 44px;
-    height: 44px;
+    width: 100%;
+    height: 46px;
   }
   .mixer-cover { width: 76px; border-radius: 14px; }
   .site-mixer.is-open .mixer-cover { width: 76px; }
@@ -2094,15 +2140,23 @@ img { display: block; max-width: 100%; }
     right: 12px;
     bottom: 70px;
     translate: 0;
-    width: 42px;
-    min-height: 42px;
+    width: 118px;
+    min-height: 44px;
     grid-template-columns: 1fr;
-    padding: 0;
+    padding: 0 9px;
     border-radius: 999px;
   }
   .site-mixer.is-docked .mixer-collapse {
-    width: 42px;
-    height: 42px;
+    width: 100%;
+    height: 44px;
+  }
+  .mixer-dock-icon {
+    width: 27px;
+    height: 27px;
+  }
+  .mixer-dock-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
   }
   .mixer-cover, .site-mixer.is-open .mixer-cover { width: 58px; }
   .site-mixer.is-open .mixer-cover { width: 58px; }
