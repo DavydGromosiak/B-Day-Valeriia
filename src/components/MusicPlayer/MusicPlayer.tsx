@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Headphones, Music2, Pause, Play, SkipBack, SkipForward, Volume1, Volume2, VolumeX } from "lucide-react";
+import { ChevronDown, Maximize2, Music2, Pause, Play, SkipBack, SkipForward, Volume1, Volume2, VolumeX } from "lucide-react";
 import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { musicTracks } from "../../data/musicTracks";
@@ -8,12 +8,6 @@ import { Language, t } from "../../data/translations";
 type Props = {
   language: Language;
   shouldStart: boolean;
-};
-
-const dockLabel: Record<Language, string> = {
-  ru: "Music mix",
-  en: "Music mix",
-  de: "Music mix"
 };
 
 function formatTime(value: number) {
@@ -132,6 +126,9 @@ export function MusicPlayer({ language, shouldStart }: Props) {
 
   return (
     <motion.aside className={`site-mixer ${open ? "is-open" : "is-docked"}`} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} data-romantic="true">
+      <div className="mixer-ambient" aria-hidden="true">
+        <span /><span /><span />
+      </div>
       <div className="mixer-cover" aria-hidden="true">
         {coverFailed ? <Music2 size={28} /> : <img src={track.cover} alt="" onError={() => setCoverFailed(true)} />}
       </div>
@@ -183,17 +180,7 @@ export function MusicPlayer({ language, shouldStart }: Props) {
         <button onClick={() => moveTrack(1)} aria-label={t.nextTrack[language]}><SkipForward size={22} fill="currentColor" /></button>
       </div>
       <button className="mixer-collapse" onClick={() => setOpen((value) => !value)} aria-label={open ? t.collapsePlayer[language] : t.expandPlayer[language]}>
-        {open ? (
-          <ChevronDown size={18} />
-        ) : (
-          <>
-            <span className="mixer-dock-icon" aria-hidden="true">
-              <Headphones size={17} />
-              <i /><i /><i />
-            </span>
-            <span className="mixer-dock-label">{dockLabel[language]}</span>
-          </>
-        )}
+        {open ? <ChevronDown size={18} /> : <Maximize2 size={16} />}
       </button>
     </motion.aside>
   );
