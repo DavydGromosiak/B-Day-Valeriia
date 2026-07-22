@@ -38,6 +38,12 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 :focus-visible { outline: 2px solid var(--purple-light); outline-offset: 4px; }
 
+button,
+a,
+input[type="range"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .space-background {
   position: fixed;
   inset: 0;
@@ -112,6 +118,9 @@ img { display: block; max-width: 100%; }
 .main-topbar { top: 16px; }
 
 .language-switcher {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   gap: 6px;
   padding: 5px;
@@ -119,20 +128,67 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
   background: rgba(7, 5, 13, 0.64);
   backdrop-filter: blur(18px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.language-switcher::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 5px;
+  top: 5px;
+  width: 42px;
+  height: 34px;
+  border-radius: 999px;
+  opacity: 0;
+  background:
+    linear-gradient(135deg, rgba(157, 78, 221, 0.92), rgba(255, 79, 163, 0.84)),
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.42), transparent 34%);
+  box-shadow: 0 0 26px rgba(255, 79, 163, 0.32);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.22s ease;
+}
+
+.language-switcher:has(button.active)::before { opacity: 1; }
+.language-switcher:has(button:nth-child(2).active)::before { transform: translateX(48px); }
+.language-switcher:has(button:nth-child(3).active)::before { transform: translateX(96px); }
+
+.language-switcher::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 12%, rgba(255,255,255,0.12) 42%, transparent 72%);
+  opacity: 0;
+  transform: translateX(-70%);
+  pointer-events: none;
 }
 
 .language-switcher button {
+  position: relative;
+  z-index: 1;
   width: 42px;
   min-height: 34px;
   border-radius: 999px;
   color: var(--muted);
   background: transparent;
+  transition: color 0.2s ease, transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.language-switcher:hover::after {
+  opacity: 1;
+  animation: buttonShine 1.05s ease;
+}
+
+.language-switcher button:hover {
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 .language-switcher button.active {
   color: var(--white);
-  background: linear-gradient(135deg, rgba(157, 78, 221, 0.82), rgba(255, 79, 163, 0.78));
-  box-shadow: 0 0 24px rgba(255, 79, 163, 0.28);
+  background: transparent;
+  text-shadow: 0 0 12px rgba(255, 248, 252, 0.3);
 }
 
 .music-button {
@@ -2403,4 +2459,509 @@ img { display: block; max-width: 100%; }
   .final-reveal p { font-size: 0.96rem; }
   .confetti-layer span:nth-child(n+43) { display: none; }
   .confetti-layer strong { min-height: 210px; border-radius: 24px; }
+}
+
+/* Interaction polish: small tactile details without changing layout */
+.primary-button,
+.ghost-button,
+.icon-text-button,
+.playlist-trigger,
+.tabs button,
+.reason-list button,
+.envelope-action,
+.letter-close,
+.icon-button,
+.mixer-collapse,
+.mixer-controls button,
+.mixer-volume button,
+.heart-toggle,
+.bottom-nav a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.primary-button > *,
+.ghost-button > *,
+.icon-text-button > *,
+.playlist-trigger > *,
+.tabs button > *,
+.reason-list button > *,
+.envelope-action > *,
+.letter-close > *,
+.icon-button > *,
+.mixer-collapse > *,
+.mixer-controls button > *,
+.mixer-volume button > * {
+  position: relative;
+  z-index: 1;
+}
+
+.primary-button::before,
+.ghost-button::before,
+.icon-text-button::before,
+.playlist-trigger::before,
+.tabs button::before,
+.reason-list button::before,
+.envelope-action::before,
+.letter-close::before,
+.icon-button::before,
+.mixer-collapse::before,
+.mixer-controls button::before,
+.mixer-volume button::before {
+  content: "";
+  position: absolute;
+  inset: -45% auto -45% -70%;
+  z-index: 0;
+  width: 44%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 248, 252, 0.36), transparent);
+  transform: translate3d(-120%, 0, 0) skewX(-18deg);
+}
+
+.primary-button:hover::before,
+.ghost-button:hover::before,
+.icon-text-button:hover::before,
+.playlist-trigger:hover::before,
+.tabs button:hover::before,
+.reason-list button:hover::before,
+.envelope-action:hover::before,
+.letter-close:hover::before,
+.icon-button:hover::before,
+.mixer-collapse:hover::before,
+.mixer-controls button:hover::before,
+.mixer-volume button:hover::before {
+  opacity: 1;
+  animation: buttonShine 0.92s ease;
+}
+
+.primary-button:hover,
+.envelope-action:hover {
+  transform: translateY(-3px) scale(1.018);
+  border-color: rgba(255, 248, 252, 0.46);
+  filter: saturate(1.08);
+  box-shadow:
+    0 24px 66px rgba(255, 79, 163, 0.36),
+    0 0 26px rgba(199, 125, 255, 0.24),
+    inset 0 1px 0 rgba(255,255,255,0.38);
+}
+
+.primary-button.pulse:hover {
+  animation: none;
+}
+
+.ghost-button:hover,
+.icon-text-button:hover,
+.playlist-trigger:hover,
+.letter-close:hover,
+.icon-button:hover {
+  transform: translateY(-2px);
+  color: var(--white);
+  border-color: rgba(255, 185, 224, 0.34);
+  background:
+    radial-gradient(circle at 24% 18%, rgba(255, 79, 163, 0.18), transparent 42%),
+    rgba(255, 248, 252, 0.105);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.24),
+    0 0 24px rgba(255, 79, 163, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.primary-button:active,
+.ghost-button:active,
+.icon-text-button:active,
+.playlist-trigger:active,
+.tabs button:active,
+.reason-list button:active,
+.envelope-action:active,
+.letter-close:active,
+.icon-button:active,
+.mixer-collapse:active,
+.mixer-controls button:active,
+.mixer-volume button:active,
+.heart-toggle:active,
+.bottom-nav a:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.primary-button:hover svg,
+.ghost-button:hover svg,
+.icon-text-button:hover svg,
+.playlist-trigger:hover svg,
+.tabs button:hover svg,
+.envelope-action:hover svg,
+.letter-close:hover svg,
+.icon-button:hover svg,
+.mixer-collapse:hover svg,
+.mixer-controls button:hover svg,
+.mixer-volume button:hover svg {
+  animation: iconWink 0.58s ease;
+}
+
+.tabs button {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.tabs button:hover {
+  color: var(--white);
+  transform: translateY(-1px);
+  border-color: rgba(255, 185, 224, 0.2);
+  background: rgba(255, 248, 252, 0.105);
+}
+
+.tabs button.active {
+  box-shadow:
+    0 0 20px rgba(255, 79, 163, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.tabs button.active::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--rose), var(--purple-light), transparent);
+  box-shadow: 0 0 12px rgba(255, 79, 163, 0.5);
+}
+
+.side-nav a,
+.side-nav button {
+  position: relative;
+  isolation: isolate;
+  transition:
+    width 0.24s ease,
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.side-nav a::after,
+.side-nav button::after {
+  content: "";
+  position: absolute;
+  inset: 8px auto 8px 12px;
+  z-index: -1;
+  width: 22px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 79, 163, 0.34), transparent 68%);
+  opacity: 0;
+  transition: opacity 0.2s ease, width 0.24s ease;
+}
+
+.side-nav a:hover,
+.side-nav button:hover {
+  transform: translateX(3px);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.28),
+    0 0 34px rgba(255, 79, 163, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.side-nav a:hover::after,
+.side-nav button:hover::after {
+  width: calc(100% - 24px);
+  opacity: 1;
+}
+
+.side-nav a:hover svg,
+.side-nav button:hover svg {
+  animation: iconWink 0.62s ease;
+}
+
+.bottom-nav a::after {
+  content: "";
+  position: absolute;
+  inset: auto 28% 5px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.bottom-nav a:hover,
+.bottom-nav a:focus-visible {
+  transform: translateY(-2px);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 79, 163, 0.22), transparent 48%),
+    rgba(255, 248, 252, 0.11);
+  box-shadow: 0 0 18px rgba(255, 79, 163, 0.14);
+}
+
+.bottom-nav a:hover::after,
+.bottom-nav a:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.reason-card,
+.song-card,
+.feeling-card,
+.compliment,
+.photo-tile,
+.sealed-envelope,
+.opened-letter,
+.song-shelf,
+.postcard-modal,
+.lightbox {
+  isolation: isolate;
+  transition:
+    transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    filter 0.24s ease;
+}
+
+.reason-card,
+.song-card,
+.feeling-card,
+.compliment {
+  overflow: hidden;
+}
+
+.reason-card::before,
+.song-card::before,
+.feeling-card::before,
+.compliment::before {
+  content: "";
+  position: absolute;
+  inset: -28%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 79, 163, 0.2), transparent 32%),
+    radial-gradient(circle at 76% 30%, rgba(199, 125, 255, 0.18), transparent 36%);
+  opacity: 0.16;
+  transition: opacity 0.24s ease;
+}
+
+.reason-card > *,
+.song-card > *,
+.feeling-card > *,
+.compliment > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reason-card:hover,
+.song-card:hover,
+.compliment:hover {
+  border-color: rgba(255, 185, 224, 0.28);
+  box-shadow:
+    0 22px 64px rgba(0, 0, 0, 0.34),
+    0 0 34px rgba(255, 79, 163, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.reason-card:hover::before,
+.song-card:hover::before,
+.feeling-card:hover::before,
+.compliment:hover::before,
+.compliment.active::before {
+  opacity: 0.44;
+  animation: cardAura 8s ease-in-out infinite;
+}
+
+.reason-list button {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.reason-list button:hover {
+  transform: translateX(5px);
+  color: var(--white);
+  border-color: rgba(255, 185, 224, 0.24);
+  background:
+    radial-gradient(circle at 8% 50%, rgba(255, 79, 163, 0.18), transparent 34%),
+    rgba(255, 248, 252, 0.095);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 20px rgba(255,79,163,0.12);
+}
+
+.heart-toggle {
+  transition: transform 0.2s ease, filter 0.2s ease, color 0.2s ease;
+}
+
+.heart-toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 79, 163, 0.7);
+  box-shadow: 0 0 18px rgba(255, 79, 163, 0.42);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.heart-toggle:hover {
+  transform: scale(1.12);
+  color: var(--pink);
+  filter: drop-shadow(0 0 14px rgba(255, 79, 163, 0.72));
+}
+
+.heart-toggle:hover::after {
+  animation: microSparkle 0.72s ease;
+}
+
+.heart-toggle.active svg {
+  animation: activeHeartPop 0.62s ease;
+}
+
+.feeling-card:hover {
+  transform: perspective(760px) rotateX(3deg) rotateY(-4deg) translateY(-4px);
+  border-color: rgba(255, 185, 224, 0.32);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.34),
+    0 0 36px rgba(255,79,163,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+.feeling-card:hover small {
+  animation: activeHeartPop 0.7s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-4px);
+}
+
+.song-card:hover span {
+  color: rgba(255, 185, 224, 0.98);
+  text-shadow: 0 0 14px rgba(255, 79, 163, 0.35);
+}
+
+.photo-tile {
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.photo-tile::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 10px;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, transparent 18%, rgba(255,255,255,0.42) 48%, transparent 72%),
+    radial-gradient(circle at 50% 100%, rgba(255, 79, 163, 0.18), transparent 44%);
+  opacity: 0;
+  transform: translateX(-65%);
+  transition: opacity 0.2s ease;
+}
+
+.photo-tile:hover {
+  border-color: rgba(255, 185, 224, 0.7);
+  filter: saturate(1.08) brightness(1.04);
+  box-shadow:
+    0 22px 54px rgba(0,0,0,0.38),
+    0 0 34px rgba(255,79,163,0.28);
+}
+
+.photo-tile:hover::after {
+  opacity: 0.72;
+  animation: buttonShine 1.15s ease;
+}
+
+.compliment {
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.compliment:hover {
+  transform: translateY(-2px);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 79, 163, 0.18), transparent 40%),
+    rgba(255, 248, 252, 0.086);
+}
+
+.compliment.active {
+  animation: complimentGlowLift 1.6s ease-in-out infinite;
+}
+
+.mixer-cover {
+  transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+}
+
+.site-mixer:hover .mixer-cover {
+  transform: rotate(-1.5deg) scale(1.025);
+  filter: saturate(1.08);
+  box-shadow:
+    0 18px 48px rgba(0,0,0,0.46),
+    0 0 38px rgba(255,79,163,0.28);
+}
+
+.mixer-badge {
+  animation: tinyLift 2.8s ease-in-out infinite;
+}
+
+.mixer-controls button:hover,
+.mixer-volume button:hover,
+.mixer-collapse:hover {
+  color: var(--white);
+  background: rgba(255, 248, 252, 0.12);
+  box-shadow: 0 0 20px rgba(255, 79, 163, 0.16);
+}
+
+.mixer-controls .mixer-play:hover {
+  transform: scale(1.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    0 14px 40px rgba(255,79,163,0.24),
+    0 0 26px rgba(199,125,255,0.18);
+}
+
+.sealed-envelope {
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.sealed-envelope:hover,
+.sealed-envelope:focus-visible {
+  transform: translateY(-5px) rotateX(2deg);
+  border-color: rgba(255, 185, 224, 0.42);
+  box-shadow:
+    0 40px 112px rgba(0, 0, 0, 0.5),
+    0 0 90px rgba(255, 79, 163, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.sealed-envelope:hover .wax-seal,
+.sealed-envelope:focus-visible .wax-seal {
+  animation: activeHeartPop 0.7s ease;
+}
+
+.letter-close:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 560px) {
+  .photo-tile {
+    position: relative !important;
+    transform: none !important;
+  }
 }

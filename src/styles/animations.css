@@ -56,6 +56,44 @@
   72% { transform: translate3d(14px, -9px, 0) scale(0.82); opacity: 0.42; }
 }
 
+@keyframes buttonShine {
+  from { transform: translate3d(-135%, 0, 0) skewX(-18deg); }
+  to { transform: translate3d(245%, 0, 0) skewX(-18deg); }
+}
+
+@keyframes tinyLift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  45% { transform: translate3d(0, -2px, 0); }
+}
+
+@keyframes iconWink {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  38% { transform: translate3d(0, -1px, 0) rotate(-8deg) scale(1.08); }
+  72% { transform: translate3d(0, 0, 0) rotate(6deg) scale(1.03); }
+}
+
+@keyframes microSparkle {
+  0% { transform: translate3d(-50%, -50%, 0) scale(0.3); opacity: 0; }
+  35% { opacity: 0.78; }
+  100% { transform: translate3d(-50%, -50%, 0) scale(1.7); opacity: 0; }
+}
+
+@keyframes cardAura {
+  0%, 100% { opacity: 0.18; transform: translate3d(-4%, -2%, 0) scale(1); }
+  50% { opacity: 0.42; transform: translate3d(4%, 3%, 0) scale(1.06); }
+}
+
+@keyframes activeHeartPop {
+  0%, 100% { transform: scale(1); }
+  28% { transform: scale(1.24) rotate(-8deg); }
+  58% { transform: scale(0.94) rotate(5deg); }
+}
+
+@keyframes complimentGlowLift {
+  0%, 100% { transform: translateY(0) scale(1.05); }
+  50% { transform: translateY(-2px) scale(1.058); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
