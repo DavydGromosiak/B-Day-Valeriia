@@ -62,12 +62,11 @@ export function FeelingsLibrary({ tr, ui }: Props) {
           return (
             <motion.button
               className={`feeling-card ${card.shape}`}
-              key={card.id}
+              key={`${category}-${card.id}`}
               onClick={() => setActive(card)}
               aria-label={`${tr(ui.openCard)}: ${tr(card.title)}`}
               initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
             >
               <Icon size={22} />
