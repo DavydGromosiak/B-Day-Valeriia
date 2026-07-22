@@ -1029,23 +1029,23 @@ Ich mag, dass diese Stimmung nicht laut ist. Sie ist ruhig, aber irgendwie stark
   {
     id: 45,
     category: "moments",
-    title: l("Рядом в дороге", "Beside a friend on the way", "Neben einer Freundin unterwegs"),
+    title: l("Рядом в школе", "Beside a friend at school", "Neben einer Freundin in der Schule"),
     text: l(
-      `Этот кадр выглядит как маленькая пауза где-то в дороге.
+      `Этот кадр выглядит как обычная маленькая пауза в школе.
 
-Вы просто сидите рядом, без позы и без попытки сделать что-то вау. И в этом есть спокойная близость.
+Вы просто сидите рядом, без позы и без попытки сделать что-то вау. И в этом как раз есть что-то настоящее.
 
-Мне нравятся такие фото, потому что они честные`,
-      `This photo feels like a small pause somewhere on the way.
+Мне нравятся такие фото, потому что они честные. Будто кусочек обычного дня, который почему-то приятно сохранить`,
+      `This photo feels like a small normal pause at school.
 
-You are just sitting beside each other, without posing or trying to make it wow. And there is a calm closeness in that.
+You are just sitting beside each other, without posing or trying to make it look wow. And that is exactly what makes it feel real.
 
-I like photos like this because they are honest.`,
-      `Dieses Foto wirkt wie eine kleine Pause irgendwo unterwegs.
+I like photos like this because they are honest. Like a small piece of an ordinary day that somehow feels nice to keep.`,
+      `Dieses Foto wirkt wie eine ganz normale kleine Pause in der Schule.
 
-Ihr sitzt einfach nebeneinander, ohne Pose und ohne etwas Besonderes daraus machen zu wollen. Darin liegt eine ruhige Nähe.
+Ihr sitzt einfach nebeneinander, ohne Pose und ohne daraus etwas Besonderes machen zu wollen. Genau dadurch fühlt es sich echt an.
 
-Ich mag solche Fotos, weil sie ehrlich sind.`
+Ich mag solche Fotos, weil sie ehrlich sind. Wie ein kleines Stück von einem normalen Tag, das man trotzdem gern behalten möchte.`
     )
   },
   {
@@ -1277,23 +1277,23 @@ Ich mag, dass du hier nicht perfekt posierst, sondern einfach im Moment bist.`
   {
     id: 56,
     category: "moments",
-    title: l("Ты, Юля и лето", "You, Yulia, and summer", "Du, Yulia und Sommer"),
+    title: l("Ты, Юля и конец весны", "You, Yulia, and late spring", "Du, Yulia und der späte Frühling"),
     text: l(
       `Вот это фото смешное и солнечное.
 
-Вы с Юлей стоите на траве, эмоции живые, свет яркий, и всё выглядит так, будто настроение само выскочило в кадр.
+Вы с Юлей стоите на траве, свет яркий, и в кадре прямо чувствуется конец весны. Уже почти лето, но всё ещё есть эта свежесть и лёгкость.
 
-Мне нравится, когда фото не идеально ровное, зато в нём есть настоящая радость`,
+Мне нравится, когда фото не идеально ровное, зато в нём есть настоящая радость. Тут она прям выскочила в кадр вместе с вами`,
       `This photo is funny and sunny.
 
-You and Yulia are standing on the grass, the expressions are alive, the light is bright, and it feels like the mood jumped into the frame by itself.
+You and Yulia are standing on the grass, the light is bright, and the photo really feels like late spring. Almost summer already, but still fresh and easy.
 
-I like when a photo is not perfectly polished, but has real joy in it.`,
+I like when a photo is not perfectly polished, but has real joy in it. Here it feels like the mood jumped into the frame with you.`,
       `Dieses Foto ist lustig und sonnig.
 
-Ihr beide steht auf dem Gras, eure Gesichter sind lebendig, das Licht ist hell, und es wirkt, als wäre die Stimmung einfach ins Bild gesprungen.
+Ihr steht mit Yulia auf dem Gras, das Licht ist hell, und das Bild fühlt sich richtig nach spätem Frühling an. Fast schon Sommer, aber noch frisch und leicht.
 
-Ich mag es, wenn ein Foto nicht perfekt glatt ist, aber echte Freude hat.`
+Ich mag es, wenn ein Foto nicht perfekt glatt ist, aber echte Freude hat. Hier wirkt es, als wäre die Stimmung einfach mit euch ins Bild gesprungen.`
     )
   },
   {

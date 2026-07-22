@@ -130,8 +130,8 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     objectPosition: "center 25%"
   },
   56: {
-    alt: l("Ты с Юлей летом", "You with Yulia in summer", "Du mit Yulia im Sommer"),
-    caption: l("Ты, Юля и летнее настроение, которое сразу видно", "You, Yulia, and a summer mood you can see right away", "Du, Yulia und Sommerstimmung, die man sofort sieht")
+    alt: l("Ты с Юлей в конце весны", "You with Yulia in late spring", "Du mit Yulia im späten Frühling"),
+    caption: l("Ты, Юля и настроение конца весны, которое сразу видно", "You, Yulia, and that late-spring mood you can see right away", "Du, Yulia und diese Spätfrühlingsstimmung, die man sofort sieht")
   },
   58: {
     alt: l("Мама Елена под цветущим деревом", "Mom Elena under a blossoming tree", "Mama Elena unter einem blühenden Baum"),
