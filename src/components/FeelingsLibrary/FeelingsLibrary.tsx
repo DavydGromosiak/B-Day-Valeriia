@@ -49,8 +49,16 @@ export function FeelingsLibrary({ tr, ui }: Props) {
                 transition={{ delay: index * 0.035 }}
                 data-romantic="true"
               >
-                <span>{tr(ui.inspiredBy)} / {song.vibe}</span>
-                <p>{tr(song.note)}</p>
+                <span className="song-artist">{song.artist}</span>
+                <h4>{song.title}</h4>
+                <div className="song-fragment">
+                  <small>{tr(ui.songFragmentLabel)}</small>
+                  <p>{tr(song.fragment)}</p>
+                </div>
+                <div className="song-why">
+                  <small>{tr(ui.songWhyLabel)}</small>
+                  <p>{tr(song.why)}</p>
+                </div>
               </motion.article>
             ))}
           </div>

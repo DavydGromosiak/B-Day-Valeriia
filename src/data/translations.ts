@@ -93,11 +93,13 @@ export const t = {
     de: "Lieder, die sich wie Komplimente für dich anfühlen"
   },
   songShelfNote: {
-    ru: "Это не строки из песен, а мои оригинальные маленькие поздравления в их настроении.",
-    en: "These are not song lyrics, but my own little wishes in their mood.",
-    de: "Das sind keine Songtexte, sondern meine eigenen kleinen Wünsche in ihrer Stimmung."
+    ru: "Здесь не скопированные lyrics, а смысловые урывки из популярных песен: что я в них слышу и почему они напоминают мне о тебе.",
+    en: "These are not copied lyrics, but meaning-inspired parts from popular songs: what I hear in them and why they remind me of you.",
+    de: "Das sind keine kopierten Songtexte, sondern sinngemäße Ausschnitte aus bekannten Liedern: was ich darin höre und warum sie mich an dich erinnern."
   },
   inspiredBy: { ru: "вайб", en: "vibe", de: "Stimmung" },
+  songFragmentLabel: { ru: "смысл урывка", en: "meaning of the part", de: "Sinn der Stelle" },
+  songWhyLabel: { ru: "почему именно он", en: "why this one", de: "warum genau das" },
   categories: {
     birthday: { ru: "Поздравления", en: "Birthday wishes", de: "Glückwünsche" },
     love: { ru: "Почему я тебя люблю", en: "Why I love you", de: "Warum ich dich liebe" },

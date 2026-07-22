@@ -2,119 +2,194 @@ import { LocalizedString } from "./translations";
 
 export type SongCompliment = {
   id: number;
-  vibe: string;
-  note: LocalizedString;
+  title: string;
+  artist: string;
+  fragment: LocalizedString;
+  why: LocalizedString;
 };
 
-// EDIT HERE: можно заменить вайб песни и текст. Не вставляй сюда полные реальные lyrics популярных песен.
-// Это не цитаты, а короткие личные ассоциации Давида с песнями.
+// EDIT HERE: можно менять песни, смысловые урывки и объяснения.
+// Важно: сюда не вставляются полные реальные lyrics популярных песен.
+// Вместо цитат здесь личная адаптация смысла, чтобы сайт оставался тёплым и безопасным.
 export const songCompliments: SongCompliment[] = [
   {
     id: 1,
-    vibe: "Until I Found You / Stephen Sanchez",
-    note: {
-      ru: "Если честно, эта песня у меня почему-то про то чувство, когда человек становится очень родным не сразу громко, а постепенно. Сначала просто приятно общаться, потом ждёшь сообщения, а потом ловишь себя на мысли: ну всё, попал 🙈",
-      en: "Honestly, this song feels to me like that moment when someone becomes close not loudly, but slowly. First it is just nice to talk, then you wait for a message, and then you realize: okay, I am in trouble 🙈",
-      de: "Ehrlich, dieses Lied fühlt sich für mich so an, wenn ein Mensch nicht laut, sondern langsam wichtig wird. Erst schreibt man einfach gern, dann wartet man auf Nachrichten, und irgendwann merkt man: okay, erwischt 🙈"
+    title: "Until I Found You",
+    artist: "Stephen Sanchez",
+    fragment: {
+      ru: "Смысл урывка для меня: человек появляется в жизни не громко, но в какой-то момент ты понимаешь, что уже не хочешь терять его.",
+      en: "The idea of this part for me: someone comes into your life quietly, and then you realize you really do not want to lose them.",
+      de: "Die Idee von diesem Teil für mich: Jemand kommt leise in dein Leben, und irgendwann merkst du, dass du diese Person nicht verlieren willst."
+    },
+    why: {
+      ru: "Я выбрал это, потому что с тобой у меня именно так. Не было какого-то резкого “вау”, просто ты становилась всё ближе, а потом я понял, что ты для меня уже очень важная 🙈",
+      en: "I chose it because this is how it feels with you. It was not one loud wow moment. You just became closer and closer, and then I realized how important you are to me 🙈",
+      de: "Ich habe es gewählt, weil es sich mit dir genau so anfühlt. Es war kein lauter Wow-Moment. Du wurdest einfach immer wichtiger, bis ich es richtig gemerkt habe 🙈"
     }
   },
   {
     id: 2,
-    vibe: "golden hour / JVKE",
-    note: {
-      ru: "Эта песня для меня про свет, но не про какой-то киношный. Скорее про тот момент, когда смотришь на твоё фото и думаешь: блин, ну как она может так выглядеть просто случайно 🥹",
-      en: "For me, this song is about light, but not in a movie way. More like when I look at your photo and think: how can she look like that so naturally 🥹",
-      de: "Für mich geht dieses Lied um Licht, aber nicht wie im Film. Eher so, wenn ich dein Foto anschaue und denke: Wie kann sie einfach so natürlich so aussehen 🥹"
+    title: "golden hour",
+    artist: "JVKE",
+    fragment: {
+      ru: "Смысл урывка: человек выглядит так красиво в обычном свете, что момент будто сам становится мягче и теплее.",
+      en: "The idea: someone looks so beautiful in ordinary light that the whole moment feels softer and warmer.",
+      de: "Die Idee: Jemand sieht im normalen Licht so schön aus, dass der ganze Moment weicher und wärmer wirkt."
+    },
+    why: {
+      ru: "Потому что многие твои фото у меня вызывают именно это чувство. Смотришь и думаешь: ну как можно так случайно красиво получиться 🥹",
+      en: "Because many of your photos give me exactly that feeling. I look at them and think: how can she look this beautiful so naturally 🥹",
+      de: "Weil mir viele deiner Fotos genau dieses Gefühl geben. Ich schaue sie an und denke: Wie kann sie so natürlich schön aussehen 🥹"
     }
   },
   {
     id: 3,
-    vibe: "Perfect / Ed Sheeran",
-    note: {
-      ru: "Я не буду писать, что всё идеально, потому что это звучит слишком как открытка из магазина. Но с тобой бывают моменты, где правда хочется просто остановиться и подумать: вот бы это подольше не заканчивалось",
-      en: "I will not write that everything is perfect, because that sounds too much like a store-bought card. But with you, there are moments when I really want time to slow down for a bit.",
-      de: "Ich schreibe nicht, dass alles perfekt ist, weil das zu sehr nach gekaufter Karte klingt. Aber mit dir gibt es Momente, in denen ich wirklich möchte, dass die Zeit kurz langsamer wird."
+    title: "Perfect",
+    artist: "Ed Sheeran",
+    fragment: {
+      ru: "Смысл урывка: есть момент, который не надо улучшать, потому что рядом с нужным человеком он уже ощущается правильным.",
+      en: "The idea: some moments do not need to be improved, because with the right person they already feel right.",
+      de: "Die Idee: Manche Momente muss man nicht besser machen, weil sie mit der richtigen Person schon richtig wirken."
+    },
+    why: {
+      ru: "Не хочу писать слишком идеально, но иногда с тобой правда хочется просто остановиться и подумать: вот бы это подольше не заканчивалось",
+      en: "I do not want to make it sound too perfect, but sometimes with you I really just want time to slow down a little.",
+      de: "Ich will es nicht zu perfekt klingen lassen, aber manchmal möchte ich mit dir wirklich, dass die Zeit kurz langsamer wird."
     }
   },
   {
     id: 4,
-    vibe: "All of Me / John Legend",
-    note: {
-      ru: "Мне нравится в тебе не только “хорошая” часть. Мне нравится и твой характер, и когда ты злишься, и когда споришь, и когда делаешь вид, что тебе всё равно, хотя я вижу, что не всё равно 😅",
-      en: "I like not only the “easy” parts of you. I like your character too, even when you get annoyed, argue, or pretend you do not care when I can see that you do 😅",
-      de: "Ich mag nicht nur die “einfachen” Seiten an dir. Ich mag auch deinen Charakter, wenn du sauer bist, diskutierst oder so tust, als wäre es dir egal, obwohl ich sehe, dass es nicht egal ist 😅"
+    title: "All of Me",
+    artist: "John Legend",
+    fragment: {
+      ru: "Смысл урывка: любить человека не только за удобные стороны, а за всё, что делает его настоящим.",
+      en: "The idea: loving someone not only for the easy parts, but for everything that makes them real.",
+      de: "Die Idee: Einen Menschen nicht nur für die einfachen Seiten zu mögen, sondern für alles, was ihn echt macht."
+    },
+    why: {
+      ru: "Мне нравится в тебе не только когда ты милая. Мне нравится и твой характер, и когда ты споришь, и когда чуть злишься. Это тоже ты, и это тоже по-своему родное 😅",
+      en: "I do not only like you when you are sweet. I like your character too, even when you argue or get a little annoyed. That is also you, and it feels close to me 😅",
+      de: "Ich mag dich nicht nur, wenn du süß bist. Ich mag auch deinen Charakter, wenn du diskutierst oder ein bisschen sauer bist. Das bist auch du, und es fühlt sich nah an 😅"
     }
   },
   {
     id: 5,
-    vibe: "Just the Way You Are / Bruno Mars",
-    note: {
-      ru: "Эта ассоциация простая: мне не хочется, чтобы ты становилась кем-то другим ради кого-то. Мне нравится именно ты, со своими привычками, настроением, милотой и маленькими странностями",
-      en: "This one is simple: I do not want you to become someone else for anyone. I like you exactly as you are, with your habits, moods, sweetness, and little strange things.",
-      de: "Diese Verbindung ist einfach: Ich möchte nicht, dass du für jemanden anders wirst. Ich mag genau dich, mit deinen Gewohnheiten, Stimmungen, deiner Süße und kleinen Eigenheiten."
+    title: "Just the Way You Are",
+    artist: "Bruno Mars",
+    fragment: {
+      ru: "Смысл урывка: не нужно становиться другой, чтобы быть любимой. Достаточно быть собой.",
+      en: "The idea: you do not need to become someone else to be loved. Being yourself is enough.",
+      de: "Die Idee: Du musst nicht anders werden, um geliebt zu werden. Du selbst zu sein reicht."
+    },
+    why: {
+      ru: "Потому что мне правда нравится именно ты: с привычками, настроением, милотой, упрямством и маленькими странностями. Менять это было бы преступлением против красоты момента",
+      en: "Because I really like exactly you: your habits, moods, sweetness, stubbornness, and little strange things. Changing that would honestly be a crime against the moment.",
+      de: "Weil ich wirklich genau dich mag: deine Gewohnheiten, Stimmungen, Süße, Sturheit und kleinen Eigenheiten. Das zu ändern wäre fast schade um den Moment."
     }
   },
   {
     id: 6,
-    vibe: "Die With A Smile / Lady Gaga & Bruno Mars",
-    note: {
-      ru: "Не буду драматизировать, но я правда очень люблю, когда ты улыбаешься. Даже если день был так себе, одна твоя нормальная улыбка может сделать его заметно лучше",
-      en: "I will not make it dramatic, but I really love when you smile. Even if the day was not great, one real smile from you can make it much better.",
-      de: "Ich will es nicht dramatisch machen, aber ich liebe es wirklich, wenn du lächelst. Auch wenn der Tag nicht so gut war, kann ein echtes Lächeln von dir ihn viel besser machen."
+    title: "Die With A Smile",
+    artist: "Lady Gaga & Bruno Mars",
+    fragment: {
+      ru: "Смысл урывка: если рядом тот самый человек, даже сложный день хочется встретить с улыбкой.",
+      en: "The idea: when the right person is near, even a hard day feels easier to face with a smile.",
+      de: "Die Idee: Wenn die richtige Person nah ist, fühlt sich sogar ein schwerer Tag leichter an."
+    },
+    why: {
+      ru: "Я выбрал это из-за твоей улыбки. Не буду драматизировать, но она реально может сделать мой день лучше, даже если до этого всё было так себе",
+      en: "I chose it because of your smile. I will not make it dramatic, but it really can make my day better, even if it was not going well before.",
+      de: "Ich habe es wegen deines Lächelns gewählt. Ich will es nicht dramatisch machen, aber es kann meinen Tag wirklich besser machen."
     }
   },
   {
     id: 7,
-    vibe: "Yellow / Coldplay",
-    note: {
-      ru: "Знаешь, в тебе есть какой-то свой свет. Не такой, где надо всем доказывать, какая ты яркая. А тихий, который замечаешь и потом почему-то долго помнишь",
-      en: "You know, you have your own kind of light. Not the kind that tries to prove anything. A quiet one, the kind you notice and remember for a long time.",
-      de: "Weißt du, du hast dein eigenes Licht. Nicht so eins, das allen etwas beweisen will. Eher ein ruhiges, das man bemerkt und lange im Kopf behält."
+    title: "Yellow",
+    artist: "Coldplay",
+    fragment: {
+      ru: "Смысл урывка: у человека есть свой свет, который не кричит, но почему-то остаётся в памяти.",
+      en: "The idea: someone has their own light, not loud, but somehow impossible to forget.",
+      de: "Die Idee: Jemand hat ein eigenes Licht, nicht laut, aber irgendwie bleibt es im Kopf."
+    },
+    why: {
+      ru: "Знаешь, в тебе есть такой тихий свет. Не тот, где надо всем что-то доказывать, а тот, который замечаешь и потом долго вспоминаешь",
+      en: "You know, you have that quiet kind of light. Not the kind that tries to prove anything, but the kind you notice and remember.",
+      de: "Weißt du, du hast so ein ruhiges Licht. Nicht eins, das etwas beweisen will, sondern eins, das man bemerkt und lange behält."
     }
   },
   {
     id: 8,
-    vibe: "Can't Help Falling in Love / Elvis Presley",
-    note: {
-      ru: "Иногда я сам не сразу понимаю, что чувствую. Просто замечаю, что думаю о тебе чаще, чем планировал, улыбаюсь с переписки и жду, когда ты снова что-то напишешь",
-      en: "Sometimes I do not understand my feelings right away. I just notice that I think about you more than planned, smile at our chat, and wait for you to write again.",
-      de: "Manchmal verstehe ich selbst nicht sofort, was ich fühle. Ich merke nur, dass ich öfter an dich denke als geplant, bei unserem Chat lächle und warte, bis du wieder schreibst."
+    title: "Can't Help Falling in Love",
+    artist: "Elvis Presley",
+    fragment: {
+      ru: "Смысл урывка: чувства иногда приходят не по плану, а просто тихо становятся фактом.",
+      en: "The idea: feelings do not always arrive by plan. Sometimes they quietly become a fact.",
+      de: "Die Idee: Gefühle kommen nicht immer nach Plan. Manchmal werden sie einfach leise zu einer Tatsache."
+    },
+    why: {
+      ru: "Потому что я сам не сразу понял, насколько сильно ты мне нравишься. Просто стал чаще думать о тебе, ждать сообщения и улыбаться с переписки",
+      en: "Because I did not understand right away how much I liked you. I just started thinking about you more, waiting for your messages, and smiling at our chat.",
+      de: "Weil ich selbst nicht sofort verstanden habe, wie sehr ich dich mag. Ich dachte einfach öfter an dich, wartete auf Nachrichten und lächelte beim Chat."
     }
   },
   {
     id: 9,
-    vibe: "Make You Feel My Love / Adele",
-    note: {
-      ru: "Мне хочется, чтобы рядом со мной тебе не приходилось делать вид, что всё нормально, если внутри не нормально. Я не идеальный в словах, но я правда хочу быть тем, кому ты можешь сказать честно",
-      en: "I want you to feel that with me, you do not have to pretend everything is fine when it is not. I am not perfect with words, but I really want to be someone you can be honest with.",
-      de: "Ich möchte, dass du neben mir nicht so tun musst, als wäre alles gut, wenn es innen nicht gut ist. Ich bin nicht perfekt mit Worten, aber ich möchte wirklich jemand sein, bei dem du ehrlich sein kannst."
+    title: "Make You Feel My Love",
+    artist: "Adele",
+    fragment: {
+      ru: "Смысл урывка: хочется быть рядом с человеком не только когда всё хорошо, но и когда ему тяжело.",
+      en: "The idea: wanting to be there for someone not only when everything is fine, but also when it is hard.",
+      de: "Die Idee: Für jemanden da sein zu wollen, nicht nur wenn alles gut ist, sondern auch wenn es schwer ist."
+    },
+    why: {
+      ru: "Мне хочется, чтобы со мной тебе не приходилось делать вид, что всё нормально. Я не всегда умею красиво говорить, но я правда хочу быть рядом по-настоящему",
+      en: "I want you to feel that with me you do not have to pretend everything is fine. I am not always good with words, but I truly want to be there.",
+      de: "Ich möchte, dass du bei mir nicht so tun musst, als wäre alles gut. Ich bin nicht immer gut mit Worten, aber ich will wirklich da sein."
     }
   },
   {
     id: 10,
-    vibe: "Best Part / Daniel Caesar & H.E.R.",
-    note: {
-      ru: "Иногда лучшая часть дня это не что-то большое. Иногда это просто твоё сообщение, твоя фотка или то, что ты вдруг рассказываешь какую-то мелочь, а мне почему-то становится приятно",
-      en: "Sometimes the best part of the day is not something big. Sometimes it is just your message, your photo, or you telling me some small thing, and for some reason it makes me happy.",
-      de: "Manchmal ist der beste Teil des Tages nichts Großes. Manchmal ist es einfach deine Nachricht, dein Foto oder eine kleine Sache, die du erzählst, und irgendwie macht mich das froh."
+    title: "Best Part",
+    artist: "Daniel Caesar & H.E.R.",
+    fragment: {
+      ru: "Смысл урывка: иногда лучший кусочек дня — это не событие, а человек, который делает обычное приятным.",
+      en: "The idea: sometimes the best part of the day is not an event, but a person who makes ordinary things feel good.",
+      de: "Die Idee: Manchmal ist der beste Teil des Tages kein Ereignis, sondern ein Mensch, der normale Dinge schön macht."
+    },
+    why: {
+      ru: "Потому что иногда мне достаточно твоего сообщения, фотки или какой-то мелочи от тебя, и день уже становится чуть теплее",
+      en: "Because sometimes your message, your photo, or one small thing from you is enough to make my day feel warmer.",
+      de: "Weil manchmal deine Nachricht, dein Foto oder eine kleine Sache von dir reicht, damit mein Tag wärmer wird."
     }
   },
   {
     id: 11,
-    vibe: "Lover / Taylor Swift",
-    note: {
-      ru: "Мне нравится мысль, что любовь это не только громкие признания. Иногда это просто хотеть быть рядом, спрашивать как день, волноваться, если ты грустная, и радоваться твоим маленьким радостям",
-      en: "I like the thought that love is not only big confessions. Sometimes it is just wanting to be close, asking about your day, worrying when you are sad, and being happy for your little joys.",
-      de: "Ich mag den Gedanken, dass Liebe nicht nur große Geständnisse sind. Manchmal heißt es einfach, nah sein zu wollen, nach deinem Tag zu fragen, sich Sorgen zu machen und sich über deine kleinen Freuden zu freuen."
+    title: "Lover",
+    artist: "Taylor Swift",
+    fragment: {
+      ru: "Смысл урывка: любовь — это не только громкие признания, а желание быть рядом в обычных днях.",
+      en: "The idea: love is not only big confessions, but wanting to be close in ordinary days.",
+      de: "Die Idee: Liebe sind nicht nur große Geständnisse, sondern der Wunsch, im Alltag nah zu sein."
+    },
+    why: {
+      ru: "Мне нравится, что с тобой важными становятся простые вещи: спросить как день, переживать за настроение, радоваться твоим маленьким радостям",
+      en: "I like that with you, simple things become important: asking about your day, caring about your mood, and being happy for your little joys.",
+      de: "Ich mag, dass mit dir einfache Dinge wichtig werden: nach deinem Tag fragen, auf deine Stimmung achten und mich über deine kleinen Freuden freuen."
     }
   },
   {
     id: 12,
-    vibe: "Photograph / Ed Sheeran",
-    note: {
-      ru: "Некоторые твои фото я сохраняю не потому, что они “самые идеальные”. А потому что в них есть ты, твой взгляд, твоя мимика, твой момент. И мне хочется это оставить у себя",
-      en: "I save some of your photos not because they are “the most perfect”. I save them because they have you in them, your look, your expression, your moment. And I want to keep that.",
-      de: "Manche Fotos von dir speichere ich nicht, weil sie “perfekt” sind. Ich speichere sie, weil du darin bist, dein Blick, dein Ausdruck, dein Moment. Und das möchte ich behalten."
+    title: "Photograph",
+    artist: "Ed Sheeran",
+    fragment: {
+      ru: "Смысл урывка: фото хранит не идеальность, а чувство, которое хочется оставить рядом.",
+      en: "The idea: a photo keeps not perfection, but a feeling you want to keep close.",
+      de: "Die Idee: Ein Foto bewahrt nicht Perfektion, sondern ein Gefühl, das man nah behalten möchte."
+    },
+    why: {
+      ru: "Именно поэтому я сохраняю твои фото. Не потому что они все “идеальные”, а потому что в них есть ты: взгляд, мимика, настроение, момент",
+      en: "That is why I save your photos. Not because they are all perfect, but because they have you in them: your look, expression, mood, and moment.",
+      de: "Deshalb speichere ich deine Fotos. Nicht weil sie alle perfekt sind, sondern weil du darin bist: dein Blick, dein Ausdruck, deine Stimmung, der Moment."
     }
   }
 ];
