@@ -1,0 +1,26 @@
+import { LocalizedString } from "./translations";
+
+const rows: [string, string, string][] = [
+  ["милая <3", "sweet <3", "süß <3"], ["красивая <3", "beautiful <3", "schön <3"], ["прекрасная <3", "wonderful <3", "wundervoll <3"], ["роскошная <3", "gorgeous <3", "umwerfend <3"], ["заботливая <3", "caring <3", "fürsorglich <3"],
+  ["добрая <3", "kind <3", "gütig <3"], ["нежная <3", "tender <3", "zärtlich <3"], ["ласковая <3", "affectionate <3", "liebevoll <3"], ["весёлая <3", "cheerful <3", "fröhlich <3"], ["яркая <3", "radiant <3", "strahlend <3"],
+  ["очаровательная <3", "charming <3", "bezaubernd <3"], ["сладкая <3", "adorably sweet <3", "zuckersüß <3"], ["неповторимая <3", "one of a kind <3", "einzigartig <3"], ["сказочная <3", "fairy-tale beautiful <3", "märchenhaft <3"], ["искренняя <3", "sincere <3", "aufrichtig <3"],
+  ["романтичная <3", "romantic <3", "romantisch <3"], ["внимательная <3", "attentive <3", "aufmerksam <3"], ["симпатичная <3", "lovely <3", "hübsch <3"], ["удивительная <3", "amazing <3", "erstaunlich <3"], ["мечтательная <3", "dreamy <3", "träumerisch <3"],
+  ["потрясающая <3", "stunning <3", "fantastisch <3"], ["привлекательная <3", "attractive <3", "anziehend <3"], ["способная <3", "talented <3", "fähig <3"], ["солнечная <3", "sunny <3", "sonnig <3"], ["тёплая <3", "warm <3", "warmherzig <3"],
+  ["уютная <3", "comforting <3", "geborgen <3"], ["сообразительная <3", "quick-witted <3", "scharfsinnig <3"], ["умная <3", "smart <3", "klug <3"], ["изысканная <3", "refined <3", "edel <3"], ["стильная <3", "stylish <3", "stilvoll <3"],
+  ["грациозная <3", "graceful <3", "anmutig <3"], ["элегантная <3", "elegant <3", "elegant <3"], ["вдохновлённая <3", "inspired <3", "inspiriert <3"], ["светлая <3", "light-filled <3", "lichtvoll <3"], ["честная <3", "honest <3", "ehrlich <3"],
+  ["преданная <3", "devoted <3", "treu <3"], ["щедрая <3", "generous <3", "großzügig <3"], ["чувственная <3", "sensual <3", "sinnlich <3"], ["увлекательная <3", "captivating <3", "fesselnd <3"], ["особенная <3", "special <3", "besonders <3"],
+  ["несравненная <3", "incomparable <3", "unvergleichlich <3"], ["идеальная <3", "perfect <3", "perfekt <3"], ["чудесная <3", "marvelous <3", "wunderbar <3"], ["верная <3", "faithful <3", "verlässlich <3"], ["надёжная <3", "reliable <3", "zuverlässig <3"],
+  ["нежносердечная <3", "soft-hearted <3", "weichherzig <3"], ["магнетическая <3", "magnetic <3", "magnetisch <3"], ["хрупкая <3", "delicate <3", "zart <3"], ["смелая <3", "brave <3", "mutig <3"], ["сильная <3", "strong <3", "stark <3"],
+  ["душевная <3", "soulful <3", "herzlich <3"], ["настоящая <3", "real <3", "echt <3"], ["гармоничная <3", "harmonious <3", "harmonisch <3"], ["приветливая <3", "welcoming <3", "freundlich <3"], ["сияющая <3", "glowing <3", "leuchtend <3"],
+  ["загадочная <3", "mysterious <3", "geheimnisvoll <3"], ["эмоциональная <3", "emotional <3", "gefühlvoll <3"], ["доброжелательная <3", "benevolent <3", "wohlwollend <3"], ["любимая <3", "beloved <3", "geliebt <3"], ["бесценная <3", "priceless <3", "unbezahlbar <3"],
+  ["родная <3", "dear to my heart <3", "vertraut <3"], ["незабываемая <3", "unforgettable <3", "unvergesslich <3"], ["самая лучшая <3", "the very best <3", "die Allerbeste <3"], ["нежнокрылая <3", "soft-winged <3", "sanft beflügelt <3"], ["вдохновительница <3", "my inspiration <3", "meine Inspiration <3"],
+  ["чарующая <3", "enchanting <3", "zauberhaft <3"], ["женственная <3", "feminine <3", "weiblich <3"], ["утончённая <3", "sophisticated <3", "feinsinnig <3"], ["спокойная <3", "calm <3", "ruhig <3"], ["ласковая <3", "loving <3", "liebevoll <3"],
+  ["окрыляющая <3", "uplifting <3", "beflügelnd <3"], ["мягкая <3", "gentle <3", "sanft <3"], ["счастливая <3", "happy <3", "glücklich <3"], ["улыбчивая <3", "smiley <3", "lächelnd <3"], ["тёплокровная <3", "warm-blooded <3", "warmherzig <3"],
+  ["заботливая <3", "nurturing <3", "fürsorglich <3"], ["терпеливая <3", "patient <3", "geduldig <3"], ["чуткая <3", "sensitive <3", "feinfühlig <3"], ["сердечная <3", "warmhearted <3", "herzensgut <3"], ["благородная <3", "noble <3", "edelherzig <3"],
+  ["милосердная <3", "compassionate <3", "barmherzig <3"], ["светлоокая <3", "bright-eyed <3", "helläugig <3"], ["красавица <3", "beauty <3", "Schönheit <3"], ["феерическая <3", "spectacular <3", "feenhaft <3"], ["ангельская <3", "angelic <3", "engelsgleich <3"],
+  ["естественная <3", "natural <3", "natürlich <3"], ["непревзойдённая <3", "unsurpassed <3", "unübertroffen <3"], ["нежнодушная <3", "gentle-souled <3", "sanftseelig <3"], ["любящая <3", "loving <3", "liebend <3"], ["наполненная заботой <3", "full of care <3", "voller Fürsorge <3"],
+  ["уверенная <3", "confident <3", "selbstbewusst <3"], ["бархатная <3", "velvety <3", "samtig <3"], ["излучающая тепло <3", "radiating warmth <3", "wärmeausstrahlend <3"], ["солнечноликая <3", "sun-faced <3", "sonnengesichtig <3"], ["цветущая <3", "blossoming <3", "blühend <3"],
+  ["живая <3", "alive <3", "lebendig <3"], ["самая настоящая <3", "the most genuine <3", "die Echteste <3"], ["несгибаемая <3", "unbreakable <3", "unbeugsam <3"], ["единственная <3", "the only one <3", "die Einzige <3"], ["совершенная <3", "perfectly you <3", "vollkommen <3"]
+];
+
+export const compliments: LocalizedString[] = rows.map(([ru, en, de]) => ({ ru, en, de }));
