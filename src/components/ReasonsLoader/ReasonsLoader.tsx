@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useEffect, useMemo, useState } from "react";
 import { Language, LocalizedString } from "../../data/translations";
 import { reasons } from "../../data/reasons";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
@@ -19,6 +19,7 @@ export function ReasonsLoader({ language, setLanguage, tr, ui, onComplete, onSki
   const [showSkip, setShowSkip] = useState(false);
   const [finalStep, setFinalStep] = useState(0);
   const currentReason = useMemo(() => reasons[reasonIndex % reasons.length], [reasonIndex]);
+  const displayProgress = Math.min(progress + 1, 100);
 
   useEffect(() => {
     const skipTimer = window.setTimeout(() => setShowSkip(true), 3000);
@@ -50,23 +51,41 @@ export function ReasonsLoader({ language, setLanguage, tr, ui, onComplete, onSki
         <LanguageSwitcher language={language} setLanguage={setLanguage} />
       </div>
       {progress < 100 ? (
-        <>
-          <p className="section-kicker">{tr(ui.loadingReasons)}</p>
-          <div className="loader-count">{String(Math.min(progress + 1, 100)).padStart(3, "0")} / 100</div>
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={reasonIndex}
-              className="terminal-line"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35 }}
-            >
-              {tr(currentReason)}
-            </motion.p>
-          </AnimatePresence>
+        <div className="loader-panel" style={{ "--loader-progress": `${displayProgress}%` } as CSSProperties}>
+          <div className="loader-panel-top">
+            <p className="section-kicker">{tr(ui.loadingReasons)}</p>
+            <span>{String(displayProgress).padStart(3, "0")}%</span>
+          </div>
+          <div className="loader-count" aria-live="polite">
+            <span className="loader-count-current">{String(displayProgress).padStart(3, "0")}</span>
+            <span className="loader-count-divider">/</span>
+            <span className="loader-count-total">100</span>
+          </div>
+          <div className="loader-progress-track" aria-hidden="true">
+            <i />
+          </div>
+          <div className="loader-signal-row" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="loader-terminal">
+            <span className="loader-terminal-label">memory.stream</span>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={reasonIndex}
+                className="terminal-line"
+                initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+                transition={{ duration: 0.4 }}
+              >
+                {tr(currentReason)}
+              </motion.p>
+            </AnimatePresence>
+          </div>
           {showSkip && <button className="ghost-button" onClick={onSkip}>{tr(ui.skipIntro)}</button>}
-        </>
+        </div>
       ) : (
         <div className="loader-final">
           <AnimatePresence mode="wait">
