@@ -71,6 +71,7 @@ export const t = {
   navLibrary: { ru: "Библиотека чувств", en: "Feelings library", de: "Gefühlsbibliothek" },
   navPhotos: { ru: "Твои фото", en: "Your photos", de: "Deine Fotos" },
   navWords: { ru: "100 слов о тебе", en: "100 words about you", de: "100 Worte über dich" },
+  navWishes: { ru: "15 желаний", en: "15 wishes", de: "15 Wünsche" },
   navLetter: { ru: "Главное поздравление", en: "Main letter", de: "Hauptbrief" },
   navParents: { ru: "Родителям", en: "To her parents", de: "An ihre Eltern" },
   navFinal: { ru: "Финал", en: "Finale", de: "Finale" },
@@ -129,6 +130,30 @@ export const t = {
     ru: "Ещё не придумали такого комплимента,\nкоторый мог бы полностью тебя описать\n\nИ даже 100 слов или даже 1000 —\nслишком мало, чтобы передать,\nнасколько ты потрясающая 💜🧸",
     en: "No compliment has been invented yet\nthat could fully describe you\n\nAnd even 100 words, or even 1,000,\nwould be too little to express\nhow wonderful you are 💜🧸",
     de: "Es gibt noch kein Kompliment,\ndas dich vollständig beschreiben könnte\n\nUnd selbst 100 Worte oder sogar 1.000\nwären viel zu wenig, um zu zeigen,\nwie wundervoll du bist 💜🧸"
+  },
+  wishesTitle: {
+    ru: "15 звёзд-желаний для тебя",
+    en: "15 wish-stars for you",
+    de: "15 Wunschsterne für dich"
+  },
+  wishesIntro: {
+    ru: "Нажимай на звёзды и открывай маленькие пожелания на твои 15.\nКогда откроешь все, появится ещё одно сообщение.",
+    en: "Tap the stars and open little wishes for your 15th birthday.\nWhen you unlock them all, one more message appears.",
+    de: "Tippe auf die Sterne und öffne kleine Wünsche zu deinem 15. Geburtstag.\nWenn du alle öffnest, erscheint noch eine Nachricht."
+  },
+  wishesProgress: { ru: "открыто звёзд", en: "stars opened", de: "Sterne geöffnet" },
+  wishesOpenStar: { ru: "Открыть звезду", en: "Open star", de: "Stern öffnen" },
+  wishNumber: { ru: "желание", en: "wish", de: "Wunsch" },
+  wishesReset: { ru: "Открыть заново", en: "Open again", de: "Noch einmal öffnen" },
+  wishesCompleteTitle: {
+    ru: "Все 15 звёзд открыты",
+    en: "All 15 stars are open",
+    de: "Alle 15 Sterne sind offen"
+  },
+  wishesCompleteText: {
+    ru: "И всё равно это только маленькая часть того, чего я хочу для тебя: чтобы ты чаще улыбалась, верила в себя и чувствовала, что ты очень-очень любимая 💜",
+    en: "And still, this is only a small part of what I want for you: to smile more often, believe in yourself, and feel very, very loved 💜",
+    de: "Und trotzdem ist das nur ein kleiner Teil von dem, was ich dir wünsche: öfter lächeln, an dich glauben und dich sehr, sehr geliebt fühlen 💜"
   },
   finalText: {
     ru: "В твой 15-й день рождения я мог бы написать ещё тысячу причин\nсоздать ещё сотню открыток\nи подобрать ещё миллион красивых слов\n\nНо всё равно не смог бы полностью объяснить,\nнасколько сильно ты мне дорога\n\nПоэтому скажу самое главное\n\nЯ люблю тебя, Леруся 💜",

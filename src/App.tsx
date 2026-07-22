@@ -14,6 +14,7 @@ import { PhotoHeart } from "./components/PhotoHeart/PhotoHeart";
 import { ReasonsLoader } from "./components/ReasonsLoader/ReasonsLoader";
 import { ReasonsSection } from "./components/ReasonsSection/ReasonsSection";
 import { TeddyEasterEgg } from "./components/TeddyEasterEgg/TeddyEasterEgg";
+import { WishConstellation } from "./components/WishConstellation/WishConstellation";
 import { WorldHeart } from "./components/WorldHeart/WorldHeart";
 import { useLanguage } from "./hooks/useLanguage";
 
@@ -61,6 +62,7 @@ export default function App() {
           <FeelingsLibrary tr={translate} ui={ui} />
           <PhotoHeart tr={translate} ui={ui} />
           <ComplimentsSection language={language} tr={translate} ui={ui} />
+          <WishConstellation tr={translate} ui={ui} />
           <BirthdayLetter tr={translate} />
           <ParentsThanks tr={translate} />
           <FinalScene tr={translate} ui={ui} />

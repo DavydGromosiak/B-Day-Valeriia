@@ -1,4 +1,4 @@
-import { Gift, Heart, HeartHandshake, Home, Image, Library, MessageCircleHeart, RotateCcw, Sparkles } from "lucide-react";
+import { Gift, Heart, HeartHandshake, Home, Image, Library, MessageCircleHeart, RotateCcw, Sparkles, Star } from "lucide-react";
 import { LocalizedString } from "../../data/translations";
 
 type Props = {
@@ -14,6 +14,7 @@ export function Navigation({ tr, ui, onReplay }: Props) {
     ["#library", tr(ui.navLibrary), Library],
     ["#photos", tr(ui.navPhotos), Image],
     ["#words", tr(ui.navWords), Sparkles],
+    ["#wishes", tr(ui.navWishes), Star],
     ["#letter", tr(ui.navLetter), MessageCircleHeart],
     ["#parents", tr(ui.navParents), HeartHandshake],
     ["#final", tr(ui.navFinal), Gift]

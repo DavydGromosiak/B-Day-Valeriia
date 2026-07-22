@@ -94,6 +94,11 @@
   50% { transform: translateY(-2px) scale(1.058); }
 }
 
+@keyframes wishStarFloat {
+  0%, 100% { translate: -50% -50%; }
+  50% { translate: -50% calc(-50% - 4px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
