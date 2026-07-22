@@ -31,86 +31,182 @@ const shapes: FeelingCard["shape"][] = ["photo", "postcard", "envelope", "book"]
 const photoCardSeeds: PhotoCardSeed[] = [
   {
     id: 1,
-    category: "moments",
-    title: l("Половинка кадра, но вся ты", "Half a frame, still so you", "Halber Bildausschnitt, trotzdem ganz du"),
+    category: "birthday",
+    title: l("Начну с самого простого", "Let me start simply", "Ich fange ganz einfach an"),
     text: l(
-      "Мне нравится этот кадр именно своей странной милотой: половина лица, смешной персонаж рядом, и всё равно сразу видно тебя. В нём есть лёгкость, будто ты просто поймала момент и не пыталась быть идеальной.",
-      "I like this photo because it is oddly sweet: half of your face, a funny character beside you, and still it feels completely like you. It has that easy, unforced charm.",
-      "Ich mag dieses Foto gerade wegen seiner süßen Seltsamkeit: nur ein halbes Gesicht, eine lustige Figur daneben, und trotzdem bist es ganz du. Es wirkt leicht und ungezwungen."
+      `Лерусь, с 15-летием тебя 💜
+
+Не знаю, почему именно это фото хочется поставить первым. Наверное, потому что оно немного смешное, живое и совсем не пытается быть идеальным.
+
+А мне как раз очень нравится настоящая ты. Даже если в кадре половинка лица и какая-то странная милота рядом 😅`,
+      `Happy 15th Birthday, Valeriia 💜
+
+I do not really know why I want to start with this photo. Maybe because it is a little funny, alive, and not trying to be perfect.
+
+And honestly, I really like the real you. Even with half a face in the frame and some silly cuteness next to you 😅`,
+      `Alles Gute zum 15. Geburtstag, Valeriia 💜
+
+Ich weiß nicht genau, warum ich mit diesem Foto anfangen möchte. Vielleicht, weil es ein bisschen lustig, echt und gar nicht perfekt ist.
+
+Und ehrlich, ich mag genau diese echte Seite an dir. Auch mit halbem Gesicht im Bild und dieser kleinen lustigen Süße daneben 😅`
     ),
     objectPosition: "center 30%"
   },
   {
     id: 2,
     category: "moments",
-    title: l("Ты с Юлей в красивом зале", "You and Yulia in a beautiful hall", "Du und Yulia in einem schönen Saal"),
+    title: l("Ты с Юлей в красивом зале", "You and Yulia in that hall", "Du und Yulia in diesem Saal"),
     text: l(
-      "Здесь вы с Юлей выглядите очень красиво и по-дружески тепло. Мне нравится, что кадр не перегруженный: красивое место, ваши жесты, улыбка — и сразу чувствуется хороший момент.",
-      "You and Yulia look beautiful and warmly close here. I like that the photo is not overloaded: a beautiful place, your gestures, a smile, and the moment already feels good.",
-      "Du und Yulia seht hier sehr schön und freundschaftlich warm aus. Ich mag, dass das Foto nicht überladen ist: ein schöner Ort, eure Gesten, ein Lächeln — und der Moment fühlt sich sofort gut an."
+      `Мне правда нравится этот кадр.
+
+Вы с Юлей тут выглядите не как “мы специально сделали идеальное фото”, а просто как две подруги, которым хорошо рядом.
+
+Красивый зал, ваши жесты, улыбки. И в этом есть что-то очень лёгкое, будто момент сам получился нормальным и тёплым`,
+      `I really like this photo.
+
+You and Yulia do not look like you were trying to make a perfect picture. You just look like two friends who feel good together.
+
+The hall, your gestures, the smiles. It all feels easy, like the moment just happened naturally.`,
+      `Ich mag dieses Foto wirklich.
+
+Du und Yulia wirkt nicht so, als wolltet ihr ein perfektes Bild machen. Ihr wirkt einfach wie zwei Freundinnen, denen es zusammen gut geht.
+
+Der Saal, eure Gesten, das Lächeln. Das fühlt sich leicht an, als wäre der Moment einfach von selbst schön geworden.`
     ),
     objectPosition: "center 30%"
   },
   {
     id: 3,
     category: "moments",
-    title: l("Тёплый кадр с подругой", "A warm photo with a friend", "Ein warmes Foto mit einer Freundin"),
+    title: l("Просто хороший кадр", "Just a good little photo", "Einfach ein gutes Bild"),
     text: l(
-      "Этот снимок приятный тем, что он настоящий. Вы рядом, без лишней постановки, и у тебя здесь очень мягкий, спокойный взгляд. Такие фото хочется оставлять, потому что в них есть жизнь.",
-      "This photo feels nice because it is real. You are next to your friend, without trying too hard, and your look is soft and calm.",
-      "Dieses Bild ist angenehm, weil es echt wirkt. Du bist neben deiner Freundin, ohne große Pose, und dein Blick ist weich und ruhig."
+      `Не знаю почему, но такие спокойные фото с подругами мне нравятся больше, чем слишком постановочные.
+
+Тут нет ничего лишнего. Вы рядом, ты смотришь спокойно, и фото выглядит как кусочек обычного дня.
+
+Может, для тебя это мелочь, но мне такие моменты почему-то хочется сохранять`,
+      `I do not know why, but I like calm photos with friends more than very staged ones.
+
+There is nothing extra here. You are together, your look is calm, and the photo feels like a small piece of a normal day.
+
+Maybe it is a little thing for you, but I like keeping moments like this.`,
+      `Ich weiß nicht warum, aber ruhige Fotos mit Freundinnen mag ich oft mehr als sehr gestellte Bilder.
+
+Hier ist nichts zu viel. Ihr seid zusammen, dein Blick ist ruhig, und das Foto fühlt sich wie ein kleiner Teil eines normalen Tages an.
+
+Vielleicht ist das für dich nur eine Kleinigkeit, aber solche Momente möchte ich gern behalten.`
     )
   },
   {
     id: 4,
     category: "secret",
-    title: l("Смешная, но всё равно красивая", "Funny, but still beautiful", "Lustig und trotzdem schön"),
+    title: l("Да, даже такое фото", "Yes, even this photo", "Ja, sogar dieses Foto"),
     text: l(
-      "Фильтр смешной, но он не забирает главное. Ты тут дурачишься, и именно поэтому кадр живой. Мне нравится, что ты можешь быть милой, смешной и красивой одновременно.",
-      "The filter is funny, but it does not take away the main thing. You are being playful here, and that makes the photo feel alive.",
-      "Der Filter ist lustig, aber er nimmt dem Bild nicht das Wichtigste. Du bist hier verspielt, und genau das macht es lebendig."
+      `Наверное, это прозвучит немного странно, но мне нравится, когда ты можешь просто дурачиться.
+
+Не быть “идеальной”, не держать лицо, не думать, как это выглядит. Просто сделать смешное фото и всё.
+
+В такие моменты ты какая-то особенно живая. И мне это очень по-доброму нравится 🙈`,
+      `This may sound a little strange, but I like when you can just be silly.
+
+Not perfect, not serious, not thinking too much about how it looks. Just a funny photo, and that is it.
+
+In moments like this, you feel especially real to me. And I like that a lot 🙈`,
+      `Vielleicht klingt das ein bisschen komisch, aber ich mag es, wenn du einfach albern sein kannst.
+
+Nicht perfekt, nicht ernst, nicht zu viel darüber nachdenken, wie es aussieht. Einfach ein lustiges Foto.
+
+In solchen Momenten wirkst du für mich besonders echt. Und ich mag das sehr 🙈`
     ),
     objectPosition: "center 24%"
   },
   {
     id: 5,
-    category: "moments",
-    title: l("Когда кадр сам поднимает настроение", "A photo that lifts the mood", "Ein Foto, das die Stimmung hebt"),
+    category: "birthday",
+    title: l("Пожелание на сегодня", "A wish for today", "Ein Wunsch für heute"),
     text: l(
-      "Тут очень классная энергия: солнце, подруга рядом, смешной фильтр и твой лёгкий вайб. Это не пафосное фото, зато оно живое — и от этого оно мне нравится ещё больше.",
-      "This has such good energy: sun, a friend beside you, a funny filter, and your easy vibe. It is not dramatic, it is alive.",
-      "Das Foto hat eine schöne Energie: Sonne, eine Freundin neben dir, ein lustiger Filter und deine leichte Art. Es ist nicht gestellt, sondern lebendig."
+      `Я хочу, чтобы сегодня ты как можно чаще улыбалась.
+
+Чтобы хотя бы на один день стало меньше всяких мыслей, которые утомляют, и больше того, от чего внутри спокойно.
+
+Ты правда заслуживаешь день, где всё чуть мягче, теплее и именно так, как хочется тебе 🧸`,
+      `I want you to smile as much as possible today.
+
+I hope that, at least for one day, there are fewer heavy thoughts and more things that make you feel calm inside.
+
+You really deserve a day that feels softer, warmer, and exactly the way you want it 🧸`,
+      `Ich wünsche mir, dass du heute so oft wie möglich lächelst.
+
+Dass es wenigstens für einen Tag weniger schwere Gedanken gibt und mehr Dinge, die dich innerlich ruhig machen.
+
+Du verdienst wirklich einen Tag, der weicher, wärmer und genau so ist, wie du ihn brauchst 🧸`
     )
   },
   {
     id: 6,
-    category: "secret",
-    title: l("Домашняя милота", "Cozy sweetness", "Gemütliche Süße"),
+    category: "love",
+    title: l("За твою уютную сторону", "For your cozy side", "Für deine gemütliche Seite"),
     text: l(
-      "Мне нравятся такие простые кадры. Тут нет позы, нет попытки выглядеть как-то особенно — просто ты рядом с мягкой игрушкой, и всё выглядит очень уютно и по-настоящему.",
-      "I like simple photos like this. No posing, no trying to look special — just you, a soft toy, and a cozy real feeling.",
-      "Ich mag solche einfachen Bilder. Keine Pose, kein Versuch besonders zu wirken — einfach du, ein Kuscheltier und ein gemütliches echtes Gefühl."
+      `Я люблю в тебе эту мягкую, домашнюю сторону.
+
+Когда ты можешь быть просто собой, без позы и без попытки что-то доказать. На этом фото это очень чувствуется.
+
+Просто рядом с такой тобой мне почему-то становится спокойнее`,
+      `I love this soft, cozy side of you.
+
+The side where you can just be yourself, without posing and without proving anything. I can feel it in this photo.
+
+For some reason, this version of you makes me feel calmer.`,
+      `Ich liebe diese weiche, gemütliche Seite an dir.
+
+Die Seite, in der du einfach du selbst bist, ohne Pose und ohne etwas beweisen zu müssen. Auf diesem Foto spürt man das.
+
+Neben dieser Seite von dir werde ich irgendwie ruhiger.`
     ),
     objectPosition: "center 24%"
   },
   {
     id: 7,
     category: "moments",
-    title: l("Зеркало, подруга и ваш вайб", "Mirror, friend, and your vibe", "Spiegel, Freundin und euer Vibe"),
+    title: l("Зеркало и характер", "Mirror and attitude", "Spiegel und Charakter"),
     text: l(
-      "Обычное зеркало, но кадр всё равно цепляет. Вы выглядите уверенно, немного дерзко и очень естественно. Мне нравится, что в таких фото есть настоящая подростковая энергия.",
-      "Just a mirror photo, but it still catches the eye. You look confident, a little bold, and natural.",
-      "Nur ein Spiegelbild, aber es bleibt trotzdem hängen. Ihr wirkt selbstbewusst, ein bisschen frech und natürlich."
+      `Тут мне нравится не только само фото, а настроение.
+
+Вы с подругой выглядите уверенно, немного дерзко, но всё равно очень естественно. Никакого “смотрите, какие мы серьёзные”.
+
+Просто кадр, в котором есть характер. И у тебя он тут прям виден 😌`,
+      `What I like here is not only the photo, but the mood.
+
+You and your friend look confident, a little bold, but still very natural. Not too serious, not too forced.
+
+It is a photo with character. And yours shows clearly here 😌`,
+      `Ich mag hier nicht nur das Foto, sondern die Stimmung.
+
+Du und deine Freundin wirkt selbstbewusst, ein bisschen frech, aber trotzdem sehr natürlich. Nicht zu ernst und nicht gestellt.
+
+Es ist ein Bild mit Charakter. Und deiner ist hier wirklich zu sehen 😌`
     )
   },
   {
     id: 8,
     category: "moments",
-    title: l("Две смешные красотки", "Two funny beauties", "Zwei lustige Hübsche"),
+    title: l("Солнце и смешной момент", "Sun and a funny moment", "Sonne und ein lustiger Moment"),
     text: l(
-      "Вот это как раз тот кадр, где видно: вы просто смеётесь, ловите момент и не усложняете. Ты здесь очень милая, а рядом с подругой фото становится ещё теплее.",
-      "This is one of those photos where you are just having fun and keeping the moment simple. You look sweet, and the friend energy makes it warmer.",
-      "Das ist genau so ein Bild, auf dem ihr einfach Spaß habt. Du wirkst süß, und die Freundinnen-Energie macht es noch wärmer."
+      `Это фото просто доброе.
+
+Солнце, подруга рядом, смешные лица, и всё выглядит так, будто вы поймали момент без лишних стараний.
+
+Мне нравится, что у тебя есть люди, с которыми ты можешь быть такой живой`,
+      `This photo just feels kind.
+
+Sun, a friend beside you, funny faces, and everything looks like you caught the moment without trying too hard.
+
+I like that you have people around you with whom you can be this alive.`,
+      `Dieses Foto fühlt sich einfach gut an.
+
+Sonne, eine Freundin neben dir, lustige Gesichter, und alles wirkt so, als hättet ihr den Moment einfach erwischt.
+
+Ich mag, dass du Menschen hast, bei denen du so lebendig sein kannst.`
     )
   },
   {
@@ -118,84 +214,180 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "moments",
     title: l("Светлый кадр с Юлей", "A bright photo with Yulia", "Ein helles Foto mit Yulia"),
     text: l(
-      "Мне нравится, как тут всё выглядит легко: ты рядом с Юлей, дневной свет, спокойная улыбка и мирный знак. Фото простое, но очень тёплое и настоящее.",
-      "I like how light this feels: you beside Yulia, daylight, a calm smile, and a peace sign. The photo is simple, but very warm and real.",
-      "Ich mag, wie leicht das hier wirkt: du neben Yulia, Tageslicht, ein ruhiges Lächeln und ein Peace-Zeichen. Das Foto ist einfach, aber sehr warm und echt."
+      `Здесь мне нравится именно простота.
+
+Ты рядом с Юлей, дневной свет, спокойная улыбка, мирный знак. Никакой лишней драмы, просто хороший кадр.
+
+И почему-то от него прям ощущается, что день был нормальный и тёплый`,
+      `I like the simplicity here.
+
+You beside Yulia, daylight, a calm smile, a peace sign. No extra drama, just a good photo.
+
+For some reason, it feels like the day was simple and warm.`,
+      `Ich mag hier gerade die Einfachheit.
+
+Du neben Yulia, Tageslicht, ein ruhiges Lächeln, ein Peace-Zeichen. Kein Drama, einfach ein gutes Foto.
+
+Irgendwie fühlt es sich an, als wäre der Tag ruhig und warm gewesen.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 10,
     category: "love",
-    title: l("Сердечки тебе очень идут", "Hearts suit you", "Herzchen stehen dir"),
+    title: l("За твой взгляд", "For your look", "Für deinen Blick"),
     text: l(
-      "Да, фильтр милый, но твои глаза тут всё равно главнее. В этом фото есть такая мягкость, что его невозможно быстро пролистать. Ты здесь очень нежная и красивая.",
-      "Yes, the filter is cute, but your eyes are still the main thing here. This photo has such softness that I cannot scroll past it quickly.",
-      "Ja, der Filter ist süß, aber deine Augen sind hier trotzdem das Wichtigste. Dieses Foto hat so viel Weichheit, dass man nicht schnell daran vorbeiscrollt."
+      `Я люблю твой взгляд.
+
+Иногда он может быть очень мягким, иногда чуть хитрым, иногда спокойным. На этом фото он именно такой, из-за которого я зависаю на пару секунд.
+
+Да, сердечки тоже милые. Но глаза всё равно главные 🥹`,
+      `I love your look.
+
+Sometimes it is very soft, sometimes a little playful, sometimes calm. In this photo, it is the kind of look that makes me stop for a few seconds.
+
+The little hearts are cute too, yes. But your eyes are still the main thing 🥹`,
+      `Ich liebe deinen Blick.
+
+Manchmal ist er sehr weich, manchmal ein bisschen verspielt, manchmal ruhig. Auf diesem Foto ist es genau dieser Blick, bei dem ich kurz hängen bleibe.
+
+Die kleinen Herzchen sind auch süß, ja. Aber deine Augen sind trotzdem das Wichtigste 🥹`
     ),
     objectPosition: "center 22%"
   },
   {
     id: 11,
     category: "love",
-    title: l("Спокойная и стильная", "Calm and stylish", "Ruhig und stilvoll"),
+    title: l("За твой стиль без шума", "For your quiet style", "Für deinen ruhigen Stil"),
     text: l(
-      "Тут ты выглядишь очень аккуратно и красиво. Простое зеркало, обычный момент, но у тебя есть свой стиль — даже без какой-то сложной постановки.",
-      "You look neat and beautiful here. Just a mirror, just a simple moment, but you have your own style without trying too hard.",
-      "Du wirkst hier ordentlich und schön. Nur ein Spiegel, ein einfacher Moment, aber du hast deinen eigenen Stil, ohne dich anzustrengen."
+      `Мне нравится, что ты умеешь выглядеть красиво без ощущения, будто слишком старалась.
+
+Простое зеркало, обычный кадр, но всё равно видно твой стиль. В этом есть какая-то аккуратность, которая тебе очень идёт.
+
+Не знаю, как объяснить нормально, но вот да. Мне правда нравится`,
+      `I like that you can look beautiful without making it feel like you tried too hard.
+
+A simple mirror, a simple photo, but your style is still there. There is a neatness in it that suits you.
+
+I do not know how to explain it perfectly, but yes. I really like it.`,
+      `Ich mag, dass du schön aussehen kannst, ohne dass es zu gewollt wirkt.
+
+Ein einfacher Spiegel, ein einfaches Foto, aber dein Stil ist trotzdem da. Es hat etwas Feines, das dir sehr steht.
+
+Ich weiß nicht, wie ich es perfekt erklären soll, aber ja. Ich mag das wirklich.`
     ),
     objectPosition: "center 22%"
   },
   {
     id: 12,
     category: "secret",
-    title: l("Детское фото с котиком", "Childhood photo with a cat", "Kinderfoto mit Katze"),
+    title: l("Маленькая ты и котик", "Little you and the cat", "Kleine du und die Katze"),
     text: l(
-      "Это детское фото очень тёплое. Ты маленькая, рядом котик, и в кадре есть та самая милая простота, от которой сразу становится спокойнее.",
-      "This childhood photo is very warm. Little you, a cat beside you, and that sweet simplicity that instantly feels gentle.",
-      "Dieses Kinderfoto ist sehr warm. Du als kleines Mädchen, eine Katze neben dir und diese süße Einfachheit, die sofort sanft wirkt."
+      `Это фото меня почему-то очень трогает.
+
+Ты маленькая, рядом котик, и всё такое простое, что даже смешно писать большой текст. Но оно правда тёплое.
+
+Наверное, мне нравится видеть такие кусочки тебя, которые были ещё до меня. Как будто я чуть лучше понимаю, какой ты росла 🧸`,
+      `This photo touches me for some reason.
+
+Little you, a cat beside you, and everything is so simple that writing a big text almost feels funny. But it really is warm.
+
+I think I like seeing these small pieces of you from before I knew you. It makes me feel like I understand you a little more 🧸`,
+      `Dieses Foto berührt mich irgendwie.
+
+Du als kleines Mädchen, eine Katze neben dir, und alles ist so einfach, dass ein großer Text fast lustig wäre. Aber es ist wirklich warm.
+
+Ich mag solche kleinen Teile von dir, die es schon vor mir gab. So habe ich das Gefühl, dich ein bisschen besser zu verstehen 🧸`
     ),
     objectPosition: "center 30%"
   },
   {
     id: 13,
-    category: "moments",
-    title: l("Фото, где хочется улыбнуться", "A photo that makes me smile", "Ein Foto, bei dem man lächeln muss"),
+    category: "birthday",
+    title: l("Хочу тебе таких моментов", "I wish you moments like this", "Ich wünsche dir solche Momente"),
     text: l(
-      "Вы с подругой здесь выглядите очень живо. У кадра есть движение, улыбка и ощущение, будто он был сделан в хороший момент. Мне такие фото правда нравятся.",
-      "You and your friend look very alive here. The photo has movement, a smile, and the feeling of a good moment.",
-      "Du und deine Freundin wirkt hier sehr lebendig. Das Foto hat Bewegung, ein Lächeln und das Gefühl eines guten Moments."
+      `В твой день рождения я хочу пожелать тебе не каких-то огромных слов.
+
+А вот таких моментов: когда рядом хорошие люди, когда можно улыбнуться без причины, когда день не давит, а просто идёт нормально.
+
+Пусть таких маленьких хороших моментов у тебя будет больше ✨`,
+      `For your birthday, I do not want to wish you some huge perfect words.
+
+I want to wish you moments like this: good people nearby, a smile for no big reason, and a day that does not feel heavy.
+
+I hope you get many more of these small good moments ✨`,
+      `Zu deinem Geburtstag möchte ich dir keine riesigen perfekten Worte wünschen.
+
+Ich wünsche dir eher solche Momente: gute Menschen in der Nähe, ein Lächeln ohne großen Grund und einen Tag, der sich nicht schwer anfühlt.
+
+Ich hoffe, du bekommst noch viele von diesen kleinen guten Momenten ✨`
     )
   },
   {
     id: 14,
     category: "love",
-    title: l("Мягкий портрет", "A soft portrait", "Ein weiches Porträt"),
+    title: l("За твою мягкость", "For your softness", "Für deine weiche Art"),
     text: l(
-      "Тут в тебе есть что-то очень спокойное. Фильтр делает кадр нежнее, но главное — твой взгляд. Он тихий, красивый и немного загадочный.",
-      "There is something very calm about you here. The filter makes the photo softer, but the main thing is your look.",
-      "Hier ist etwas sehr Ruhiges an dir. Der Filter macht das Bild weicher, aber das Wichtigste ist dein Blick."
+      `Я люблю в тебе мягкость.
+
+Не такую показную, а нормальную, настоящую. Она иногда видна даже просто в лице, во взгляде, в том, как ты смотришь.
+
+На этом фото она почему-то очень заметна. И мне от этого тепло`,
+      `I love your softness.
+
+Not the fake kind, but the real, normal kind. Sometimes I can see it just in your face, in your eyes, in the way you look.
+
+For some reason, it is very clear in this photo. And it makes me feel warm.`,
+      `Ich liebe deine weiche Art.
+
+Nicht so eine gespielte, sondern eine echte, normale. Manchmal sieht man sie einfach in deinem Gesicht, in deinen Augen, in deinem Blick.
+
+Auf diesem Foto sieht man das besonders. Und es fühlt sich warm an.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 15,
     category: "moments",
-    title: l("Очки, зеркало и характер", "Glasses, mirror, and attitude", "Brillen, Spiegel und Charakter"),
+    title: l("Очки, зеркало и настроение", "Glasses, mirror, and mood", "Brille, Spiegel und Stimmung"),
     text: l(
-      "Этот кадр смешной и стильный одновременно. Вы с подругой выглядите так, будто точно знаете, что фото получится классным. И да, получилось.",
-      "This photo is funny and stylish at the same time. You and your friend look like you knew it would turn out cool. And it did.",
-      "Dieses Foto ist lustig und stilvoll zugleich. Du und deine Freundin seht aus, als wüsstet ihr genau, dass es cool wird. Und das wurde es."
+      `Этот кадр немного смешной, но в хорошем смысле.
+
+Вы с подругой выглядите так, будто заранее знали, что получится нормально. Очки, зеркало, поза, всё на месте.
+
+И да, получилось правда классно 😅`,
+      `This photo is a little funny, but in a good way.
+
+You and your friend look like you already knew it would turn out well. Glasses, mirror, pose, everything is there.
+
+And yes, it really did turn out cool 😅`,
+      `Dieses Foto ist ein bisschen lustig, aber auf eine gute Art.
+
+Du und deine Freundin wirkt so, als hättet ihr schon gewusst, dass es gut wird. Brille, Spiegel, Pose, alles passt.
+
+Und ja, es ist wirklich cool geworden 😅`
     )
   },
   {
     id: 16,
     category: "moments",
-    title: l("Двойной фильтр, двойная милота", "Double filter, double cuteness", "Doppelter Filter, doppelte Süße"),
+    title: l("Две собачки и вы", "Two dog filters and you", "Zwei Hundefilter und ihr"),
     text: l(
-      "Тут всё очень по-доброму: смешной фильтр, подруга рядом и твоя живая мимика. Фото простое, но с хорошей энергией.",
-      "This is sweet in a very simple way: a funny filter, a friend beside you, and your lively expression.",
-      "Das ist auf eine einfache Art süß: ein lustiger Filter, eine Freundin neben dir und dein lebendiger Ausdruck."
+      `Да, это максимально обычный смешной фильтр.
+
+Но мне нравится, что фото не пытается быть серьёзным. Вы с подругой просто поймали настроение, и от этого кадр кажется честнее.
+
+Такие фото потом почему-то вспоминаются лучше, чем “идеальные”`,
+      `Yes, it is a very simple funny filter.
+
+But I like that the photo is not trying to be serious. You and your friend just caught a mood, and that makes it feel more honest.
+
+Photos like this often stay in memory better than “perfect” ones.`,
+      `Ja, es ist ein ganz einfacher lustiger Filter.
+
+Aber ich mag, dass das Foto nicht ernst sein will. Du und deine Freundin habt einfach eine Stimmung erwischt, und dadurch wirkt es ehrlicher.
+
+Solche Fotos bleiben oft besser im Kopf als perfekte.`
     )
   },
   {
@@ -203,19 +395,43 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "secret",
     title: l("Маленькая фотолента", "A little photo strip", "Ein kleiner Fotostreifen"),
     text: l(
-      "Мне нравится, что это фото похоже на маленькую историю из нескольких кадров. Не одно настроение, а сразу несколько — и в каждом есть что-то живое.",
-      "I like that this feels like a small story made of several frames. Not one mood, but a few of them at once.",
-      "Ich mag, dass dieses Bild wie eine kleine Geschichte aus mehreren Momenten wirkt. Nicht nur eine Stimmung, sondern gleich mehrere."
+      `Знаешь, мне нравится сама идея этого фото.
+
+Будто не один кадр, а маленькая лента с разными кусочками тебя. И каждый кусочек как будто говорит: вот она, разная, настоящая, живая.
+
+Я не всегда умею красиво объяснять такие вещи, но мне правда приятно смотреть на это`,
+      `You know, I like the idea of this photo.
+
+It feels less like one picture and more like a little strip of different pieces of you. Every piece says something like: here she is, different, real, alive.
+
+I am not always good at explaining things like this, but I really like looking at it.`,
+      `Weißt du, ich mag die Idee von diesem Foto.
+
+Es wirkt nicht wie nur ein Bild, sondern wie ein kleiner Streifen mit verschiedenen Teilen von dir. Jeder Teil sagt irgendwie: da ist sie, verschieden, echt, lebendig.
+
+Ich kann sowas nicht immer schön erklären, aber ich schaue es wirklich gern an.`
     )
   },
   {
     id: 18,
     category: "love",
-    title: l("Кудрявая Леруся", "Curly Valeriia", "Lockige Valeriia"),
+    title: l("За твою уверенность", "For your confidence", "Für deine Sicherheit"),
     text: l(
-      "Ты тут выглядишь очень красиво: кудри, спокойный взгляд, чуть более серьёзный образ. Есть в этом кадре такая аккуратная уверенность, которая тебе очень идёт.",
-      "You look beautiful here: curls, a calm look, a slightly more serious style. This photo has a neat confidence that suits you.",
-      "Du siehst hier wunderschön aus: Locken, ein ruhiger Blick, ein etwas ernsterer Stil. Dieses Foto hat eine feine Sicherheit, die dir sehr steht."
+      `Я люблю, когда в тебе видно уверенность.
+
+Не громкую, не такую “я лучше всех”, а спокойную. Когда ты просто выглядишь так, будто знаешь, какая ты.
+
+На этом фото с кудрями это очень чувствуется. И тебе это правда идёт`,
+      `I love when I can see confidence in you.
+
+Not loud confidence, not “I am better than everyone”, but calm confidence. When you simply look like you know who you are.
+
+In this curly-haired photo, I can really feel it. And it suits you a lot.`,
+      `Ich liebe es, wenn man deine Sicherheit sieht.
+
+Nicht laut, nicht so “ich bin besser als alle”, sondern ruhig. Wenn du einfach wirkst, als wüsstest du, wer du bist.
+
+Auf diesem Foto mit den Locken spürt man das sehr. Und es steht dir wirklich.`
     ),
     objectPosition: "center 25%"
   },
@@ -224,105 +440,225 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "moments",
     title: l("Ты, Юля и ещё одна подруга", "You, Yulia, and another friend", "Du, Yulia und noch eine Freundin"),
     text: l(
-      "Это очень летний кадр: ты, Юля и ещё одна подруга рядом, солнце, люди вокруг и ощущение обычного хорошего дня. Фото живое, дружеское и без лишней постановки.",
-      "This is such a summer photo: you, Yulia, another friend beside you, sun, people around, and the feeling of an ordinary good day.",
-      "Das ist ein richtig sommerliches Foto: du, Yulia und noch eine Freundin, Sonne, Menschen drumherum und das Gefühl eines normalen schönen Tages."
+      `Это фото прям летнее.
+
+Ты, Юля и ещё одна подруга рядом, вокруг люди, солнце, движение. Ничего специально романтичного, но всё живое.
+
+Мне нравится, что у тебя есть такие кадры, где видно не только внешность, а твоя жизнь вокруг тебя`,
+      `This photo feels very summery.
+
+You, Yulia, and another friend nearby, people around, sun, movement. Nothing overly romantic, but everything feels alive.
+
+I like that you have photos where I can see not just how you look, but a little bit of your life around you.`,
+      `Dieses Foto fühlt sich sehr nach Sommer an.
+
+Du, Yulia und noch eine Freundin, Menschen um euch herum, Sonne, Bewegung. Nichts extra Romantisches, aber alles wirkt lebendig.
+
+Ich mag Fotos, auf denen man nicht nur sieht, wie du aussiehst, sondern auch ein bisschen dein Leben um dich herum.`
     )
   },
   {
     id: 20,
     category: "secret",
-    title: l("Зеркало без лишнего", "A simple mirror photo", "Ein schlichtes Spiegelbild"),
+    title: l("Обычное зеркало", "A simple mirror", "Ein einfacher Spiegel"),
     text: l(
-      "Обычный кадр в зеркале, но в нём есть твоя естественность. Ты не пытаешься делать из фото что-то огромное, и именно поэтому оно приятное.",
-      "A simple mirror photo, but it has your naturalness. You are not trying to make it huge, and that is exactly why it feels nice.",
-      "Ein einfaches Spiegelbild, aber es hat deine Natürlichkeit. Du versuchst nicht, daraus etwas Großes zu machen, und genau deshalb ist es angenehm."
+      `Не знаю почему, но мне нравятся и такие обычные фото.
+
+Ты просто стоишь перед зеркалом, без какого-то большого смысла, а я всё равно смотрю и думаю: да, это Лера.
+
+Может, именно в таких простых кадрах человек почему-то кажется ближе`,
+      `I do not know why, but I like simple photos like this too.
+
+You are just standing in front of a mirror, without any big meaning, and I still look at it and think: yes, that is Valeriia.
+
+Maybe in simple photos, a person somehow feels closer.`,
+      `Ich weiß nicht warum, aber ich mag auch solche einfachen Fotos.
+
+Du stehst einfach vor dem Spiegel, ohne große Bedeutung, und ich schaue es trotzdem an und denke: ja, das ist Valeriia.
+
+Vielleicht wirkt ein Mensch gerade auf solchen einfachen Bildern näher.`
     ),
     objectPosition: "center 20%"
   },
   {
     id: 21,
-    category: "secret",
-    title: l("Солнечный кадр из машины", "Sunny car photo", "Sonniges Autofoto"),
+    category: "birthday",
+    title: l("Пусть будет больше лёгкости", "More easy moments", "Mehr leichte Momente"),
     text: l(
-      "Тут мне нравится свет и твой спокойный вид. Даже с фильтром фото не теряет ощущения настоящего момента — просто ты, солнце и хорошее настроение.",
-      "I like the light here and your calm look. Even with the filter, it still feels like a real moment.",
-      "Ich mag hier das Licht und deinen ruhigen Ausdruck. Auch mit Filter wirkt es wie ein echter Moment."
+      `Я хочу, чтобы в твоём новом году было больше лёгкости.
+
+Не только больших радостей, а ещё обычных нормальных дней: солнце в машине, спокойная музыка, смешной фильтр, хорошее настроение.
+
+Пусть тебе чаще будет просто хорошо. Без причины, без объяснений, просто хорошо`,
+      `I want your new year of life to have more lightness.
+
+Not only big happy moments, but also normal good days: sun in the car, calm music, a funny filter, a good mood.
+
+I hope you feel good more often. Without a reason, without explaining it, just good.`,
+      `Ich wünsche dir für dein neues Lebensjahr mehr Leichtigkeit.
+
+Nicht nur große schöne Momente, sondern auch normale gute Tage: Sonne im Auto, ruhige Musik, ein lustiger Filter, gute Stimmung.
+
+Ich hoffe, dass es dir öfter einfach gut geht. Ohne Grund, ohne Erklärung, einfach gut.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 22,
     category: "secret",
-    title: l("Hello Kitty настроение", "Hello Kitty mood", "Hello-Kitty-Stimmung"),
+    title: l("Hello Kitty и ты", "Hello Kitty and you", "Hello Kitty und du"),
     text: l(
-      "Это фото смешное и милое. В нём есть твоя игривая сторона — та, где ты можешь просто быть забавной, не думая, как это выглядит со стороны.",
-      "This photo is funny and sweet. It shows your playful side, where you can just be silly without worrying how it looks.",
-      "Dieses Foto ist lustig und süß. Es zeigt deine verspielte Seite, in der du einfach witzig sein kannst, ohne darüber nachzudenken."
+      `Это фото смешное, но я его всё равно люблю.
+
+В нём есть та твоя сторона, где ты можешь быть милой и немного глупенькой в хорошем смысле. И знаешь, это очень подкупает.
+
+Потому что рядом с человеком, который не боится быть смешным, становится легче самому`,
+      `This photo is funny, but I still love it.
+
+It shows the side of you that can be cute and a little silly in a good way. And honestly, that is very charming.
+
+Because when someone is not afraid to be funny, it also makes me feel lighter.`,
+      `Dieses Foto ist lustig, aber ich mag es trotzdem sehr.
+
+Es zeigt die Seite an dir, die süß und ein bisschen albern sein kann, auf eine gute Art. Und ehrlich, das ist sehr charmant.
+
+Neben einem Menschen, der keine Angst hat lustig zu sein, wird man selbst auch leichter.`
     ),
     objectPosition: "center 20%"
   },
   {
     id: 23,
     category: "moments",
-    title: l("Горы, вода и твой силуэт", "Mountains, water, and you", "Berge, Wasser und du"),
+    title: l("Горы, вода и ты", "Mountains, water, and you", "Berge, Wasser und du"),
     text: l(
-      "Очень красивый кадр: горы, озеро, яркая футболка и ты, которая спокойно смотрит вдаль. В нём есть ощущение свободы и летнего воздуха.",
-      "A very beautiful shot: mountains, water, your bright shirt, and you calmly looking into the distance.",
-      "Ein sehr schönes Bild: Berge, Wasser, dein helles Shirt und du, die ruhig in die Ferne schaut."
+      `Этот кадр я бы сохранил даже просто из-за вида.
+
+Но там есть ты, и поэтому он ощущается совсем иначе. Красная футболка, горы, вода, и ты смотришь куда-то вдаль.
+
+В нём есть спокойствие. Такое, которое хочется не объяснять, а просто оставить`,
+      `I would save this photo even just for the view.
+
+But you are in it, and that makes it feel completely different. The red shirt, the mountains, the water, and you looking into the distance.
+
+There is calmness in it. The kind I do not want to explain, just keep.`,
+      `Ich würde dieses Foto schon nur wegen der Aussicht behalten.
+
+Aber du bist darin, und dadurch fühlt es sich ganz anders an. Das rote Shirt, die Berge, das Wasser, und du schaust in die Ferne.
+
+Es hat eine Ruhe. Eine, die ich nicht erklären, sondern einfach behalten möchte.`
     ),
     objectPosition: "center 35%"
   },
   {
     id: 24,
     category: "secret",
-    title: l("Ты замечаешь красивое", "You notice beautiful things", "Du bemerkst schöne Dinge"),
+    title: l("Ты замечаешь красоту", "You notice beauty", "Du bemerkst Schönheit"),
     text: l(
-      "На этом фото нет тебя, но мне оно всё равно нравится. Оно будто показывает, что ты умеешь замечать маленькую красоту вокруг — цветы, свет, детали.",
-      "You are not in this photo, but I still like it. It feels like proof that you notice small beautiful things around you.",
-      "Du bist nicht auf diesem Foto, aber ich mag es trotzdem. Es zeigt irgendwie, dass du kleine schöne Dinge um dich herum bemerkst."
+      `На этом фото нет тебя, но мне оно всё равно подходит для этой библиотеки.
+
+Потому что оно как будто про то, что ты замечаешь детали. Цветы, свет, маленькие красивые штуки вокруг.
+
+Мне правда нравится эта черта. Не всё в жизни надо делать громким, иногда достаточно просто заметить`,
+      `You are not in this photo, but it still belongs in this library for me.
+
+Because it feels like it says something about you: you notice details. Flowers, light, small beautiful things around you.
+
+I really like that. Not everything in life has to be loud, sometimes it is enough to notice.`,
+      `Du bist nicht auf diesem Foto, aber für mich passt es trotzdem in diese Bibliothek.
+
+Denn es erzählt irgendwie etwas über dich: du bemerkst Details. Blumen, Licht, kleine schöne Dinge um dich herum.
+
+Ich mag diese Eigenschaft sehr. Nicht alles im Leben muss laut sein, manchmal reicht es, etwas zu bemerken.`
     )
   },
   {
     id: 25,
     category: "family",
-    title: l("Ты с папой и Мирусей", "You with your dad and Mirusya", "Du mit deinem Papa und Mirusya"),
+    title: l("Ты с Виталием и Мирусей", "You with Vitalii and Mirusya", "Du mit Vitalii und Mirusya"),
     text: l(
-      "Лерусь, это отдельный тёплый кадр: ты рядом с папой Виталием и Мирусей, а вокруг такие горы и вода, что фото выглядит почти как открытка. В нём очень чувствуется семья, защита и что-то по-настоящему родное.",
-      "Valeriia, this is a special warm photo: you are with your dad Vitalii and Mirusya, surrounded by mountains and water. It feels like family, safety, and something truly close.",
-      "Valeriia, das ist ein besonders warmes Bild: du bist mit deinem Papa Vitalii und Mirusya da, umgeben von Bergen und Wasser. Es fühlt sich nach Familie, Schutz und etwas wirklich Vertrautem an."
+      `Лерусь, это очень тёплый семейный кадр.
+
+Ты рядом с папой Виталием и Мирусей, вокруг горы и вода, а в фото есть ощущение защиты и чего-то родного.
+
+Мне приятно видеть, что рядом с тобой есть такая семья. И честно, по тебе видно, что тебя растили с теплом`,
+      `Valeriia, this is a very warm family photo.
+
+You are with your dad Vitalii and Mirusya, with mountains and water around you. The photo feels protective and close.
+
+It is nice for me to see that you have a family like this. And honestly, I can tell that you were raised with warmth.`,
+      `Valeriia, das ist ein sehr warmes Familienfoto.
+
+Du bist mit deinem Papa Vitalii und Mirusya zusammen, um euch herum Berge und Wasser. Das Foto fühlt sich nach Schutz und Nähe an.
+
+Es ist schön für mich zu sehen, dass du so eine Familie hast. Und ehrlich, man merkt dir an, dass du mit Wärme groß geworden bist.`
     ),
-    objectPosition: "center 38%"
+    objectPosition: "center 35%"
   },
   {
     id: 26,
     category: "love",
-    title: l("Примерочная, но красиво", "Changing room, but beautiful", "Umkleidekabine, aber schön"),
+    title: l("За то, как тебе идут простые кадры", "For how simple photos suit you", "Dafür, wie dir einfache Fotos stehen"),
     text: l(
-      "Даже в обычной примерочной ты умудряешься выглядеть красиво. Кадр простой, но в нём есть твоя фигура, твой стиль и эта спокойная уверенность.",
-      "Even in a simple changing room, you manage to look beautiful. It is a simple photo, but it has your style and calm confidence.",
-      "Sogar in einer einfachen Umkleide siehst du schön aus. Das Foto ist schlicht, aber es hat deinen Stil und deine ruhige Sicherheit."
+      `Я люблю, что тебе не обязательно делать что-то особенное, чтобы фото получилось красивым.
+
+Вот вроде обычное зеркало, примерочная, никакой “магии”. А ты всё равно выглядишь так, что хочется сохранить.
+
+Мне нравится эта твоя естественная красота, без лишнего шума`,
+      `I love that you do not need to do anything special for a photo to look beautiful.
+
+It is just a mirror, a changing room, nothing magical. And still, you look like someone I want to keep in a photo.
+
+I like your natural beauty without all the extra noise.`,
+      `Ich liebe, dass du nichts Besonderes machen musst, damit ein Foto schön wird.
+
+Nur ein Spiegel, eine Umkleide, keine Magie. Und trotzdem siehst du so aus, dass man das Bild behalten möchte.
+
+Ich mag deine natürliche Schönheit ohne zu viel drumherum.`
     ),
-    objectPosition: "center 18%"
+    objectPosition: "center 20%"
   },
   {
     id: 27,
     category: "moments",
-    title: l("Подруга рядом, ты в кадре", "A friend beside you, you in the frame", "Eine Freundin neben dir, du im Bild"),
+    title: l("Подруга рядом, ты в кадре", "A friend beside you", "Eine Freundin neben dir"),
     text: l(
-      "Это фото приятное своей обычностью. Магазин, зеркало, подруга рядом — и ты, которая всё равно делает кадр красивее просто своим присутствием.",
-      "This photo is nice because it is ordinary. A shop, a mirror, a friend beside you — and you still make it prettier just by being there.",
-      "Dieses Foto ist schön, weil es alltäglich ist. Ein Laden, ein Spiegel, eine Freundin neben dir — und du machst es allein durch deine Anwesenheit schöner."
+      `Этот кадр немного шумный, но живой.
+
+Вы где-то рядом, вокруг люди, лица, движение, и всё выглядит как настоящий день, а не как специально сделанная картинка.
+
+Мне нравится, когда фото оставляет ощущение момента, а не только внешности`,
+      `This photo is a little busy, but alive.
+
+You are with a friend, there are people around, faces, movement, and it feels like a real day, not a staged picture.
+
+I like when a photo keeps the feeling of a moment, not just how someone looks.`,
+      `Dieses Foto ist ein bisschen unruhig, aber lebendig.
+
+Du bist mit einer Freundin, Menschen um euch herum, Gesichter, Bewegung. Es fühlt sich wie ein echter Tag an, nicht wie ein gestelltes Bild.
+
+Ich mag es, wenn ein Foto nicht nur Aussehen zeigt, sondern einen Moment.`
     )
   },
   {
     id: 28,
     category: "secret",
-    title: l("Тихое чёрно-белое зеркало", "Quiet black-and-white mirror", "Ruhiger Schwarz-Weiß-Spiegel"),
+    title: l("Тихое зеркало", "A quiet mirror photo", "Ein ruhiges Spiegelbild"),
     text: l(
-      "В этом кадре есть тишина. Он не яркий, не громкий, но именно поэтому выглядит атмосферно. Ты здесь будто оставила маленький секретный след.",
-      "This photo has quietness. It is not bright or loud, and that makes it atmospheric. It feels like a small secret trace from you.",
-      "Dieses Bild hat Stille. Es ist nicht hell oder laut, und genau deshalb wirkt es atmosphärisch. Wie eine kleine geheime Spur von dir."
+      `Если честно, это фото почему-то кажется мне очень личным.
+
+Не потому что там что-то особенное, а наоборот: всё тихо, чёрно-белое, спокойно. Ты будто в своём маленьком мире.
+
+И мне нравится, что у тебя есть не только смешная и яркая сторона, но и такая тихая тоже`,
+      `Honestly, this photo feels very personal to me for some reason.
+
+Not because something big is happening, but the opposite: it is quiet, black and white, calm. You look like you are in your own little world.
+
+I like that you are not only funny and bright, but also quiet like this.`,
+      `Ehrlich gesagt wirkt dieses Foto für mich irgendwie sehr persönlich.
+
+Nicht weil etwas Großes passiert, sondern genau andersherum: es ist ruhig, schwarz-weiß, still. Du wirkst wie in deiner eigenen kleinen Welt.
+
+Ich mag, dass du nicht nur lustig und hell bist, sondern auch so ruhig sein kannst.`
     )
   },
   {
@@ -330,51 +666,111 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "family",
     title: l("Елена среди цветов", "Elena among flowers", "Elena zwischen Blüten"),
     text: l(
-      "Это твоя мама Елена, и кадр правда очень красивый. Белые цветы вокруг делают фото нежным, а в ней самой чувствуется спокойная красота. Видно, откуда у тебя столько света и женственности.",
-      "This is your mom Elena, and the photo is truly beautiful. The white flowers make it gentle, and she has such calm beauty. It is easy to see where your light comes from.",
-      "Das ist deine Mama Elena, und das Foto ist wirklich schön. Die weißen Blüten machen es zart, und sie selbst hat eine ruhige Schönheit. Man sieht, woher dein Licht kommt."
+      `На этом фото твоя мама Елена выглядит очень красиво.
+
+Белые цветы, светлая одежда, спокойный взгляд. В кадре есть такая взрослая мягкость, которую сложно объяснить.
+
+И знаешь, мне правда приятно думать, что у тебя такая великолепная мама. В тебе тоже чувствуется часть этого тепла`,
+      `In this photo, your mom Elena looks very beautiful.
+
+White flowers, light clothes, a calm look. There is a mature softness in the photo that is hard to explain.
+
+And you know, it is really nice to think that you have such a wonderful mom. I can feel part of that warmth in you too.`,
+      `Auf diesem Foto sieht deine Mama Elena sehr schön aus.
+
+Weiße Blüten, helle Kleidung, ein ruhiger Blick. Das Foto hat eine erwachsene Weichheit, die schwer zu erklären ist.
+
+Und weißt du, ich finde es wirklich schön, dass du so eine wundervolle Mama hast. Ein Teil dieser Wärme ist auch in dir.`
     ),
-    objectPosition: "center 38%"
+    objectPosition: "center 42%"
   },
   {
     id: 30,
     category: "secret",
-    title: l("Цветы и тишина", "Flowers and quietness", "Blüten und Stille"),
+    title: l("Цветы без тебя, но про тебя", "Flowers, still somehow about you", "Blüten, trotzdem irgendwie über dich"),
     text: l(
-      "Этот кадр без лица, но в нём есть настроение. Цветущие ветки, тень, немного загадочности — будто маленькая пауза между всеми яркими фотографиями.",
-      "This photo has no face in it, but it has a mood: blossoms, shadow, and a little mystery.",
-      "Dieses Foto zeigt kein Gesicht, aber es hat Stimmung: Blüten, Schatten und ein bisschen Geheimnis."
+      `Это фото вроде просто про цветы.
+
+Но мне нравится, что оно стоит рядом с твоими снимками. Как будто среди всех лиц, фильтров и улыбок есть маленькая пауза.
+
+Иногда ты сама похожа на такую паузу: не шумную, а нужную`,
+      `This photo is just flowers, at first.
+
+But I like that it stands next to your photos. Among all the faces, filters, and smiles, it feels like a small pause.
+
+Sometimes you feel like that kind of pause too: not loud, but needed.`,
+      `Dieses Foto zeigt eigentlich nur Blüten.
+
+Aber ich mag, dass es neben deinen Fotos steht. Zwischen all den Gesichtern, Filtern und Lächeln ist es wie eine kleine Pause.
+
+Manchmal wirkst du für mich auch wie so eine Pause: nicht laut, aber wichtig.`
     )
   },
   {
     id: 31,
     category: "love",
-    title: l("Образ, который тебе идёт", "A look that suits you", "Ein Look, der dir steht"),
+    title: l("За твою женственность", "For your feminine side", "Für deine feminine Seite"),
     text: l(
-      "Тут у тебя очень красивый образ. Он чуть яркий, чуть дерзкий, но всё равно аккуратный. Мне нравится, что ты можешь выглядеть по-разному и в каждом варианте оставаться собой.",
-      "This look really suits you. A little bright, a little bold, but still neat. I like that you can look different and still stay yourself.",
-      "Dieser Look steht dir wirklich. Ein bisschen auffällig, ein bisschen frech, aber trotzdem ordentlich. Ich mag, dass du verschieden aussehen kannst und trotzdem du bleibst."
+      `Мне нравится этот образ на тебе.
+
+Он спокойный, аккуратный и взрослый, но без какой-то лишней строгости. Просто красиво, уверенно и очень по-твоему.
+
+Я сам не сразу понял, почему сохранил это фото. Потом понял: мне нравится, как ты тут держишься`,
+      `I like this look on you.
+
+It is calm, neat, and a little grown-up, but not too strict. Just beautiful, confident, and very much you.
+
+I did not understand right away why I saved this photo. Then I realized: I like the way you carry yourself here.`,
+      `Ich mag diesen Look an dir.
+
+Er ist ruhig, ordentlich und ein bisschen erwachsen, aber nicht zu streng. Einfach schön, sicher und sehr du.
+
+Ich habe nicht sofort verstanden, warum ich dieses Foto gespeichert habe. Dann wusste ich es: Ich mag, wie du dich hier hältst.`
     ),
-    objectPosition: "center 20%"
+    objectPosition: "center 24%"
   },
   {
     id: 32,
     category: "moments",
-    title: l("Ты, Юля и подруга на одном кадре", "You, Yulia, and a friend in one photo", "Du, Yulia und eine Freundin auf einem Bild"),
+    title: l("Ты, Юля и подруга", "You, Yulia, and a friend", "Du, Yulia und eine Freundin"),
     text: l(
-      "В этом фото классная дружеская энергия. Ты, Юля и ещё одна подруга выглядите легко, уверенно и весело. Мне нравится, что кадр солнечный и совсем не искусственный.",
-      "This photo has great friend energy. You, Yulia, and another friend look light, confident, and fun. I like that it feels sunny and completely unforced.",
-      "Dieses Foto hat eine schöne Freundinnen-Energie. Zusammen wirkt ihr leicht, selbstbewusst und fröhlich. Ich mag, dass es sonnig und gar nicht gestellt wirkt."
+      `Здесь очень заметна дружеская энергия.
+
+Вы все разные в кадре, но вместе смотритесь легко. Мне нравится, что ты не одна, а среди людей, с которыми тебе, кажется, комфортно.
+
+Такие фото показывают не только тебя, а ещё то, как тебе бывает хорошо рядом с другими`,
+      `The friend energy is very clear here.
+
+You all look different in the frame, but together it feels easy. I like that you are not alone here, but with people you seem comfortable with.
+
+Photos like this show not only you, but also how good you can feel around others.`,
+      `Die Freundinnen-Energie sieht man hier sehr klar.
+
+Ihr seid alle unterschiedlich im Bild, aber zusammen wirkt es leicht. Ich mag, dass du hier nicht allein bist, sondern mit Menschen, bei denen du dich wohl fühlst.
+
+Solche Fotos zeigen nicht nur dich, sondern auch, wie gut es dir neben anderen gehen kann.`
     )
   },
   {
     id: 33,
     category: "moments",
-    title: l("Маленькая поездка, большой вайб", "Small ride, big vibe", "Kleine Fahrt, großer Vibe"),
+    title: l("Кадр из дороги", "A photo from the road", "Ein Foto von unterwegs"),
     text: l(
-      "Кадр из машины, подруга рядом, фильтры и ваша лёгкость. Он не про идеальность, а про момент — и именно поэтому он живой.",
-      "A car photo, a friend beside you, filters, and your easy mood. It is not about perfection, it is about the moment.",
-      "Ein Foto aus dem Auto, eine Freundin neben dir, Filter und eure Leichtigkeit. Es geht nicht um Perfektion, sondern um den Moment."
+      `Фото из машины всегда немного странные, но в этом есть свой вайб.
+
+Фильтр, дорога, подруга рядом, и у тебя такой вид, будто день просто идёт своим ходом.
+
+Мне нравится эта обычность. Она честная`,
+      `Car photos are always a little strange, but this one has its own vibe.
+
+A filter, the road, a friend beside you, and you look like the day is just moving on naturally.
+
+I like that ordinary feeling. It is honest.`,
+      `Fotos aus dem Auto sind immer ein bisschen komisch, aber dieses hat seinen eigenen Vibe.
+
+Ein Filter, die Fahrt, eine Freundin neben dir, und du wirkst, als würde der Tag einfach normal weitergehen.
+
+Ich mag diese Alltäglichkeit. Sie ist ehrlich.`
     )
   },
   {
@@ -382,63 +778,135 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "moments",
     title: l("Прогулка с Юлей и подругой", "A walk with Yulia and a friend", "Ein Spaziergang mit Yulia und einer Freundin"),
     text: l(
-      "Тут всё выглядит очень естественно: ты впереди, рядом Юля и ещё одна подруга, обычная прогулка и летний свет. В таких фото есть честность — не поза, а настоящий момент.",
-      "Everything feels very natural here: you in front, Yulia and another friend nearby, a normal walk, and summer light. It is not a pose, it is a real moment.",
-      "Hier wirkt alles sehr natürlich: du vorne, Yulia und noch eine Freundin in der Nähe, ein normaler Spaziergang und Sommerlicht. Keine Pose, sondern ein echter Moment."
+      `Тут всё выглядит очень по-настоящему.
+
+Ты впереди, рядом Юля и ещё одна подруга, обычная прогулка, летний свет. Не идеальный кадр, зато живой.
+
+Мне нравится, что в нём есть движение, будто фото не остановило момент, а просто чуть-чуть его поймало`,
+      `Everything here feels very real.
+
+You in front, Yulia and another friend nearby, a normal walk, summer light. Not a perfect photo, but a living one.
+
+I like that it has movement, like the photo did not stop the moment, only caught a small part of it.`,
+      `Hier wirkt alles sehr echt.
+
+Du vorne, Yulia und noch eine Freundin in der Nähe, ein normaler Spaziergang, Sommerlicht. Kein perfektes Foto, aber ein lebendiges.
+
+Ich mag, dass Bewegung darin ist, als hätte das Foto den Moment nicht gestoppt, sondern nur kurz erwischt.`
     )
   },
   {
     id: 35,
-    category: "secret",
-    title: l("Солнце прямо в кадре", "Sun right in the frame", "Sonne direkt im Bild"),
+    category: "birthday",
+    title: l("Пусть будет больше солнца", "More sunlight for you", "Mehr Sonne für dich"),
     text: l(
-      "Фото немного случайное, но мне нравится его свет. Очки, солнце, половина улыбки — всё выглядит как маленький кусочек лета.",
-      "The photo is a bit accidental, but I like its light. Glasses, sun, half a smile — like a small piece of summer.",
-      "Das Foto ist ein bisschen zufällig, aber ich mag sein Licht. Brille, Sonne, ein halbes Lächeln — wie ein kleines Stück Sommer."
+      `Хочу пожелать тебе больше таких солнечных кусочков.
+
+Когда всё не идеально, где-то засвет, где-то половина улыбки, но настроение всё равно хорошее.
+
+Пусть в 15 у тебя будет побольше дней, которые потом хочется вспоминать именно из-за ощущения, а не из-за идеальности`,
+      `I want to wish you more little pieces of sunlight like this.
+
+When nothing is perfect, maybe the light is too bright, maybe only half a smile is visible, but the mood is still good.
+
+I hope at 15 you have more days you want to remember because of the feeling, not because they were perfect.`,
+      `Ich wünsche dir mehr solche kleinen Sonnenmomente.
+
+Wenn nicht alles perfekt ist, vielleicht ist das Licht zu hell, vielleicht sieht man nur ein halbes Lächeln, aber die Stimmung ist trotzdem gut.
+
+Ich hoffe, dass du mit 15 mehr Tage hast, an die du dich wegen des Gefühls erinnerst, nicht wegen Perfektion.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 36,
-    category: "secret",
+    category: "birthday",
     title: l("Маленькая Леруся за пианино", "Little Valeriia at the piano", "Kleine Valeriia am Klavier"),
     text: l(
-      "Это детское фото очень милое. Ты маленькая, рядом подарки и пианино, и в кадре есть такое домашнее тепло, которое хочется беречь.",
-      "This childhood photo is very sweet. Little you, presents, and a piano — it has a cozy warmth worth keeping.",
-      "Dieses Kinderfoto ist sehr süß. Du als kleines Mädchen, Geschenke und ein Klavier — es hat eine gemütliche Wärme, die man behalten möchte."
+      `Это фото особенно милое, потому что на нём маленькая ты.
+
+Подарки, пианино, домашний кадр. И сейчас тебе уже 15, а всё равно хочется сказать: береги в себе эту маленькую Леру, которая просто радуется моменту.
+
+Пусть взросление не забирает у тебя эту искренность 🧸`,
+      `This photo is especially sweet because it shows little you.
+
+Presents, a piano, a home moment. And now you are already 15, but I still want to say: keep that little Valeriia inside you, the one who can simply enjoy a moment.
+
+I hope growing up never takes away that honesty from you 🧸`,
+      `Dieses Foto ist besonders süß, weil man darauf die kleine Valeriia sieht.
+
+Geschenke, ein Klavier, ein Moment zu Hause. Und jetzt bist du schon 15, aber ich möchte trotzdem sagen: Bewahre diese kleine Valeriia in dir, die sich einfach über einen Moment freuen kann.
+
+Ich hoffe, dass Erwachsenwerden dir diese Ehrlichkeit nie wegnimmt 🧸`
     ),
     objectPosition: "center 28%"
   },
   {
     id: 37,
     category: "family",
-    title: l("Мируся — маленькое солнышко", "Mirusya, a little sunshine", "Mirusya, kleiner Sonnenschein"),
+    title: l("Мируся, маленькая искорка", "Mirusya, a tiny spark", "Mirusya, ein kleiner Funke"),
     text: l(
-      "Это Мируся, твоя сестрёнка. Фото очень милое: большие глаза, розовая шапка и такой детский взгляд, что сразу становится тепло. У тебя правда очень красивая и светлая семья.",
-      "This is Mirusya, your little sister. The photo is so sweet: big eyes, a pink hat, and that childlike look that instantly feels warm.",
-      "Das ist Mirusya, deine kleine Schwester. Das Foto ist sehr süß: große Augen, eine rosa Mütze und dieser Kinderblick, der sofort warm wirkt."
+      `Это Мируся, твоя сестрёнка.
+
+Фото очень милое: большие глаза, розовая шапка и такой детский взгляд, что сразу становится тепло.
+
+У тебя правда красивая семья. И мне нравится, что рядом с тобой есть такие родные люди`,
+      `This is Mirusya, your little sister.
+
+The photo is very sweet: big eyes, a pink hat, and that childlike look that instantly feels warm.
+
+You really have a beautiful family. I like that you have people this close to you.`,
+      `Das ist Mirusya, deine kleine Schwester.
+
+Das Foto ist sehr süß: große Augen, eine rosa Mütze und dieser Kinderblick, der sofort warm wirkt.
+
+Du hast wirklich eine schöne Familie. Ich mag, dass du solche nahen Menschen bei dir hast.`
     ),
     objectPosition: "center 18%"
   },
   {
     id: 38,
     category: "moments",
-    title: l("Как кадр из открытки", "Like a postcard", "Wie eine Postkarte"),
+    title: l("Как кадр из поездки", "Like a travel photo", "Wie ein Reisefoto"),
     text: l(
-      "Ты со спины на фоне замка и гор — и фото выглядит очень красиво. В нём есть ощущение путешествия, воздуха и того самого момента, который хочется запомнить.",
-      "You from behind with a castle and mountains in the background — it looks beautiful. It has the feeling of travel, air, and a moment worth remembering.",
-      "Du von hinten vor Schloss und Bergen — das sieht wunderschön aus. Es hat das Gefühl von Reise, Luft und einem Moment, den man behalten möchte."
+      `Ты со спины, впереди замок и горы.
+
+В этом фото есть ощущение, будто ты стоишь на границе какого-то красивого дня. Не обязательно знать, что было дальше, сам кадр уже работает.
+
+Мне нравится, что он спокойный и немного сказочный, но без перебора`,
+      `You from behind, a castle and mountains ahead.
+
+This photo feels like you are standing at the edge of a beautiful day. I do not even need to know what happened next, the photo already works.
+
+I like that it is calm and a little dreamy, but not too much.`,
+      `Du von hinten, vor dir ein Schloss und Berge.
+
+Dieses Foto fühlt sich an, als würdest du am Anfang eines schönen Tages stehen. Ich muss gar nicht wissen, was danach passiert ist, das Bild wirkt schon so.
+
+Ich mag, dass es ruhig und ein bisschen märchenhaft ist, aber nicht zu viel.`
     ),
     objectPosition: "center 38%"
   },
   {
     id: 39,
     category: "moments",
-    title: l("Горы делают кадр большим", "The mountains make it grand", "Die Berge machen es groß"),
+    title: l("Красная футболка и горы", "Red shirt and mountains", "Rotes Shirt und Berge"),
     text: l(
-      "Тут очень красивый вид, но мне всё равно больше всего нравится, что в нём есть ты. Красная футболка, зелень, горы — всё вместе выглядит ярко и спокойно.",
-      "The view is beautiful here, but I still like most that you are in it. Red shirt, greenery, mountains — bright and calm together.",
-      "Die Aussicht ist hier wunderschön, aber am meisten mag ich trotzdem, dass du darin bist. Rotes Shirt, Grün, Berge — hell und ruhig zugleich."
+      `На этом фото очень красивый фон.
+
+Но я всё равно сначала замечаю тебя. Красная футболка, спокойная поза, горы за спиной, и всё вместе выглядит ярко, но не шумно.
+
+Такие кадры хочется сохранять не потому что они идеальные, а потому что в них приятно возвращаться`,
+      `The background is very beautiful here.
+
+But I still notice you first. The red shirt, the calm pose, the mountains behind you, everything looks bright but not loud.
+
+Photos like this are worth keeping not because they are perfect, but because they are nice to return to.`,
+      `Der Hintergrund ist hier sehr schön.
+
+Aber ich sehe trotzdem zuerst dich. Das rote Shirt, die ruhige Haltung, die Berge hinter dir, alles wirkt hell, aber nicht laut.
+
+Solche Bilder behält man nicht, weil sie perfekt sind, sondern weil man gern zu ihnen zurückkommt.`
     ),
     objectPosition: "center 35%"
   },
@@ -447,158 +915,338 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "moments",
     title: l("Зеркало с подругой", "Mirror with a friend", "Spiegel mit einer Freundin"),
     text: l(
-      "Этот кадр простой, но приятный. Вы с подругой рядом, и в фото есть ощущение обычного дня, который всё равно хочется сохранить.",
-      "This is simple but nice. You and your friend are together, and it feels like an ordinary day still worth keeping.",
-      "Das ist schlicht, aber angenehm. Du und deine Freundin seid zusammen, und es fühlt sich wie ein normaler Tag an, den man trotzdem behalten möchte."
+      `Это простой кадр, но он мне нравится.
+
+Ты с подругой рядом, обычное зеркало, обычный день. И в этом как раз есть что-то хорошее.
+
+Не каждое приятное воспоминание обязано выглядеть как кино`,
+      `This is a simple photo, but I like it.
+
+You are with a friend, a normal mirror, a normal day. And that is exactly what feels good about it.
+
+Not every good memory has to look like a movie.`,
+      `Das ist ein einfaches Foto, aber ich mag es.
+
+Du bist mit einer Freundin zusammen, ein normaler Spiegel, ein normaler Tag. Genau das fühlt sich daran gut an.
+
+Nicht jede schöne Erinnerung muss wie ein Film aussehen.`
     )
   },
   {
     id: 41,
     category: "love",
-    title: l("Уверенная и красивая", "Confident and beautiful", "Selbstbewusst und schön"),
+    title: l("За твой характер в кадре", "For your character in the photo", "Für deinen Charakter im Bild"),
     text: l(
-      "Мне нравится твой вид на этом фото. Ты тут собранная, уверенная и очень красивая. Такой кадр, где сразу чувствуется характер.",
-      "I like your look in this photo. You seem collected, confident, and very beautiful. It shows character.",
-      "Ich mag deinen Ausdruck auf diesem Foto. Du wirkst gesammelt, selbstbewusst und sehr schön. Man spürt Charakter."
+      `Я люблю, когда на фото видно не только “красивая”, а ещё и характер.
+
+Тут ты выглядишь собранно, уверенно, будто в тебе есть своё “я знаю, что делаю”.
+
+Мне это правда нравится. В тебе есть сила, даже когда ты просто стоишь на фото`,
+      `I love when a photo shows not only beauty, but character too.
+
+Here you look collected and confident, like there is a quiet “I know what I am doing” in you.
+
+I really like that. You have strength, even when you are simply standing in a photo.`,
+      `Ich liebe es, wenn ein Foto nicht nur Schönheit zeigt, sondern auch Charakter.
+
+Hier wirkst du gesammelt und sicher, als gäbe es in dir ein ruhiges “ich weiß, was ich tue”.
+
+Ich mag das wirklich. Du hast Stärke, sogar wenn du einfach nur auf einem Foto stehst.`
     ),
     objectPosition: "center 22%"
   },
   {
     id: 42,
     category: "love",
-    title: l("Спокойный взгляд", "A calm look", "Ein ruhiger Blick"),
+    title: l("За спокойный взгляд", "For your calm look", "Für deinen ruhigen Blick"),
     text: l(
-      "Ты здесь выглядишь спокойно и аккуратно. Кадр без лишнего, но в твоём взгляде есть мягкость, из-за которой фото хочется сохранить.",
-      "You look calm and neat here. The photo is simple, but your look has a softness that makes it worth keeping.",
-      "Du wirkst hier ruhig und ordentlich. Das Foto ist schlicht, aber dein Blick hat eine Weichheit, die man behalten möchte."
+      `Мне нравится твой спокойный взгляд на этом фото.
+
+В нём нет попытки выглядеть как-то специально. Ты просто смотришь, и почему-то от этого кадр кажется ближе.
+
+Может, для тебя это обычное фото, но для меня в нём есть что-то очень мягкое`,
+      `I like your calm look in this photo.
+
+There is no attempt to look special. You are just looking, and for some reason that makes the photo feel closer.
+
+Maybe it is just a normal photo for you, but for me it has something very soft in it.`,
+      `Ich mag deinen ruhigen Blick auf diesem Foto.
+
+Es wirkt nicht so, als wolltest du besonders aussehen. Du schaust einfach, und dadurch fühlt sich das Bild irgendwie näher an.
+
+Vielleicht ist es für dich nur ein normales Foto, aber für mich hat es etwas sehr Weiches.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 43,
     category: "love",
-    title: l("Очень аккуратная Леруся", "Very neat Valeriia", "Sehr feine Valeriia"),
+    title: l("За аккуратность", "For your neatness", "Für deine Feinheit"),
     text: l(
-      "Тут мне нравится твоя аккуратность: волосы, очки, спокойная поза. Всё выглядит мягко и красиво, без попытки сделать фото слишком идеальным.",
-      "I like how neat you look here: hair, glasses, calm pose. Everything feels soft and beautiful without trying too hard.",
-      "Ich mag, wie fein du hier wirkst: Haare, Brille, ruhige Pose. Alles ist weich und schön, ohne zu gewollt zu sein."
+      `Я люблю твою аккуратность.
+
+Она бывает в мелочах: волосы, очки, поза, то, как ты держишься. На этом фото всё это очень видно.
+
+И мне нравится, что эта аккуратность не холодная. Она у тебя мягкая`,
+      `I love your neatness.
+
+It is in small things: your hair, your glasses, your pose, the way you hold yourself. In this photo, I can really see it.
+
+And I like that this neatness does not feel cold. With you, it feels soft.`,
+      `Ich liebe diese Feinheit an dir.
+
+Sie zeigt sich in kleinen Dingen: Haare, Brille, Haltung, wie du dich gibst. Auf diesem Foto sieht man das sehr.
+
+Und ich mag, dass diese Feinheit nicht kalt wirkt. Bei dir ist sie weich.`
     ),
     objectPosition: "center 22%"
   },
   {
     id: 44,
     category: "secret",
-    title: l("Чёрно-белая нежность", "Black-and-white softness", "Schwarz-weiße Sanftheit"),
+    title: l("Чёрно-белая тишина", "Black-and-white quiet", "Schwarz-weiße Ruhe"),
     text: l(
-      "В чёрно-белом варианте твой взгляд становится ещё заметнее. Фото тихое, немного загадочное и очень красивое.",
-      "In black and white, your look becomes even stronger. The photo is quiet, a little mysterious, and very beautiful.",
-      "In Schwarz-Weiß wirkt dein Blick noch stärker. Das Foto ist ruhig, ein bisschen geheimnisvoll und sehr schön."
+      `Если честно, в чёрно-белых фото ты иногда выглядишь ещё более настоящей.
+
+Тут нет цвета, фильтрового шума, ничего лишнего. Остаётся лицо, взгляд и настроение.
+
+И мне нравится, что это настроение не громкое. Оно тихое, но почему-то сильное`,
+      `Honestly, in black-and-white photos you sometimes look even more real.
+
+There is no color, no loud filter feeling, nothing extra. Only your face, your look, and the mood.
+
+And I like that the mood is not loud. It is quiet, but somehow strong.`,
+      `Ehrlich gesagt wirkst du auf Schwarz-Weiß-Fotos manchmal noch echter.
+
+Keine Farbe, kein lauter Filter, nichts zu viel. Nur dein Gesicht, dein Blick und die Stimmung.
+
+Ich mag, dass diese Stimmung nicht laut ist. Sie ist ruhig, aber irgendwie stark.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 45,
     category: "moments",
-    title: l("Кадр с подругой в дороге", "A photo with a friend on the way", "Ein Foto mit Freundin unterwegs"),
+    title: l("Рядом в дороге", "Beside a friend on the way", "Neben einer Freundin unterwegs"),
     text: l(
-      "Мне нравится этот простой кадр: вы сидите рядом, и всё выглядит спокойно. В нём нет постановки, зато есть настоящая близость обычного момента.",
-      "I like this simple photo: you sit beside your friend and everything feels calm. No posing, just a real little moment.",
-      "Ich mag dieses einfache Bild: du sitzt neben deiner Freundin und alles wirkt ruhig. Keine Pose, nur ein echter kleiner Moment."
+      `Этот кадр выглядит как маленькая пауза где-то в дороге.
+
+Вы просто сидите рядом, без позы и без попытки сделать что-то вау. И в этом есть спокойная близость.
+
+Мне нравятся такие фото, потому что они честные`,
+      `This photo feels like a small pause somewhere on the way.
+
+You are just sitting beside each other, without posing or trying to make it wow. And there is a calm closeness in that.
+
+I like photos like this because they are honest.`,
+      `Dieses Foto wirkt wie eine kleine Pause irgendwo unterwegs.
+
+Ihr sitzt einfach nebeneinander, ohne Pose und ohne etwas Besonderes daraus machen zu wollen. Darin liegt eine ruhige Nähe.
+
+Ich mag solche Fotos, weil sie ehrlich sind.`
     )
   },
   {
     id: 46,
     category: "love",
-    title: l("Солнце и твои глаза", "Sun and your eyes", "Sonne und deine Augen"),
+    title: l("За живую энергию", "For your lively energy", "Für deine lebendige Energie"),
     text: l(
-      "Тут у тебя очень красивый взгляд. Солнце делает кадр ярче, но всё равно главное — твои глаза и эта чуть дерзкая, живая энергия.",
-      "Your eyes look beautiful here. The sun makes the photo brighter, but the main thing is still your look and that lively energy.",
-      "Deine Augen sehen hier wunderschön aus. Die Sonne macht das Bild heller, aber das Wichtigste ist dein Blick und diese lebendige Energie."
+      `Я люблю, что в тебе есть живая энергия.
+
+На этом фото солнце, взгляд, немного дерзости, и всё вместе работает. Ты не просто “милая на фото”, ты тут с характером.
+
+И мне это очень нравится`,
+      `I love that you have a lively energy.
+
+In this photo, there is sun, your look, a little boldness, and it all works together. You are not just “cute in a photo”, you have character here.
+
+And I like that a lot.`,
+      `Ich liebe, dass du so eine lebendige Energie hast.
+
+Auf diesem Foto sind Sonne, dein Blick, ein bisschen Frechheit, und alles passt zusammen. Du bist hier nicht nur “süß auf einem Foto”, du hast Charakter.
+
+Und das mag ich sehr.`
     ),
     objectPosition: "center 24%"
   },
   {
     id: 47,
     category: "love",
-    title: l("Живой профиль", "A lively profile", "Ein lebendiges Profil"),
+    title: l("За естественность", "For your naturalness", "Für deine Natürlichkeit"),
     text: l(
-      "Этот кадр мне нравится своей естественностью. Ты не смотришь прямо в камеру, и из-за этого фото кажется ещё более живым и настоящим.",
-      "I like this photo for its naturalness. You are not looking straight at the camera, and that makes it feel even more alive.",
-      "Ich mag dieses Bild wegen seiner Natürlichkeit. Du schaust nicht direkt in die Kamera, und dadurch wirkt es noch lebendiger."
+      `Я люблю твою естественность.
+
+Особенно на таких кадрах, где ты не смотришь прямо в камеру и не пытаешься поймать “правильное” лицо.
+
+Фото получается живым, потому что ты в нём не играешь роль`,
+      `I love your naturalness.
+
+Especially in photos like this, where you are not looking straight into the camera and not trying to make the “right” face.
+
+The photo feels alive because you are not playing a role in it.`,
+      `Ich liebe deine Natürlichkeit.
+
+Besonders auf solchen Fotos, wo du nicht direkt in die Kamera schaust und nicht versuchst, das “richtige” Gesicht zu machen.
+
+Das Foto wirkt lebendig, weil du darin keine Rolle spielst.`
     ),
     objectPosition: "center 24%"
   },
   {
     id: 48,
     category: "love",
-    title: l("Твои глаза крупным планом", "Your eyes up close", "Deine Augen ganz nah"),
+    title: l("За глаза, которые цепляют", "For eyes that stay with me", "Für Augen, die hängen bleiben"),
     text: l(
-      "Это фото невозможно описать без слов про глаза. Они здесь очень красивые: тёплые, внимательные и такие настоящие, что кадр сразу цепляет.",
-      "This photo is all about your eyes. They are beautiful here: warm, attentive, and so real that the photo catches you immediately.",
-      "Dieses Foto dreht sich ganz um deine Augen. Sie sind hier wunderschön: warm, aufmerksam und so echt, dass das Bild sofort hängen bleibt."
+      `Да, это буквально открытка про твои глаза.
+
+Не знаю, как по-другому, потому что на этом фото они правда забирают всё внимание. Тёплые, внимательные, немного хитрые.
+
+Я могу сколько угодно пытаться написать красиво, но проще сказать честно: мне очень нравится твой взгляд`,
+      `Yes, this is literally a card about your eyes.
+
+I do not know how else to say it, because in this photo they really take all the attention. Warm, attentive, a little playful.
+
+I could try to write something pretty, but honestly it is simpler: I really like your look.`,
+      `Ja, das ist wirklich eine Karte über deine Augen.
+
+Ich weiß nicht, wie ich es anders sagen soll, weil sie auf diesem Foto wirklich alles an Aufmerksamkeit nehmen. Warm, aufmerksam, ein bisschen verspielt.
+
+Ich könnte versuchen, es schön zu formulieren, aber ehrlich ist es einfacher: Ich mag deinen Blick sehr.`
     ),
     objectPosition: "center 28%"
   },
   {
     id: 49,
     category: "moments",
-    title: l("Подруга рядом, ты спокойная", "Friend beside you, you calm", "Freundin neben dir, du ruhig"),
+    title: l("Обычное зеркало, хороший кадр", "Simple mirror, good photo", "Einfacher Spiegel, gutes Foto"),
     text: l(
-      "Ты здесь с подругой в обычном зеркальном кадре, но мне нравится, как спокойно и красиво ты выглядишь. Ничего лишнего — просто приятный настоящий момент.",
-      "You are with a friend in a simple mirror shot, and I like how calm and beautiful you look. Nothing extra — just a nice real moment.",
-      "Du bist hier mit einer Freundin in einem einfachen Spiegelbild, und ich mag, wie ruhig und schön du wirkst. Nichts Überflüssiges — einfach ein schöner echter Moment."
+      `Ты здесь с подругой, и фото очень обычное.
+
+Но именно поэтому оно мне нравится. В нём нет желания сделать из момента что-то огромное. Просто вы рядом, и всё нормально.
+
+Иногда этого достаточно, чтобы кадр был тёплым`,
+      `You are with a friend here, and the photo is very simple.
+
+But that is exactly why I like it. It does not try to make the moment bigger than it is. You are just together, and it feels good.
+
+Sometimes that is enough for a photo to feel warm.`,
+      `Du bist hier mit einer Freundin, und das Foto ist sehr einfach.
+
+Aber genau deshalb mag ich es. Es versucht nicht, den Moment größer zu machen. Ihr seid einfach zusammen, und es fühlt sich gut an.
+
+Manchmal reicht das, damit ein Foto warm wirkt.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 50,
     category: "moments",
-    title: l("Смешной кадр с подругой", "Funny photo with a friend", "Lustiges Foto mit Freundin"),
+    title: l("Смешной фильтр, хорошее настроение", "Funny filter, good mood", "Lustiger Filter, gute Stimmung"),
     text: l(
-      "Кадр с фильтром, подругой и хорошим настроением. Он простой, но очень живой: такие фото не выглядят идеальными, зато они честные и тёплые.",
-      "A filter, a friend, and good mood. It is simple but very alive: not perfect, but honest and warm.",
-      "Ein Filter, eine Freundin und gute Stimmung. Es ist einfach, aber sehr lebendig: nicht perfekt, dafür ehrlich und warm."
+      `Мне нравится, что это фото не стесняется быть смешным.
+
+Фильтр, подруга, лица, настроение. Всё немного хаотично, но зато живое.
+
+И честно, такие кадры часто самые родные, потому что в них нет попытки выглядеть идеально`,
+      `I like that this photo is not afraid to be funny.
+
+The filter, your friend, faces, mood. Everything is a little chaotic, but alive.
+
+And honestly, photos like this often feel the closest, because they are not trying to be perfect.`,
+      `Ich mag, dass dieses Foto keine Angst hat lustig zu sein.
+
+Der Filter, deine Freundin, Gesichter, Stimmung. Alles ist ein bisschen chaotisch, aber lebendig.
+
+Und ehrlich, solche Fotos fühlen sich oft am nächsten an, weil sie nicht perfekt sein wollen.`
     )
   },
   {
     id: 51,
     category: "secret",
-    title: l("Зеркало в коридоре", "Mirror in the hallway", "Spiegel im Flur"),
+    title: l("Ты почти в тени", "Almost in the shadow", "Fast im Schatten"),
     text: l(
-      "Этот кадр спокойный и немного загадочный. Ты почти в тени, но всё равно видно твой стиль и настроение. В этом есть своя атмосфера.",
-      "This photo is calm and a little mysterious. You are almost in the shadow, but your style and mood still show.",
-      "Dieses Foto ist ruhig und ein bisschen geheimnisvoll. Du bist fast im Schatten, aber dein Stil und deine Stimmung sind trotzdem da."
+      `Это фото тихое.
+
+Ты почти в тени, зеркало, коридор, и нет ощущения, что кадр пытается понравиться. Он просто есть.
+
+Мне иногда нравятся именно такие снимки. В них человек не показывает всё, но от этого хочется смотреть внимательнее`,
+      `This photo is quiet.
+
+You are almost in the shadow, a mirror, a hallway, and it does not feel like the photo is trying to be liked. It simply exists.
+
+Sometimes I like exactly these kinds of photos. A person does not show everything, and that makes me look more carefully.`,
+      `Dieses Foto ist ruhig.
+
+Du bist fast im Schatten, ein Spiegel, ein Flur, und es wirkt nicht so, als wollte das Bild gefallen. Es ist einfach da.
+
+Manchmal mag ich genau solche Bilder. Ein Mensch zeigt nicht alles, und gerade deshalb schaut man genauer hin.`
     )
   },
   {
     id: 52,
     category: "secret",
-    title: l("Даже тень может быть памятью", "Even a shadow can be a memory", "Sogar ein Schatten kann Erinnerung sein"),
+    title: l("Даже тень запомнилась", "Even the shadow stayed with me", "Sogar der Schatten blieb"),
     text: l(
-      "Это не обычная открытка, но мне нравится идея кадра. Даже тень с телефоном может стать маленькой памятью о тебе и о моменте, который ты заметила.",
-      "It is not a usual postcard photo, but I like the idea. Even a shadow with a phone can become a small memory of you noticing a moment.",
-      "Es ist kein gewöhnliches Postkartenbild, aber ich mag die Idee. Sogar ein Schatten mit Handy kann zu einer kleinen Erinnerung werden."
+      `Наверное, это самая странная открытка в библиотеке.
+
+Но мне нравится, что здесь не лицо, не поза, не фильтр, а просто тень. Маленький знак того, что ты была в каком-то моменте и заметила его.
+
+Не знаю почему, но такие детали иногда цепляют сильнее, чем идеальные фото`,
+      `This is probably the strangest card in the library.
+
+But I like that it is not a face, not a pose, not a filter, just a shadow. A small sign that you were in a moment and noticed it.
+
+I do not know why, but details like this sometimes stay with me more than perfect photos.`,
+      `Das ist wahrscheinlich die seltsamste Karte in der Bibliothek.
+
+Aber ich mag, dass es kein Gesicht ist, keine Pose, kein Filter, sondern nur ein Schatten. Ein kleines Zeichen, dass du in einem Moment warst und ihn bemerkt hast.
+
+Ich weiß nicht warum, aber solche Details bleiben manchmal stärker als perfekte Fotos.`
     )
   },
   {
     id: 53,
     category: "moments",
-    title: l("Близкий кадр с подругой", "A close photo with a friend", "Ein nahes Foto mit Freundin"),
+    title: l("Близко и по-настоящему", "Close and real", "Nah und echt"),
     text: l(
-      "Фото близкое, простое и немного смешное. Вы с подругой здесь без лишнего пафоса, и именно поэтому кадр выглядит живым.",
-      "This photo is close, simple, and a little funny. You and your friend are not trying too hard, and that makes it alive.",
-      "Dieses Foto ist nah, einfach und ein bisschen lustig. Du und deine Freundin versucht nicht zu viel, und genau das macht es lebendig."
+      `Это близкий кадр с подругой, немного смешной и очень настоящий.
+
+Вы не пытаетесь выглядеть “как надо”, и от этого фото становится живым. Мне нравится такая честность.
+
+В таких снимках будто слышно не картинку, а сам момент`,
+      `This is a close photo with a friend, a little funny and very real.
+
+You are not trying to look “right”, and that makes the photo alive. I like that honesty.
+
+In photos like this, I almost feel the moment, not just the picture.`,
+      `Das ist ein nahes Foto mit einer Freundin, ein bisschen lustig und sehr echt.
+
+Ihr versucht nicht, “richtig” auszusehen, und dadurch wird das Foto lebendig. Ich mag diese Ehrlichkeit.
+
+Bei solchen Bildern fühlt man fast den Moment, nicht nur das Foto.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 54,
     category: "moments",
-    title: l("Зеркальное фото с подругой", "Mirror photo with a friend", "Spiegelbild mit Freundin"),
+    title: l("Мягкое зеркало", "A soft mirror photo", "Ein weiches Spiegelbild"),
     text: l(
-      "Тут очень мягкая атмосфера: зеркало, подруга рядом, спокойный свет. Кадр немного размыт настроением, но из-за этого он кажется ещё теплее.",
-      "This has a soft atmosphere: mirror, friend beside you, calm light. It is a little blurred by the mood, and that makes it warmer.",
-      "Das hat eine weiche Atmosphäre: Spiegel, Freundin neben dir, ruhiges Licht. Es ist ein wenig von Stimmung verschwommen, und dadurch wärmer."
+      `Тут мне нравится атмосфера.
+
+Зеркало, подруга рядом, спокойный свет, и весь кадр как будто немного мягкий. Не резкий, не громкий.
+
+Просто приятная фотография, к которой не хочется придираться`,
+      `I like the atmosphere here.
+
+A mirror, a friend beside you, calm light, and the whole photo feels a little soft. Not sharp, not loud.
+
+Just a nice photo that I do not want to overthink.`,
+      `Ich mag hier die Atmosphäre.
+
+Ein Spiegel, eine Freundin neben dir, ruhiges Licht, und das ganze Foto wirkt etwas weich. Nicht hart, nicht laut.
+
+Einfach ein angenehmes Foto, bei dem man nichts zerdenken will.`
     )
   },
   {
@@ -606,41 +1254,89 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "moments",
     title: l("Ты с Юлей на солнце", "You and Yulia in the sun", "Du und Yulia in der Sonne"),
     text: l(
-      "Этот снимок очень живой. Вы с Юлей смотрите вверх, солнце делает кадр ярким, и в нём есть такая лёгкая летняя энергия, что фото сразу кажется хорошим.",
-      "This photo is very alive. You and Yulia are looking up, the sun makes it bright, and it has that easy summer energy.",
-      "Dieses Foto ist sehr lebendig. Du und Yulia schaut beide nach oben, die Sonne macht das Bild hell, und es hat diese leichte Sommerenergie."
+      `Этот кадр очень живой.
+
+Вы с Юлей смотрите вверх, свет яркий, и в фото есть ощущение лета, которое не надо объяснять.
+
+Мне нравится, что ты здесь не позируешь идеально, а просто находишься в моменте`,
+      `This photo is very alive.
+
+You and Yulia are looking up, the light is bright, and the photo has a summer feeling that does not need explanation.
+
+I like that you are not posing perfectly here, you are just in the moment.`,
+      `Dieses Foto ist sehr lebendig.
+
+Du und Yulia schaut nach oben, das Licht ist hell, und das Bild hat ein Sommergefühl, das man nicht erklären muss.
+
+Ich mag, dass du hier nicht perfekt posierst, sondern einfach im Moment bist.`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 56,
     category: "moments",
-    title: l("Ты с Юлей и лето", "You, Yulia, and summer", "Du, Yulia und Sommer"),
+    title: l("Ты, Юля и лето", "You, Yulia, and summer", "Du, Yulia und Sommer"),
     text: l(
-      "Кадр смешной, солнечный и очень настоящий. Вы с Юлей стоите на траве, свет яркий, эмоции живые — и всё вместе выглядит легко, по-доброму и очень по-летнему.",
-      "This photo is funny, sunny, and very real. You and Yulia are standing on the grass, the light is bright, the expressions are alive, and everything feels easy and summery.",
-      "Dieses Foto ist lustig, sonnig und sehr echt. Du und Yulia steht beide auf dem Gras, das Licht ist hell, eure Gesichter sind lebendig, und alles wirkt leicht und sommerlich."
+      `Вот это фото смешное и солнечное.
+
+Вы с Юлей стоите на траве, эмоции живые, свет яркий, и всё выглядит так, будто настроение само выскочило в кадр.
+
+Мне нравится, когда фото не идеально ровное, зато в нём есть настоящая радость`,
+      `This photo is funny and sunny.
+
+You and Yulia are standing on the grass, the expressions are alive, the light is bright, and it feels like the mood jumped into the frame by itself.
+
+I like when a photo is not perfectly polished, but has real joy in it.`,
+      `Dieses Foto ist lustig und sonnig.
+
+Du und Yulia steht auf dem Gras, eure Gesichter sind lebendig, das Licht ist hell, und es wirkt, als wäre die Stimmung einfach ins Bild gesprungen.
+
+Ich mag es, wenn ein Foto nicht perfekt glatt ist, aber echte Freude hat.`
     )
   },
   {
     id: 57,
-    category: "love",
-    title: l("Нежный образ", "A gentle look", "Ein zarter Look"),
+    category: "birthday",
+    title: l("Моя хорошая, с 15-летием", "My sweet Valeriia, happy 15th", "Meine liebe Valeriia, alles Gute zum 15."),
     text: l(
-      "Ты здесь выглядишь очень нежно и красиво. Свет мягкий, образ спокойный, и весь кадр будто про твою аккуратную, женственную сторону.",
-      "You look very gentle and beautiful here. The light is soft, the look is calm, and the whole photo shows your elegant side.",
-      "Du wirkst hier sehr zart und schön. Das Licht ist weich, der Look ruhig, und das ganze Bild zeigt deine feine Seite."
+      `Моя хорошая, с 15-летием тебя.
+
+Хочу, чтобы ты в этом году чаще чувствовала себя красивой не только на фото, но и просто внутри. Чтобы было меньше сомнений и больше спокойной уверенности в себе.
+
+Ты правда очень особенная для меня. Не идеально-открыточно, а по-настоящему, со своим характером, настроением и этими маленькими деталями, из-за которых ты именно ты 💜`,
+      `My sweet Valeriia, happy 15th Birthday.
+
+I hope this year you feel beautiful not only in photos, but also inside yourself. I hope there are fewer doubts and more calm confidence.
+
+You really are very special to me. Not in a perfect postcard way, but in a real way, with your character, your moods, and all those small details that make you you 💜`,
+      `Meine liebe Valeriia, alles Gute zum 15. Geburtstag.
+
+Ich hoffe, dass du dich in diesem Jahr nicht nur auf Fotos schön fühlst, sondern auch in dir selbst. Mit weniger Zweifeln und mehr ruhiger Sicherheit.
+
+Du bist mir wirklich sehr besonders. Nicht perfekt wie eine Postkarte, sondern echt, mit deinem Charakter, deinen Stimmungen und all den kleinen Details, die dich zu dir machen 💜`
     ),
     objectPosition: "center 25%"
   },
   {
     id: 58,
     category: "family",
-    title: l("Елена — очень красивая мама", "Elena, a very beautiful mom", "Elena, eine sehr schöne Mama"),
+    title: l("Елена, у тебя великолепная мама", "Elena, your wonderful mom", "Elena, deine wundervolle Mama"),
     text: l(
-      "На этом фото твоя мама Елена выглядит очень красиво: белые цветы, светлая одежда, спокойный взгляд. Хочется сказать честно — у тебя великолепная мама, и в тебе правда чувствуется часть её тепла и красоты.",
-      "In this photo, your mom Elena looks very beautiful: white flowers, light clothes, a calm look. Honestly, you have a wonderful mom, and I can feel part of her warmth and beauty in you.",
-      "Auf diesem Foto sieht deine Mama Elena sehr schön aus: weiße Blüten, helle Kleidung, ein ruhiger Blick. Ehrlich: du hast eine wundervolle Mama, und ein Teil ihrer Wärme und Schönheit ist auch in dir."
+      `Здесь снова твоя мама Елена, и фото очень красивое.
+
+Цветущие ветки, белый образ, спокойный взгляд. Оно выглядит так, будто в нём много женственности и тепла.
+
+И я хочу сказать без пафоса: у тебя великолепная мама и папа. Видно, что в твоей семье есть любовь, забота и характер. И, наверное, поэтому в тебе столько хорошего`,
+      `Here is your mom Elena again, and the photo is very beautiful.
+
+The blooming branches, the light outfit, the calm look. It feels full of warmth and femininity.
+
+And I want to say this simply: you have a wonderful mom and dad. I can see that your family has love, care, and character. Maybe that is why there is so much good in you.`,
+      `Hier ist wieder deine Mama Elena, und das Foto ist sehr schön.
+
+Die blühenden Zweige, das helle Outfit, der ruhige Blick. Es wirkt voller Wärme und Weiblichkeit.
+
+Und ich möchte es einfach sagen: du hast eine wundervolle Mama und einen wundervollen Papa. Man sieht, dass es in deiner Familie Liebe, Fürsorge und Charakter gibt. Vielleicht ist deshalb so viel Gutes in dir.`
     ),
     objectPosition: "center 42%"
   }
