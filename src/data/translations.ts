@@ -53,6 +53,11 @@ export const t = {
     en: "Happy 15th Birthday, my love 💜🧸",
     de: "Alles Gute zum 15. Geburtstag, meine Liebe 💜🧸"
   },
+  moreAhead: {
+    ru: "И это только начало...",
+    en: "And this is only the beginning...",
+    de: "Und das ist erst der Anfang..."
+  },
   heartCenterTop: { ru: "С 15-ЛЕТИЕМ", en: "HAPPY 15TH BIRTHDAY", de: "ALLES GUTE ZUM 15. GEBURTSTAG" },
   heartCenterName: { ru: "ЛЕРУСЯ", en: "MY LOVE", de: "MEINE LIEBE" },
   heartCenterBottom: {

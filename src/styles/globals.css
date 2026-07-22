@@ -785,6 +785,18 @@ input[type="range"] {
 }
 .loader-final span { display: block; }
 .loader-final strong { display: block; margin-top: 28px; color: var(--rose); font-size: clamp(1.15rem, 3vw, 2rem); }
+.loader-final em {
+  display: block;
+  margin-top: 16px;
+  color: rgba(255, 248, 252, 0.72);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(0.82rem, 1.6vw, 1.05rem);
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(199, 125, 255, 0.38);
+  animation: tinyLift 2.2s ease-in-out infinite;
+}
 
 .page-section {
   display: flex;

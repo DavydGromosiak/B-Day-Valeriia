@@ -74,7 +74,12 @@ export function ReasonsLoader({ language, setLanguage, tr, ui, onComplete, onSki
               {finalStep === 0 && tr(ui.loaded100)}
               {finalStep === 1 && tr(ui.notEnough)}
               {finalStep >= 2 && tr(ui.millionWords).split("\n").map((line) => <span key={line}>{line}</span>)}
-              {finalStep === 3 && <strong>{tr(ui.happyLove)}</strong>}
+              {finalStep === 3 && (
+                <>
+                  <strong>{tr(ui.happyLove)}</strong>
+                  <em>{tr(ui.moreAhead)}</em>
+                </>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
