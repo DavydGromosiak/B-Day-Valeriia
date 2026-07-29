@@ -1355,23 +1355,23 @@ Und ich möchte es einfach sagen: Elena und Vitalii sind wundervolle Eltern. Man
   {
     id: 59,
     category: "moments",
-    title: l("Красный купальник и синий бассейн", "Red swimsuit, blue pool", "Roter Badeanzug, blauer Pool"),
+    title: l("Солнечный день у воды", "A sunny day by the water", "Ein sonniger Tag am Wasser"),
     text: l(
-      `Здесь цвета вообще решили сделать половину фотографии за тебя: ярко-синяя вода и красный купальник.
+      `Мне нравится, какой спокойной ты получилась на этой фотографии.
 
-Но я всё равно сначала смотрю на тебя. Ты спокойно сидишь у края бассейна, будто камера появилась там случайно.
+Вокруг солнце и яркая вода, но взгляд всё равно сразу останавливается на тебе. Ты просто смотришь в сторону, и в этом кадре нет ничего лишнего.
 
-Очень красивый кадр. Без сложного объяснения — просто красивый`,
-      `The colors make this photo stand out right away: bright blue water and your red swimsuit.
+Мне хочется, чтобы таких спокойных и солнечных моментов у тебя было как можно больше`,
+      `I like how calm you look in this photo.
 
-But I still notice you first. You are sitting calmly by the pool as if the camera just happened to be there.
+There is sunlight and bright water all around you, but my eyes still go straight to you. You are simply looking away, and nothing in this picture feels unnecessary.
 
-It is a really beautiful photo. No complicated explanation needed.`,
-      `Die Farben lassen dieses Foto sofort auffallen: leuchtend blaues Wasser und dein roter Badeanzug.
+I hope you have many more calm and sunny moments like this one.`,
+      `Ich mag, wie ruhig du auf diesem Foto wirkst.
 
-Trotzdem sehe ich zuerst dich. Du sitzt ruhig am Beckenrand, als wäre die Kamera nur zufällig da gewesen.
+Um dich herum sind Sonne und leuchtendes Wasser, aber mein Blick geht trotzdem sofort zu dir. Du schaust einfach zur Seite, und auf diesem Bild wirkt nichts überflüssig.
 
-Ein wirklich schönes Foto. Dafür brauche ich keine komplizierte Erklärung.`
+Ich wünsche dir noch ganz viele solche ruhigen und sonnigen Momente.`
     ),
     objectPosition: "center 36%"
   },
@@ -1875,10 +1875,10 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
 А ещё теперь понятно, откуда у тебя некоторые черты. Скажу без длинной речи: у тебя замечательные мама и папа. И я правда благодарен им за такую дочь 💜`
   },
   59: {
-    title: "Красный и синий",
-    text: `На этой фотографии цвета сделали всё очень ярким: синяя вода, красный купальник, солнце.
+    title: "Солнечный день у воды",
+    text: `Мне нравится, какой спокойной ты получилась на этой фотографии
 
-Но я всё равно смотрю не на бассейн. Ты здесь очень красивая, и никакое сложное объяснение мне для этого не нужно`
+Вокруг солнце и яркая вода, но взгляд всё равно сразу останавливается на тебе. Ты просто смотришь в сторону, и в этом кадре нет ничего лишнего`
   },
   60: {
     title: "Ты просто сидишь у воды",

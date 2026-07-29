@@ -1484,7 +1484,7 @@ input[type="range"] {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 107, 158, 0.44) transparent;
   display: grid;
-  align-content: center;
+  align-content: start;
   gap: 18px;
   padding: 36px 12px 24px 0;
 }

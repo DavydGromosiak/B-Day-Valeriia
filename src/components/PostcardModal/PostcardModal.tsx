@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { FeelingCard } from "../../data/cards";
 import { LocalizedString } from "../../data/translations";
 import { SmartImage } from "../PhotoHeart/SmartImage";
@@ -15,11 +15,17 @@ type Props = {
 };
 
 export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const close = (event: KeyboardEvent) => event.key === "Escape" && onClose();
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, [onClose]);
+
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0 });
+  }, [card?.id]);
 
   if (!card) return null;
   const index = cards.findIndex((item) => item.id === card.id);
@@ -44,6 +50,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
           </AnimatePresence>
           <AnimatePresence mode="wait">
             <motion.div
+              ref={contentRef}
               className="postcard-content"
               key={`content-${card.id}`}
               initial={{ opacity: 0, y: 16 }}
