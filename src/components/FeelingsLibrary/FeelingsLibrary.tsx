@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BookOpen, Disc3, HeartHandshake, Image, Mail, Music2, Sparkles } from "lucide-react";
+import { BookOpen, Disc3, ExternalLink, HeartHandshake, Image, Mail, Music2, Sparkles, Youtube } from "lucide-react";
 import { useState } from "react";
 import { CardCategory, cards, FeelingCard } from "../../data/cards";
 import { songCompliments } from "../../data/songCompliments";
@@ -18,7 +18,7 @@ export function FeelingsLibrary({ tr, ui }: Props) {
 
   return (
     <section id="library" className="page-section content-section">
-      <p className="section-kicker">letters / postcards / tiny stories</p>
+      <p className="section-kicker">{tr(ui.libraryKicker)}</p>
       <h2>{tr(ui.libraryTitle)}</h2>
       <div className="tabs" role="tablist" aria-label={tr(ui.libraryTitle)}>
         <button className={category === "all" ? "active" : ""} onClick={() => setCategory("all")}>{tr(ui.allCards)}</button>
@@ -31,7 +31,7 @@ export function FeelingsLibrary({ tr, ui }: Props) {
         {tr(ui.songShelfTeaser)}
       </button>
       {showSongs && (
-        <motion.div className="song-shelf" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
+        <div className="song-shelf">
           <div className="song-shelf-heading">
             <Music2 size={24} />
             <div>
@@ -40,17 +40,27 @@ export function FeelingsLibrary({ tr, ui }: Props) {
             </div>
           </div>
           <div className="song-grid">
-            {songCompliments.map((song, index) => (
-              <motion.article
+            {songCompliments.map((song) => (
+              <article
                 className="song-card"
                 key={song.id}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.035 }}
                 data-romantic="true"
               >
                 <span className="song-artist">{song.artist}</span>
-                <h4>{song.title}</h4>
+                <h4>
+                  <a href={song.spotifyUrl} target="_blank" rel="noreferrer" aria-label={`${tr(ui.listenOnSpotify)}: ${song.title}`}>
+                    {song.title}
+                    <ExternalLink size={16} />
+                  </a>
+                </h4>
+                <div className="song-service-links">
+                  <a href={song.spotifyUrl} target="_blank" rel="noreferrer" aria-label={`${tr(ui.listenOnSpotify)}: ${song.title}`}>
+                    <Disc3 size={15} /> Spotify
+                  </a>
+                  <a href={song.youtubeUrl} target="_blank" rel="noreferrer" aria-label={`${tr(ui.listenOnYoutube)}: ${song.title}`}>
+                    <Youtube size={16} /> YouTube
+                  </a>
+                </div>
                 <div className="song-fragment">
                   <small>{tr(ui.songFragmentLabel)}</small>
                   <p>{tr(song.fragment)}</p>
@@ -59,10 +69,10 @@ export function FeelingsLibrary({ tr, ui }: Props) {
                   <small>{tr(ui.songWhyLabel)}</small>
                   <p>{tr(song.why)}</p>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
       <div className="card-grid">
         {filtered.map((card, i) => {

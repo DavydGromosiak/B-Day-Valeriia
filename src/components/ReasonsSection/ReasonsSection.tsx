@@ -17,7 +17,7 @@ export function ReasonsSection({ tr, ui }: Props) {
 
   return (
     <section id="reasons" className="page-section content-section">
-      <p className="section-kicker">birthday.PROTOCOL_FOR_LERA</p>
+      <p className="section-kicker">birthday.PROTOCOL_FOR_VALERIIA</p>
       <h2>{tr(ui.reasonsTitle)}</h2>
       <div className="reason-layout">
         <div className="reason-card" onTouchStart={(event) => (event.currentTarget.dataset.startX = String(event.touches[0].clientX))} onTouchEnd={(event) => {

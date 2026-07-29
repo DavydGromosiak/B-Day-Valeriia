@@ -14,13 +14,13 @@ const letterUi = {
   },
   heading: {
     ru: "Письмо, которое хочется открыть не спеша",
-    en: "A letter to open slowly",
+    en: "A letter to take your time with",
     de: "Ein Brief, den man langsam öffnen möchte"
   },
   note: {
     ru: "Я спрятал здесь самое тёплое поздравление. Нажми на конверт, и он откроется для тебя.",
-    en: "I hid the warmest birthday words here. Touch the envelope, and it will open for you.",
-    de: "Hier habe ich die wärmsten Geburtstagsworte versteckt. Berühre den Umschlag, und er öffnet sich für dich."
+    en: "I hid my warmest birthday message here. Open the envelope, and the letter will appear.",
+    de: "Hier habe ich meine herzlichste Geburtstagsnachricht versteckt. Öffne den Umschlag, dann erscheint der Brief."
   },
   sealedFor: {
     ru: "для Леруси",
@@ -119,6 +119,7 @@ export function BirthdayLetter({ tr }: Props) {
                 </div>
                 <h2>{tr(birthdayLetter.title)}</h2>
                 <p>{tr(birthdayLetter.body)}</p>
+                <strong className="letter-closing">{tr(birthdayLetter.closing)}</strong>
               </motion.article>
             )}
           </AnimatePresence>

@@ -27,7 +27,7 @@ export function FinalScene({ tr, ui }: Props) {
         ))}
       </div>
       {!done && <div className="final-orbit" aria-hidden="true">
-        {Array.from({ length: 28 }, (_, i) => <span key={i} style={{ transform: `rotate(${i * 13}deg) translateY(${90 + (i % 5) * 12}px)` }}>{"\u{1F49C}"}</span>)}
+        {Array.from({ length: 28 }, (_, i) => <span key={i} style={{ transform: `rotate(${i * 13}deg) translateY(${90 + (i % 5) * 12}px)` }}>{"\u2665"}</span>)}
       </div>}
       <AnimatePresence mode="wait">
         {!done && (
@@ -54,7 +54,7 @@ export function FinalScene({ tr, ui }: Props) {
                   "--heart-scale": heart.scale,
                 } as CSSProperties}
               >
-                {"\u{1F49C}"}
+                {"\u2665"}
               </span>
             ))}
             <motion.div className="final-reveal" initial={{ scale: 0.86, opacity: 0 }} animate={{ scale: [0.86, 1.04, 1], opacity: 1 }} transition={{ duration: 0.9 }}>

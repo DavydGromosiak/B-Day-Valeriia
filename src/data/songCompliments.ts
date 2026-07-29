@@ -6,20 +6,22 @@ export type SongCompliment = {
   artist: string;
   fragment: LocalizedString;
   why: LocalizedString;
+  spotifyUrl: string;
+  youtubeUrl: string;
 };
 
 // EDIT HERE: можно менять песни, смысловые урывки и объяснения.
 // Важно: сюда не вставляются полные реальные lyrics популярных песен.
 // Вместо цитат здесь личная адаптация смысла, чтобы сайт оставался тёплым и безопасным.
-export const songCompliments: SongCompliment[] = [
+const songComplimentEntries: Omit<SongCompliment, "spotifyUrl" | "youtubeUrl">[] = [
   {
     id: 1,
     title: "Until I Found You",
     artist: "Stephen Sanchez",
     fragment: {
       ru: "Смысл урывка для меня: человек появляется в жизни не громко, но в какой-то момент ты понимаешь, что уже не хочешь терять его.",
-      en: "The idea of this part for me: someone comes into your life quietly, and then you realize you really do not want to lose them.",
-      de: "Die Idee von diesem Teil für mich: Jemand kommt leise in dein Leben, und irgendwann merkst du, dass du diese Person nicht verlieren willst."
+      en: "What I hear in this part is that someone can quietly come into your life, and then you realize you really do not want to lose them.",
+      de: "Was ich in dieser Stelle höre: Jemand kommt leise in dein Leben, und irgendwann merkst du, dass du diese Person nicht verlieren willst."
     },
     why: {
       ru: "Я выбрал это, потому что с тобой у меня именно так. Не было какого-то резкого “вау”, просто ты становилась всё ближе, а потом я понял, что ты для меня уже очень важная 🙈",
@@ -54,7 +56,7 @@ export const songCompliments: SongCompliment[] = [
     why: {
       ru: "Не хочу писать слишком идеально, но иногда с тобой правда хочется просто остановиться и подумать: вот бы это подольше не заканчивалось",
       en: "I do not want to make it sound too perfect, but sometimes with you I really just want time to slow down a little.",
-      de: "Ich will es nicht zu perfekt klingen lassen, aber manchmal möchte ich mit dir wirklich, dass die Zeit kurz langsamer wird."
+      de: "Ich will es nicht zu perfekt klingen lassen, aber manchmal wünsche ich mir wirklich, dass die Zeit mit dir kurz langsamer wird."
     }
   },
   {
@@ -84,7 +86,7 @@ export const songCompliments: SongCompliment[] = [
     why: {
       ru: "Потому что мне правда нравится именно ты: с привычками, настроением, милотой, упрямством и маленькими странностями. Менять это было бы преступлением против красоты момента",
       en: "Because I really like exactly you: your habits, moods, sweetness, stubbornness, and little strange things. Changing that would honestly be a crime against the moment.",
-      de: "Weil ich wirklich genau dich mag: deine Gewohnheiten, Stimmungen, Süße, Sturheit und kleinen Eigenheiten. Das zu ändern wäre fast schade um den Moment."
+      de: "Weil ich wirklich genau dich mag: deine Gewohnheiten, Stimmungen, deine liebe Art, deine Sturheit und deine kleinen Eigenheiten. Das zu ändern wäre wirklich schade."
     }
   },
   {
@@ -114,7 +116,7 @@ export const songCompliments: SongCompliment[] = [
     why: {
       ru: "Знаешь, в тебе есть такой тихий свет. Не тот, где надо всем что-то доказывать, а тот, который замечаешь и потом долго вспоминаешь",
       en: "You know, you have that quiet kind of light. Not the kind that tries to prove anything, but the kind you notice and remember.",
-      de: "Weißt du, du hast so ein ruhiges Licht. Nicht eins, das etwas beweisen will, sondern eins, das man bemerkt und lange behält."
+      de: "Weißt du, du hast so ein ruhiges Licht. Nicht eins, das etwas beweisen will, sondern eins, das man bemerkt und lange in Erinnerung behält."
     }
   },
   {
@@ -129,7 +131,7 @@ export const songCompliments: SongCompliment[] = [
     why: {
       ru: "Потому что я сам не сразу понял, насколько сильно ты мне нравишься. Просто стал чаще думать о тебе, ждать сообщения и улыбаться с переписки",
       en: "Because I did not understand right away how much I liked you. I just started thinking about you more, waiting for your messages, and smiling at our chat.",
-      de: "Weil ich selbst nicht sofort verstanden habe, wie sehr ich dich mag. Ich dachte einfach öfter an dich, wartete auf Nachrichten und lächelte beim Chat."
+      de: "Weil ich selbst nicht sofort verstanden habe, wie sehr ich dich mag. Ich dachte einfach öfter an dich, freute mich auf deine Nachrichten und musste bei unserem Chat lächeln."
     }
   },
   {
@@ -189,7 +191,139 @@ export const songCompliments: SongCompliment[] = [
     why: {
       ru: "Именно поэтому я сохраняю твои фото. Не потому что они все “идеальные”, а потому что в них есть ты: взгляд, мимика, настроение, момент",
       en: "That is why I save your photos. Not because they are all perfect, but because they have you in them: your look, expression, mood, and moment.",
-      de: "Deshalb speichere ich deine Fotos. Nicht weil sie alle perfekt sind, sondern weil du darin bist: dein Blick, dein Ausdruck, deine Stimmung, der Moment."
+      de: "Deshalb speichere ich deine Fotos. Nicht weil sie alle perfekt sind, sondern weil sie dich zeigen: deinen Blick, deinen Ausdruck, deine Stimmung und den jeweiligen Moment."
+    }
+  },
+  {
+    id: 13,
+    title: "A Thousand Years",
+    artist: "Christina Perri",
+    fragment: {
+      ru: "Смысл для меня: иногда человек становится настолько важным, что даже ожидание и волнение рядом с ним ощущаются не зря.",
+      en: "The meaning for me: sometimes a person becomes so important that even waiting and feeling nervous around them feels worth it.",
+      de: "Die Bedeutung für mich: Manchmal wird ein Mensch so wichtig, dass sich sogar das Warten und die Aufregung lohnen."
+    },
+    why: {
+      ru: "Эта песня напоминает мне о том, как чувства растут постепенно. Сначала ты просто нравишься, а потом вдруг понимаешь, что думаешь о человеке намного чаще, чем собирался 🥹",
+      en: "This song reminds me of how feelings grow slowly. First you simply like someone, and then you realize you think about them much more often than you planned 🥹",
+      de: "Dieses Lied erinnert mich daran, wie Gefühle langsam wachsen. Zuerst mag man jemanden einfach, und dann merkt man, dass man viel öfter an diese Person denkt als geplant 🥹"
+    }
+  },
+  {
+    id: 14,
+    title: "Say You Won't Let Go",
+    artist: "James Arthur",
+    fragment: {
+      ru: "Смысл для меня: настоящее чувство видно не только в красивых словах, а в желании оставаться рядом в самых обычных днях.",
+      en: "The meaning for me: real feelings are not only in beautiful words, but in wanting to stay close through ordinary days.",
+      de: "Die Bedeutung für mich: Echte Gefühle stecken nicht nur in schönen Worten, sondern auch im Wunsch, im normalen Alltag nah zu bleiben."
+    },
+    why: {
+      ru: "Мне нравится сама мысль о простом «я рядом». Без огромных обещаний и пафоса. Просто спрашивать, как ты, слушать твои истории и не исчезать, когда настроение не самое лучшее",
+      en: "I like the simple idea of saying, “I am here.” No huge promises. Just asking how you are, listening to your stories, and not disappearing when your mood is not the best.",
+      de: "Ich mag den einfachen Gedanken: „Ich bin da.“ Keine riesigen Versprechen. Einfach fragen, wie es dir geht, deine Geschichten hören und nicht verschwinden, wenn deine Stimmung nicht die beste ist."
+    }
+  },
+  {
+    id: 15,
+    title: "Those Eyes",
+    artist: "New West",
+    fragment: {
+      ru: "Смысл для меня: сильнее всего запоминаются не идеальные кадры, а взгляд и маленькие детали, которые замечаешь только у важного человека.",
+      en: "The meaning for me: what stays with you is not a perfect picture, but a look and the little details you notice only in someone important.",
+      de: "Die Bedeutung für mich: Im Kopf bleiben nicht perfekte Bilder, sondern ein Blick und kleine Details, die man nur bei einem wichtigen Menschen bemerkt."
+    },
+    why: {
+      ru: "У тебя очень запоминающийся взгляд. На некоторых фотографиях я реально сначала смотрю тебе в глаза, а уже потом замечаю всё остальное. Не знаю, как это нормально объяснить, но вот так 😅",
+      en: "Your look is very easy to remember. In some photos I honestly notice your eyes first and everything else only after. I do not really know how to explain it better 😅",
+      de: "Dein Blick bleibt leicht in Erinnerung. Auf manchen Fotos sehe ich ehrlich zuerst deine Augen und alles andere erst danach. Ich weiß nicht, wie ich es besser erklären soll 😅"
+    }
+  },
+  {
+    id: 16,
+    title: "Dandelions",
+    artist: "Ruth B.",
+    fragment: {
+      ru: "Смысл для меня: когда загадываешь что-то хорошее, в голове почему-то сразу появляется один конкретный человек.",
+      en: "The meaning for me: when you make a small wish, one particular person somehow appears in your mind right away.",
+      de: "Die Bedeutung für mich: Wenn man sich etwas Schönes wünscht, erscheint irgendwie sofort ein bestimmter Mensch im Kopf."
+    },
+    why: {
+      ru: "Наверное, немного глупо звучит, но когда я представляю что-то хорошее впереди, ты там появляешься сама собой. Я специально тебя туда не вставляю, честно 🙈",
+      en: "It may sound a little silly, but when I imagine something good ahead, you appear there on your own. I do not place you there on purpose, honestly 🙈",
+      de: "Vielleicht klingt es ein bisschen albern, aber wenn ich mir etwas Schönes in der Zukunft vorstelle, bist du einfach dabei. Ich setze dich nicht extra hinein, ehrlich 🙈"
+    }
+  },
+  {
+    id: 17,
+    title: "I Wanna Be Yours",
+    artist: "Arctic Monkeys",
+    fragment: {
+      ru: "Смысл для меня: иногда хочется не придумывать идеальное признание, а просто стать человеком, к которому можно прийти и которому можно доверять.",
+      en: "The meaning for me: sometimes you do not need a perfect confession. You just want to be someone the other person can come to and trust.",
+      de: "Die Bedeutung für mich: Manchmal braucht man kein perfektes Geständnis. Man möchte einfach jemand sein, zu dem die andere Person kommen und dem sie vertrauen kann."
+    },
+    why: {
+      ru: "Я не всегда знаю, какие слова правильные. Но мне правда хочется быть тем, кому ты можешь написать и хорошее, и странное, и то, что тебя бесит. Мне важно, чтобы рядом со мной тебе было спокойно",
+      en: "I do not always know the right words. But I really want to be someone you can text about good things, strange things, and things that annoy you. I want you to feel calm with me.",
+      de: "Ich kenne nicht immer die richtigen Worte. Aber ich möchte jemand sein, dem du schöne, komische und nervige Dinge schreiben kannst. Mir ist wichtig, dass du dich bei mir ruhig fühlst."
+    }
+  },
+  {
+    id: 18,
+    title: "Adore You",
+    artist: "Harry Styles",
+    fragment: {
+      ru: "Смысл для меня: заботиться о человеке хочется не ради ответа или награды, а просто потому, что он тебе важен.",
+      en: "The meaning for me: you want to care for someone not for a reward or an answer, but simply because they matter to you.",
+      de: "Die Bedeutung für mich: Man möchte sich nicht wegen einer Belohnung um jemanden kümmern, sondern einfach, weil dieser Mensch wichtig ist."
+    },
+    why: {
+      ru: "Мне приятно делать для тебя какие-то мелочи и видеть, что ты улыбаешься. Даже этот сайт я делал не ради идеальной реакции. Мне просто хотелось подарить тебе что-то очень твоё 💜",
+      en: "I like doing small things for you and seeing you smile. Even this website was not made for a perfect reaction. I simply wanted to give you something that feels truly yours 💜",
+      de: "Ich mache gern kleine Dinge für dich und sehe dich lächeln. Auch diese Website habe ich nicht für eine perfekte Reaktion gemacht. Ich wollte dir einfach etwas schenken, das wirklich zu dir gehört 💜"
+    }
+  },
+  {
+    id: 19,
+    title: "Rewrite the Stars",
+    artist: "Zac Efron & Zendaya",
+    fragment: {
+      ru: "Смысл для меня: иногда обстоятельства и сомнения всё усложняют, но это не отменяет желания попробовать быть ближе.",
+      en: "The meaning for me: circumstances and doubts can make everything harder, but they do not remove the wish to become closer.",
+      de: "Die Bedeutung für mich: Umstände und Zweifel können alles schwieriger machen, aber der Wunsch nach mehr Nähe bleibt trotzdem."
+    },
+    why: {
+      ru: "Не всё всегда получается легко и понятно, и мы оба можем накрутить лишнего. Но мне нравится мысль, что важное не обязательно бросать только потому, что иногда оно сложное",
+      en: "Not everything is always easy or clear, and both of us can overthink things. But I like the thought that something important should not be abandoned only because it is sometimes difficult.",
+      de: "Nicht alles ist immer leicht oder klar, und wir können beide zu viel nachdenken. Aber ich mag den Gedanken, dass man etwas Wichtiges nicht aufgeben muss, nur weil es manchmal schwierig ist."
+    }
+  },
+  {
+    id: 20,
+    title: "Glue Song",
+    artist: "beabadoobee",
+    fragment: {
+      ru: "Смысл для меня: человек может как-то незаметно приклеиться к мыслям, и потом ты вспоминаешь его даже во время самых обычных дел.",
+      en: "The meaning for me: someone can quietly stick in your thoughts, and then you remember them even during the most ordinary things.",
+      de: "Die Bedeutung für mich: Ein Mensch kann leise in den Gedanken hängen bleiben, und dann erinnert man sich sogar bei ganz normalen Dingen an ihn."
+    },
+    why: {
+      ru: "Это очень похоже на тебя в моей голове. Могу заниматься вообще чем-то другим, увидеть смешную мелочь или красивый свет и внезапно подумать: надо бы Лере показать 🫶🏻",
+      en: "This is very much how you are in my head. I can be doing something completely different, notice a funny detail or beautiful light, and suddenly think: I should show this to Valeriia 🫶🏻",
+      de: "So bist du oft in meinem Kopf. Ich kann etwas ganz anderes machen, ein lustiges Detail oder schönes Licht sehen und plötzlich denken: Das muss ich Valeriia zeigen 🫶🏻"
     }
   }
 ];
+
+const makeSpotifyUrl = (title: string, artist: string) =>
+  `https://open.spotify.com/search/${encodeURIComponent(`${title} ${artist}`)}`;
+
+const makeYoutubeUrl = (title: string, artist: string) =>
+  `https://www.youtube.com/results?search_query=${encodeURIComponent(`${title} ${artist} official audio`)}`;
+
+export const songCompliments: SongCompliment[] = songComplimentEntries.map((entry) => ({
+  ...entry,
+  spotifyUrl: makeSpotifyUrl(entry.title, entry.artist),
+  youtubeUrl: makeYoutubeUrl(entry.title, entry.artist)
+}));

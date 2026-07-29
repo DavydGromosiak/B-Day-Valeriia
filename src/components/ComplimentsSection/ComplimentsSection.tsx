@@ -10,7 +10,7 @@ export function ComplimentsSection({ language, tr, ui }: Props) {
 
   return (
     <section id="words" className="page-section content-section">
-      <p className="section-kicker">constellation of you</p>
+      <p className="section-kicker">{tr(ui.wordsKicker)}</p>
       <h2>{tr(ui.wordsTitle)}</h2>
       <p className="poem-text">{tr(ui.wordsIntro)}</p>
       <div className="compliment-grid">

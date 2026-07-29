@@ -9,7 +9,7 @@ type Props = {
 };
 
 export function ParentsThanks({ tr }: Props) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <section id="parents" className="page-section parents-section">
@@ -40,7 +40,7 @@ export function ParentsThanks({ tr }: Props) {
           >
             <div className="parents-note-top">
               <Home size={22} />
-              <span>family constellation</span>
+              <span>{tr(parentsThanks.constellation)}</span>
             </div>
             <strong>{tr(parentsThanks.recipient)}</strong>
             <p>{tr(parentsThanks.title)}</p>

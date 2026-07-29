@@ -25,7 +25,7 @@ export function PhotoHeart({ tr, ui }: Props) {
 
   return (
     <section id="photos" className="page-section photo-section">
-      <p className="section-kicker">photo constellation</p>
+      <p className="section-kicker">{tr(ui.photosKicker)}</p>
       <h2>{tr(ui.photosTitle)}</h2>
       <div className={`photo-heart-stage ${photos.length > 28 ? "is-dense" : ""}`} data-romantic="true">
         {photos.map((photo, i) => {
@@ -34,7 +34,7 @@ export function PhotoHeart({ tr, ui }: Props) {
             <motion.button
               className="photo-tile"
               key={photo.src}
-              style={{ zIndex: photos.length - i }}
+              style={{ zIndex: active ? 0 : photos.length - i }}
               onClick={() => setActive(photo)}
               aria-label={tr(photo.alt)}
               initial={reduced ? false : { x: 0, y: 0, rotate: i * 3 - 20, opacity: 0 }}
@@ -42,7 +42,7 @@ export function PhotoHeart({ tr, ui }: Props) {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.04, duration: 0.85, type: "spring", damping: 18 }}
             >
-              <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} />
+              <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
             </motion.button>
           );
         })}

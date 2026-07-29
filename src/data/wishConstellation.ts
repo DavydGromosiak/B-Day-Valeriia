@@ -16,7 +16,7 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 26,
     title: {
       ru: "Спокойствия внутри",
-      en: "Peace inside",
+      en: "Inner peace",
       de: "Ruhe in dir"
     },
     text: {
@@ -61,7 +61,7 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 12,
     title: {
       ru: "Верить в себя",
-      en: "Belief in yourself",
+      en: "Believe in yourself",
       de: "Glaube an dich"
     },
     text: {
@@ -76,13 +76,13 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 27,
     title: {
       ru: "Тёплых людей рядом",
-      en: "Warm people near you",
-      de: "Warme Menschen um dich"
+      en: "Kind people around you",
+      de: "Liebe Menschen um dich"
     },
     text: {
       ru: "Пусть рядом с тобой будут люди, после которых не становится тяжелее. Те, с кем можно быть собой, смеяться, молчать и не объяснять каждую мелочь.",
       en: "I hope you have people near you who do not make your heart heavier. People with whom you can be yourself, laugh, be quiet, and not explain every little thing.",
-      de: "Ich wünsche dir Menschen in deiner Nähe, nach denen es nicht schwerer wird. Menschen, bei denen du du selbst sein kannst, lachen, schweigen und nicht alles erklären musst."
+      de: "Ich wünsche dir Menschen, bei denen sich das Leben leichter anfühlt. Menschen, bei denen du du selbst sein, lachen und schweigen kannst, ohne alles erklären zu müssen."
     }
   },
   {
@@ -106,7 +106,7 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 42,
     title: {
       ru: "Не сомневаться в красоте",
-      en: "No doubts about your beauty",
+      en: "Fewer doubts about your beauty",
       de: "Keine Zweifel an deiner Schönheit"
     },
     text: {
@@ -121,8 +121,8 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 50,
     title: {
       ru: "Смелости для мечт",
-      en: "Courage for dreams",
-      de: "Mut für Träume"
+      en: "Courage to dream",
+      de: "Mut für deine Träume"
     },
     text: {
       ru: "Пусть у тебя хватает смелости хотеть большего. Не обязательно всем сразу рассказывать, просто внутри знать: я могу, я попробую, я достойна.",
@@ -137,12 +137,12 @@ export const birthdayWishes: BirthdayWish[] = [
     title: {
       ru: "Дней без лишней тревоги",
       en: "Days with less worry",
-      de: "Tage mit weniger Sorge"
+      de: "Tage mit weniger Sorgen"
     },
     text: {
       ru: "Пусть тревога не забирает у тебя настроение. Я хочу, чтобы в твоей голове чаще было тихо и мягко, а не бесконечное “а вдруг”.",
       en: "I hope worry does not steal your mood. I want your mind to feel quiet and soft more often, instead of endless what ifs.",
-      de: "Ich wünsche dir, dass Sorgen dir nicht die Stimmung nehmen. In deinem Kopf soll es öfter ruhig und weich sein, nicht voller Was-wäre-wenn."
+      de: "Ich wünsche dir, dass Sorgen dir nicht die Stimmung nehmen. In deinem Kopf soll es öfter ruhig und leicht sein, statt voller Was-wäre-wenn-Gedanken."
     }
   },
   {
@@ -151,8 +151,8 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 72,
     title: {
       ru: "Чувствовать любовь",
-      en: "Feeling loved",
-      de: "Liebe spüren"
+      en: "Feel loved",
+      de: "Sich geliebt fühlen"
     },
     text: {
       ru: "Пусть ты всегда чувствуешь, что тебя любят не за идеальность. Не за оценки, не за настроение, не за удобность, а просто потому что ты — это ты.",
@@ -172,7 +172,7 @@ export const birthdayWishes: BirthdayWish[] = [
     text: {
       ru: "Хочу, чтобы в твоей жизни было больше нежности. В словах, в объятиях, в заботе, в мелочах. Такой, от которой становится спокойно.",
       en: "I want your life to have more tenderness. In words, hugs, care, and small things. The kind that makes you feel calm.",
-      de: "Ich wünsche dir mehr Zärtlichkeit im Leben. In Worten, Umarmungen, Fürsorge und Kleinigkeiten. So eine, die ruhig macht."
+      de: "Ich wünsche dir mehr Zärtlichkeit im Leben. In Worten, Umarmungen, Fürsorge und Kleinigkeiten. Eine Zärtlichkeit, die dir Ruhe gibt."
     }
   },
   {
@@ -196,7 +196,7 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 76,
     title: {
       ru: "Смеяться до боли в щеках",
-      en: "Laughing until your cheeks hurt",
+      en: "Laughter until your cheeks hurt",
       de: "Lachen, bis die Wangen weh tun"
     },
     text: {
@@ -211,7 +211,7 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 67,
     title: {
       ru: "Беречь своё сердце",
-      en: "Protecting your heart",
+      en: "Protect your heart",
       de: "Dein Herz schützen"
     },
     text: {
@@ -226,13 +226,13 @@ export const birthdayWishes: BirthdayWish[] = [
     y: 86,
     title: {
       ru: "Быть счастливой по-своему",
-      en: "Being happy your own way",
+      en: "Happiness on your own terms",
       de: "Auf deine Art glücklich sein"
     },
     text: {
       ru: "Самое главное: я хочу, чтобы ты была счастливой именно по-своему. Не как “надо”, не как кто-то сказал, а так, чтобы внутри было честное: да, мне хорошо 💜",
       en: "Most of all, I want you to be happy in your own way. Not the way people say you should be, but in a way that feels honestly good inside 💜",
-      de: "Am wichtigsten: Ich wünsche dir, dass du auf deine eigene Art glücklich bist. Nicht so, wie andere es sagen, sondern so, dass es innen ehrlich gut ist 💜"
+      de: "Am wichtigsten ist mir, dass du auf deine eigene Art glücklich bist. Nicht so, wie andere es erwarten, sondern so, dass du ehrlich sagen kannst: Ja, mir geht es gut 💜"
     }
   }
 ];

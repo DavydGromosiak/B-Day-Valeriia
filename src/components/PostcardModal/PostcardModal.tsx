@@ -29,7 +29,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
     <AnimatePresence>
       <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <motion.article className="postcard-modal" initial={{ rotateY: 65, opacity: 0, scale: 0.88 }} animate={{ rotateY: 0, opacity: 1, scale: 1 }} transition={{ type: "spring", damping: 20 }}>
-          <button className="icon-button modal-close" onClick={onClose} aria-label={tr(ui.close)}><X size={19} /></button>
+          <button type="button" className="icon-button modal-close" onClick={onClose} aria-label={tr(ui.close)}><X size={19} /></button>
           <AnimatePresence mode="wait">
             <motion.div
               className="postcard-media"
@@ -39,7 +39,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
               exit={{ opacity: 0, x: 18, scale: 0.98 }}
               transition={{ duration: 0.24 }}
             >
-              <SmartImage src={card.image} alt={tr(card.title)} objectPosition={card.objectPosition} />
+              <SmartImage src={card.image} alt={tr(card.title)} objectPosition={card.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
             </motion.div>
           </AnimatePresence>
           <AnimatePresence mode="wait">
@@ -57,8 +57,8 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
             </motion.div>
           </AnimatePresence>
           <div className="postcard-actions">
-            <button className="ghost-button" onClick={() => move(-1)}>{tr(ui.previous)}</button>
-            <button className="ghost-button" onClick={() => move(1)}>{tr(ui.next)}</button>
+            <button type="button" className="ghost-button" onClick={() => move(-1)}>{tr(ui.previous)}</button>
+            <button type="button" className="ghost-button" onClick={() => move(1)}>{tr(ui.next)}</button>
           </div>
         </motion.article>
       </motion.div>

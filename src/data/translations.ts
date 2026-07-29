@@ -33,8 +33,8 @@ export const t = {
   expandPlayer: { ru: "Открыть плеер", en: "Open player", de: "Player öffnen" },
   loadingReasons: {
     ru: "Загружаю причины, почему ты стала для меня такой дорогой...",
-    en: "Loading the reasons why you became so precious to me...",
-    de: "Ich lade die Gründe, warum du mir so kostbar geworden bist..."
+    en: "Loading the reasons why you became so important to me...",
+    de: "Ich lade die Gründe, warum du mir so wichtig geworden bist..."
   },
   skipIntro: { ru: "Пропустить вступление", en: "Skip intro", de: "Intro überspringen" },
   loaded100: { ru: "100 причин загружено", en: "100 reasons loaded", de: "100 Gründe wurden geladen" },
@@ -61,9 +61,9 @@ export const t = {
   heartCenterTop: { ru: "С 15-ЛЕТИЕМ", en: "HAPPY 15TH BIRTHDAY", de: "ALLES GUTE ZUM 15. GEBURTSTAG" },
   heartCenterName: { ru: "ЛЕРУСЯ", en: "MY LOVE", de: "MEINE LIEBE" },
   heartCenterBottom: {
-    ru: "ТЫ ОЧЕНЬ ДОРОГА МНЕ",
-    en: "YOU MEAN SO MUCH TO ME",
-    de: "DU BEDEUTEST MIR SEHR VIEL"
+    ru: "С ДНЁМ РОЖДЕНИЯ",
+    en: "HAPPY BIRTHDAY",
+    de: "ALLES GUTE ZUM GEBURTSTAG"
   },
   startJourney: { ru: "Начать наше путешествие", en: "Start our journey", de: "Unsere Reise beginnen" },
   navHome: { ru: "Главная", en: "Home", de: "Start" },
@@ -72,7 +72,7 @@ export const t = {
   navPhotos: { ru: "Твои фото", en: "Your photos", de: "Deine Fotos" },
   navWords: { ru: "100 слов о тебе", en: "100 words about you", de: "100 Worte über dich" },
   navWishes: { ru: "15 желаний", en: "15 wishes", de: "15 Wünsche" },
-  navLetter: { ru: "Главное поздравление", en: "Main letter", de: "Hauptbrief" },
+  navLetter: { ru: "Главное поздравление", en: "Birthday letter", de: "Geburtstagsbrief" },
   navParents: { ru: "Родителям", en: "To her parents", de: "An ihre Eltern" },
   navFinal: { ru: "Финал", en: "Finale", de: "Finale" },
   restartIntro: { ru: "Повторить вступление", en: "Replay intro", de: "Intro wiederholen" },
@@ -87,6 +87,11 @@ export const t = {
   allReasons: { ru: "Все причины", en: "All reasons", de: "Alle Gründe" },
   favorite: { ru: "Отметить сердечком", en: "Mark with a heart", de: "Mit Herz markieren" },
   libraryTitle: { ru: "Библиотека моих чувств", en: "Library of my feelings", de: "Bibliothek meiner Gefühle" },
+  libraryKicker: {
+    ru: "письма / открытки / маленькие истории",
+    en: "letters / postcards / tiny stories",
+    de: "Briefe / Postkarten / kleine Geschichten"
+  },
   allCards: { ru: "Все", en: "All", de: "Alle" },
   songShelfTeaser: {
     ru: "Открыть секретную музыкальную полку",
@@ -100,12 +105,14 @@ export const t = {
   },
   songShelfNote: {
     ru: "Здесь не скопированные lyrics, а смысловые урывки из популярных песен: что я в них слышу и почему они напоминают мне о тебе.",
-    en: "These are not copied lyrics, but meaning-inspired parts from popular songs: what I hear in them and why they remind me of you.",
-    de: "Das sind keine kopierten Songtexte, sondern sinngemäße Ausschnitte aus bekannten Liedern: was ich darin höre und warum sie mich an dich erinnern."
+    en: "These are not copied lyrics, but my own takes on parts of popular songs: what I hear in them and why they remind me of you.",
+    de: "Das sind keine kopierten Songtexte, sondern meine eigenen Gedanken zu Stellen aus bekannten Liedern: was ich darin höre und warum sie mich an dich erinnern."
   },
   inspiredBy: { ru: "вайб", en: "vibe", de: "Stimmung" },
   songFragmentLabel: { ru: "смысл урывка", en: "meaning of the part", de: "Sinn der Stelle" },
   songWhyLabel: { ru: "почему именно он", en: "why this one", de: "warum genau das" },
+  listenOnSpotify: { ru: "Открыть в Spotify", en: "Open on Spotify", de: "Auf Spotify öffnen" },
+  listenOnYoutube: { ru: "Открыть на YouTube", en: "Open on YouTube", de: "Auf YouTube öffnen" },
   categories: {
     birthday: { ru: "Поздравления", en: "Birthday wishes", de: "Glückwünsche" },
     love: { ru: "Почему я тебя люблю", en: "Why I love you", de: "Warum ich dich liebe" },
@@ -117,15 +124,17 @@ export const t = {
   close: { ru: "Закрыть", en: "Close", de: "Schließen" },
   photosTitle: {
     ru: "Твои фотографии, которые мне особенно понравились",
-    en: "Your photos that I especially loved",
+    en: "Your photos that I especially liked",
     de: "Deine Fotos, die mir besonders gefallen"
   },
+  photosKicker: { ru: "созвездие фотографий", en: "photo constellation", de: "Fotokonstellation" },
   photoPlaceholder: { ru: "Добавь фотографию сюда", en: "Add a photo here", de: "Füge hier ein Foto hinzu" },
   wordsTitle: {
     ru: "100 слов, которыми я хочу описать тебя",
     en: "100 words I would use to describe you",
     de: "100 Worte, mit denen ich dich beschreiben würde"
   },
+  wordsKicker: { ru: "созвездие о тебе", en: "constellation of you", de: "deine Konstellation" },
   wordsIntro: {
     ru: "Ещё не придумали такого комплимента,\nкоторый мог бы полностью тебя описать\n\nИ даже 100 слов или даже 1000 —\nслишком мало, чтобы передать,\nнасколько ты потрясающая 💜🧸",
     en: "No compliment has been invented yet\nthat could fully describe you\n\nAnd even 100 words, or even 1,000,\nwould be too little to express\nhow wonderful you are 💜🧸",
@@ -133,7 +142,7 @@ export const t = {
   },
   wishesTitle: {
     ru: "15 звёзд-желаний для тебя",
-    en: "15 wish-stars for you",
+    en: "15 wishing stars for you",
     de: "15 Wunschsterne für dich"
   },
   wishesIntro: {
@@ -153,12 +162,12 @@ export const t = {
   wishesCompleteText: {
     ru: "И всё равно это только маленькая часть того, чего я хочу для тебя: чтобы ты чаще улыбалась, верила в себя и чувствовала, что ты очень-очень любимая 💜",
     en: "And still, this is only a small part of what I want for you: to smile more often, believe in yourself, and feel very, very loved 💜",
-    de: "Und trotzdem ist das nur ein kleiner Teil von dem, was ich dir wünsche: öfter lächeln, an dich glauben und dich sehr, sehr geliebt fühlen 💜"
+    de: "Und trotzdem ist das nur ein kleiner Teil von dem, was ich dir wünsche: dass du öfter lächelst, an dich glaubst und dich sehr, sehr geliebt fühlst 💜"
   },
   finalText: {
     ru: "В твой 15-й день рождения я мог бы написать ещё тысячу причин\nсоздать ещё сотню открыток\nи подобрать ещё миллион красивых слов\n\nНо всё равно не смог бы полностью объяснить,\nнасколько сильно ты мне дорога\n\nПоэтому скажу самое главное\n\nЯ люблю тебя, Леруся 💜",
     en: "On your 15th birthday, I could write another thousand reasons\ncreate a hundred more letters\nand find a million beautiful words\n\nBut I still could not fully explain\nhow much you mean to me\n\nSo I will say the most important thing\n\nI love you, Valeriia 💜",
-    de: "Zu deinem 15. Geburtstag könnte ich noch tausend Gründe aufschreiben\nnoch hundert Briefe erstellen\nund eine Million schöne Worte finden\n\nTrotzdem könnte ich nie vollständig erklären,\nwie viel du mir bedeutest\n\nDeshalb sage ich nur das Wichtigste\n\nIch liebe dich, Valeriia 💜"
+    de: "Zu deinem 15. Geburtstag könnte ich noch tausend Gründe aufschreiben\nnoch hundert Briefe schreiben\nund eine Million schöne Worte finden\n\nTrotzdem könnte ich nie vollständig erklären,\nwie viel du mir bedeutest\n\nDeshalb sage ich nur das Wichtigste\n\nIch liebe dich, Valeriia 💜"
   },
   touchHeart: { ru: "Нажми на сердечко", en: "Touch the heart", de: "Berühre das Herz" },
   finalSignature: {

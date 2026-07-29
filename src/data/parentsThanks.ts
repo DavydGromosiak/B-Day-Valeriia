@@ -4,6 +4,7 @@ export const parentsThanks: {
   kicker: LocalizedString;
   title: LocalizedString;
   subtitle: LocalizedString;
+  constellation: LocalizedString;
   recipient: LocalizedString;
   openButton: LocalizedString;
   closeButton: LocalizedString;
@@ -12,9 +13,9 @@ export const parentsThanks: {
   values: { title: LocalizedString; text: LocalizedString }[];
 } = {
   kicker: {
-    ru: "a quiet thank you",
+    ru: "тихое спасибо",
     en: "a quiet thank you",
-    de: "ein leises danke"
+    de: "ein leises Danke"
   },
   title: {
     ru: "Спасибо за Леру",
@@ -23,8 +24,13 @@ export const parentsThanks: {
   },
   subtitle: {
     ru: "Эта часть не громкая, но очень важная. Потому что за самым светлым человеком всегда стоят те, кто дал ей дом, тепло и любовь.",
-    en: "This part is not loud, but it matters deeply. Because behind such a bright person are the people who gave her home, warmth, and love.",
-    de: "Dieser Teil ist nicht laut, aber sehr wichtig. Denn hinter einem so hellen Menschen stehen die Menschen, die ihr Zuhause, Wärme und Liebe gegeben haben."
+    en: "This is a quiet part, but it matters deeply. Behind such a wonderful person are the people who gave her a home, warmth, and love.",
+    de: "Dieser Teil ist leise, aber sehr wichtig. Denn hinter einem so wunderbaren Menschen stehen die Menschen, die ihr ein Zuhause, Wärme und Liebe gegeben haben."
+  },
+  constellation: {
+    ru: "семейное созвездие",
+    en: "family constellation",
+    de: "Familienkonstellation"
   },
   recipient: {
     ru: "Виталию и Елене",
@@ -42,14 +48,14 @@ export const parentsThanks: {
     de: "Brief einklappen"
   },
   letter: {
-    ru: "Виталию и Елене\n\nХочется сказать вам отдельное спасибо.\n\nСпасибо за Леру — за её доброту, характер, улыбку, за её тепло и за ту светлую энергию, которую она приносит рядом с собой.\n\nВ ней есть очень много прекрасного: нежность, искренность, умение заботиться, живость, красота не только внешняя, но и внутренняя. И я понимаю, что такие вещи не появляются просто так.\n\nЗа этим стоят люди, которые любили, берегли, поддерживали, учили быть настоящей и давали ей ощущение дома.\n\nСпасибо вам за то, что воспитали такую замечательную дочь. За то, что в ней столько света, тепла и силы. За то, что она умеет быть собой.\n\nЯ правда очень ценю Леру. И мне важно, чтобы в этой маленькой вселенной было место не только моим чувствам к ней, но и благодарности людям, благодаря которым она такая особенная.",
-    en: "To Vitalii and Elena\n\nI want to say a separate thank you to you.\n\nThank you for Valeriia: for her kindness, her character, her smile, her warmth, and the bright energy she brings with her.\n\nThere is so much beauty in her: tenderness, sincerity, the ability to care, life, and beauty not only on the outside, but also within. And I understand that things like that do not appear out of nowhere.\n\nBehind them are people who loved her, protected her, supported her, taught her to be real, and gave her the feeling of home.\n\nThank you for raising such a wonderful daughter. Thank you for the light, warmth, and strength she carries. Thank you for helping her become herself.\n\nI truly value Valeriia. And it matters to me that this little universe has space not only for my feelings for her, but also for gratitude to the people who helped make her so special.",
-    de: "An Vitalii und Elena\n\nIch möchte Ihnen ein eigenes Danke sagen.\n\nDanke für Valeriia: für ihre Güte, ihren Charakter, ihr Lächeln, ihre Wärme und die helle Energie, die sie mitbringt.\n\nIn ihr ist so viel Schönes: Zärtlichkeit, Aufrichtigkeit, die Fähigkeit, sich zu kümmern, Lebendigkeit und Schönheit nicht nur von außen, sondern auch von innen. Und ich weiß, dass solche Dinge nicht einfach aus dem Nichts entstehen.\n\nDahinter stehen Menschen, die sie geliebt, beschützt, unterstützt, ihr Echtheit gezeigt und ihr das Gefühl von Zuhause gegeben haben.\n\nDanke, dass Sie eine so wunderbare Tochter großgezogen haben. Danke für das Licht, die Wärme und die Stärke, die sie in sich trägt. Danke, dass sie sie selbst sein darf.\n\nIch schätze Valeriia wirklich sehr. Und mir ist wichtig, dass in diesem kleinen Universum nicht nur Platz für meine Gefühle zu ihr ist, sondern auch für Dankbarkeit gegenüber den Menschen, durch die sie so besonders geworden ist."
+    ru: "Виталию и Елене\n\nХочется отдельно поблагодарить вас за труд, время, любовь и тепло, которые вы вложили в воспитание такой замечательной девушки\n\nХотя мы пока не знакомы лично, мне всё же хотелось сказать вам эти слова\nПо тому, какой я вижу Леру, я понимаю, сколько любви, заботы и сил вы вложили в её воспитание\n\nСпасибо вам за Леру — за её доброту, характер, улыбку и тот свет, который она приносит в жизнь окружающих\n\nВ ней удивительно сочетаются нежность и сила, искренность и умение заботиться о других, красота не только внешняя, но и внутренняя\n\nЯ понимаю, что все эти качества появились в ней не просто так\nЗа ними стоят люди, которые любили её, поддерживали, оберегали, учили доброте и всегда старались быть рядом\n\nСпасибо вам за то, что подарили ей столько тепла, которым теперь она делится с другими\n\nЯ искренне дорожу Лерой\nИ мне важно сказать спасибо не только ей, но и вам — за любовь, заботу и воспитание, благодаря которым она стала именно той Лерой, которую я так сильно ценю\n\nМне также важно, чтобы вы знали: я отношусь к ней с искренним уважением, стараюсь поддерживать её, быть рядом и бережно относиться к доверию, которое есть между нами\n\nОт всей души желаю вашей семье здоровья, счастья, взаимопонимания и как можно больше тёплых моментов, проведённых вместе\n\nНадеюсь, что однажды мы сможем познакомиться лично и, возможно, когда-нибудь я тоже стану частью вашей семьи",
+    en: "To Vitalii and Elena\n\nI would like to thank you especially for all the effort, time, love, and warmth you put into raising such a wonderful young woman\n\nAlthough we have not met in person yet, I still wanted to say these words to you\nFrom the person I see in Valeriia, I understand how much love, care, and energy you put into raising her\n\nThank you for Valeriia — for her kindness, her character, her smile, and the light she brings into the lives of those around her\n\nShe has a wonderful combination of tenderness and strength, sincerity and care for others, and beauty both inside and out\n\nI understand that all these qualities did not appear by themselves\nBehind them are people who loved her, supported and protected her, taught her kindness, and always tried to be there for her\n\nThank you for giving her so much warmth, which she now shares with others\n\nI truly cherish Valeriia\nIt is important to me to thank not only her, but also you — for the love, care, and upbringing that helped her become the Valeriia I value so deeply\n\nI also want you to know that I treat her with sincere respect, try to support her, stay by her side, and treasure the trust we share\n\nWith all my heart, I wish your family health, happiness, mutual understanding, and as many warm moments together as possible\n\nI hope that one day we can meet in person and that perhaps, someday, I too may become part of your family",
+    de: "An Vitalii und Elena\n\nIch möchte Ihnen besonders für all die Mühe, Zeit, Liebe und Wärme danken, die Sie in die Erziehung einer so wunderbaren jungen Frau gesteckt haben\n\nObwohl wir uns noch nicht persönlich kennen, wollte ich Ihnen diese Worte trotzdem sagen\nWenn ich sehe, was für ein Mensch Valeriia ist, verstehe ich, wie viel Liebe, Fürsorge und Kraft Sie in ihre Erziehung investiert haben\n\nDanke für Valeriia — für ihre Güte, ihren Charakter, ihr Lächeln und das Licht, das sie in das Leben der Menschen um sie herum bringt\n\nIn ihr verbinden sich auf besondere Weise Zärtlichkeit und Stärke, Aufrichtigkeit und die Fähigkeit, für andere da zu sein, sowie äußere und innere Schönheit\n\nIch weiß, dass all diese Eigenschaften nicht einfach so entstanden sind\nDahinter stehen Menschen, die sie geliebt, unterstützt und beschützt haben, ihr Güte beigebracht und immer versucht haben, für sie da zu sein\n\nDanke, dass Sie ihr so viel Wärme geschenkt haben, die sie heute mit anderen teilt\n\nValeriia bedeutet mir sehr viel\nMir ist wichtig, nicht nur ihr, sondern auch Ihnen Danke zu sagen — für die Liebe, Fürsorge und Erziehung, durch die sie zu genau der Valeriia geworden ist, die ich so sehr schätze\n\nMir ist außerdem wichtig, dass Sie wissen: Ich begegne ihr mit aufrichtigem Respekt, versuche sie zu unterstützen, für sie da zu sein und sorgsam mit dem Vertrauen umzugehen, das zwischen uns besteht\n\nVon Herzen wünsche ich Ihrer Familie Gesundheit, Glück, gegenseitiges Verständnis und so viele schöne gemeinsame Momente wie möglich\n\nIch hoffe, dass wir uns eines Tages persönlich kennenlernen können und dass vielleicht auch ich irgendwann Teil Ihrer Familie werde"
   },
   signature: {
-    ru: "С уважением и тёплой благодарностью, Давид 💜",
-    en: "With respect and warm gratitude, Davyd 💜",
-    de: "Mit Respekt und warmer Dankbarkeit, Davyd 💜"
+    ru: "С уважением и искренней благодарностью,\nДавид 💜",
+    en: "With respect and sincere gratitude,\nDavyd 💜",
+    de: "Mit Respekt und aufrichtiger Dankbarkeit,\nDavyd 💜"
   },
   values: [
     {
@@ -64,8 +70,8 @@ export const parentsThanks: {
       title: { ru: "За её характер", en: "For her character", de: "Für ihren Charakter" },
       text: {
         ru: "За то, что она живая, настоящая и умеет быть собой.",
-        en: "For the way she is alive, real, and able to be herself.",
-        de: "Dafür, dass sie lebendig, echt und sie selbst sein kann."
+        en: "For being lively, genuine, and completely herself.",
+        de: "Dafür, dass sie lebendig und echt ist und ganz sie selbst sein kann."
       }
     },
     {
@@ -81,14 +87,14 @@ export const parentsThanks: {
       text: {
         ru: "За то, как она умеет заботиться и чувствовать.",
         en: "For the way she knows how to care and feel.",
-        de: "Dafür, wie sie sorgen und fühlen kann."
+        de: "Dafür, wie aufmerksam sie fühlt und für andere da ist."
       }
     },
     {
       title: { ru: "За её свет", en: "For her light", de: "Für ihr Licht" },
       text: {
         ru: "В ней есть что-то, что хочется беречь.",
-        en: "There is something in her that makes you want to protect it.",
+        en: "There is something in her that makes you want to protect her.",
         de: "In ihr ist etwas, das man behüten möchte."
       }
     },
