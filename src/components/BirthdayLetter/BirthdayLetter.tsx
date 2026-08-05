@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Heart, MailOpen, Sparkles, X } from "lucide-react";
+import { ArrowDown, BookOpen, Heart, MailOpen, Sparkles, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { birthdayLetter } from "../../data/birthdayLetter";
 import { LocalizedString } from "../../data/translations";
@@ -46,13 +46,49 @@ const letterUi = {
     ru: "письмо открыто",
     en: "letter opened",
     de: "brief geöffnet"
+  },
+  contents: {
+    ru: "Главы письма",
+    en: "Letter chapters",
+    de: "Briefkapitel"
+  },
+  chapter: {
+    ru: "Глава",
+    en: "Chapter",
+    de: "Kapitel"
+  },
+  nextChapter: {
+    ru: "Следующая глава",
+    en: "Next chapter",
+    de: "Nächstes Kapitel"
+  },
+  readingProgress: {
+    ru: "Прочитано",
+    en: "Read",
+    de: "Gelesen"
   }
 } satisfies Record<string, LocalizedString>;
 
 export function BirthdayLetter({ tr }: Props) {
   const [open, setOpen] = useState(false);
+  const [activeChapter, setActiveChapter] = useState(0);
+  const [readingProgress, setReadingProgress] = useState(0);
   const openedLetterRef = useRef<HTMLElement | null>(null);
+  const chapterRefs = useRef<Array<HTMLElement | null>>([]);
+  const readingFrameRef = useRef<number | null>(null);
   const letterBlocks = tr(birthdayLetter.body).split(/\n{2,}/);
+  const introBlocks: string[] = [];
+  const chapters: Array<{ title: string; paragraphs: string[] }> = [];
+
+  letterBlocks.forEach((block) => {
+    if (block.startsWith("## ")) {
+      chapters.push({ title: block.slice(3), paragraphs: [] });
+    } else if (chapters.length === 0) {
+      introBlocks.push(block);
+    } else {
+      chapters[chapters.length - 1].paragraphs.push(block);
+    }
+  });
 
   useEffect(() => {
     if (!open) return;
@@ -61,6 +97,64 @@ export function BirthdayLetter({ tr }: Props) {
     }, 260);
     return () => window.clearTimeout(timer);
   }, [open]);
+
+  useEffect(() => {
+    if (!open) {
+      setActiveChapter(0);
+      setReadingProgress(0);
+      return;
+    }
+
+    const updateReadingState = () => {
+      const letter = openedLetterRef.current;
+      if (!letter) return;
+
+      const rect = letter.getBoundingClientRect();
+      const travel = Math.max(rect.height - window.innerHeight * 0.55, 1);
+      const progress = Math.min(1, Math.max(0, (window.innerHeight * 0.22 - rect.top) / travel));
+      setReadingProgress(progress);
+
+      const readingLine = window.innerHeight * 0.38;
+      let current = 0;
+      chapterRefs.current.forEach((chapter, index) => {
+        if (chapter && chapter.getBoundingClientRect().top <= readingLine) current = index;
+      });
+      setActiveChapter(current);
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    const scheduleReadingState = () => {
+      if (readingFrameRef.current !== null) return;
+      readingFrameRef.current = window.requestAnimationFrame(() => {
+        readingFrameRef.current = null;
+        updateReadingState();
+      });
+    };
+
+    updateReadingState();
+    window.addEventListener("scroll", scheduleReadingState, { passive: true });
+    window.addEventListener("resize", scheduleReadingState);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("scroll", scheduleReadingState);
+      window.removeEventListener("resize", scheduleReadingState);
+      window.removeEventListener("keydown", closeOnEscape);
+      if (readingFrameRef.current !== null) {
+        window.cancelAnimationFrame(readingFrameRef.current);
+        readingFrameRef.current = null;
+      }
+    };
+  }, [open, chapters.length]);
+
+  const scrollToChapter = (index: number) => {
+    chapterRefs.current[index]?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
+  };
 
   return (
     <section id="letter" className={`page-section letter-section ${open ? "is-open" : ""}`}>
@@ -118,15 +212,73 @@ export function BirthdayLetter({ tr }: Props) {
                     <X size={16} /> {tr(letterUi.close)}
                   </button>
                 </div>
-                <h2>{tr(birthdayLetter.title)}</h2>
+                <div className="letter-reading-progress" aria-label={`${tr(letterUi.readingProgress)} ${Math.round(readingProgress * 100)}%`}>
+                  <span>{tr(letterUi.readingProgress)}</span>
+                  <i><b style={{ transform: `scaleX(${readingProgress})` }} /></i>
+                  <strong>{Math.round(readingProgress * 100)}%</strong>
+                </div>
+                <header className="letter-title-block">
+                  <span><Heart size={16} fill="currentColor" /> 15</span>
+                  <h2>{tr(birthdayLetter.title)}</h2>
+                </header>
+                <div className="letter-intro-copy">
+                  {introBlocks.map((block, index) => <p key={`${block}-${index}`}>{block}</p>)}
+                </div>
+
+                <nav className="letter-chapter-nav" aria-label={tr(letterUi.contents)}>
+                  <div className="letter-chapter-nav-title">
+                    <BookOpen size={17} />
+                    <span>{tr(letterUi.contents)}</span>
+                  </div>
+                  <div className="letter-chapter-links">
+                    {chapters.map((chapter, index) => (
+                      <button
+                        key={chapter.title}
+                        className={activeChapter === index ? "active" : ""}
+                        onClick={() => scrollToChapter(index)}
+                        aria-current={activeChapter === index ? "step" : undefined}
+                        title={chapter.title}
+                      >
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <strong>{chapter.title}</strong>
+                      </button>
+                    ))}
+                  </div>
+                </nav>
+
                 <div className="letter-body">
-                  {letterBlocks.map((block, index) => block.startsWith("## ") ? (
-                    <h3 key={`${block}-${index}`}>{block.slice(3)}</h3>
-                  ) : (
-                    <p key={`${block}-${index}`}>{block}</p>
+                  {chapters.map((chapter, index) => (
+                    <motion.section
+                      key={chapter.title}
+                      ref={(node) => { chapterRefs.current[index] = node; }}
+                      className={`letter-chapter ${activeChapter === index ? "is-active" : ""}`}
+                      initial={{ opacity: 0, y: 26 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.08 }}
+                      transition={{ duration: 0.55, ease: [0.2, 0.8, 0.2, 1] }}
+                    >
+                      <div className="letter-chapter-heading">
+                        <span>{tr(letterUi.chapter)} {String(index + 1).padStart(2, "0")}</span>
+                        <h3>{chapter.title}</h3>
+                      </div>
+                      <div className="letter-chapter-copy">
+                        {chapter.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p key={`${paragraph}-${paragraphIndex}`}>{paragraph}</p>
+                        ))}
+                      </div>
+                      {index < chapters.length - 1 && (
+                        <button className="letter-next-chapter" onClick={() => scrollToChapter(index + 1)}>
+                          <span>{tr(letterUi.nextChapter)}</span>
+                          <ArrowDown size={17} />
+                        </button>
+                      )}
+                    </motion.section>
                   ))}
                 </div>
-                <strong className="letter-closing">{tr(birthdayLetter.closing)}</strong>
+                <div className="letter-closing">
+                  <Heart size={22} fill="currentColor" aria-hidden="true" />
+                  <strong>{tr(birthdayLetter.closing)}</strong>
+                </div>
               </motion.article>
             )}
           </AnimatePresence>
