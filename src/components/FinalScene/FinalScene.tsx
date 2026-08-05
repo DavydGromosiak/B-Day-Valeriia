@@ -7,9 +7,22 @@ import { LocalizedString } from "../../data/translations";
 
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
+const finalPhotoPaths = [
+  "/photos/59.jpg",
+  "/photos/65.jpg",
+  "/photos/64.jpg",
+  "/photos/69.jpg",
+  "/photos/61.jpg",
+  "/photos/72.jpg",
+  "/photos/67.jpg",
+  "/photos/68.jpg",
+];
+
 export function FinalScene({ tr, ui }: Props) {
   const [done, setDone] = useState(false);
-  const finalPhotos = photos.slice(0, 8);
+  const finalPhotos = finalPhotoPaths
+    .map((path) => photos.find((photo) => photo.src === path))
+    .filter((photo): photo is (typeof photos)[number] => Boolean(photo));
   const finalParagraphs = tr(ui.finalText).split("\n\n");
   const heartRain = Array.from({ length: 72 }, (_, index) => ({
     left: `${2 + ((index * 37) % 96)}%`,
