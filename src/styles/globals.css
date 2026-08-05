@@ -2585,7 +2585,10 @@ input[type="range"] {
   filter: saturate(1.08);
   transform: translateZ(0);
   backface-visibility: hidden;
+  animation: finalPhotoDrift var(--float-duration, 8s) ease-in-out var(--float-delay, 0s) infinite alternate;
+  will-change: transform, opacity;
 }
+.final-photo-dust span:nth-child(even) { animation-direction: alternate-reverse; }
 .final-photo-dust span:nth-child(1) { left: 13%; top: 18%; rotate: -16deg; }
 .final-photo-dust span:nth-child(2) { right: 12%; top: 23%; rotate: 12deg; }
 .final-photo-dust span:nth-child(3) { left: 22%; bottom: 18%; rotate: 9deg; }
@@ -2620,14 +2623,36 @@ input[type="range"] {
     radial-gradient(circle at 50% 60%, rgba(255, 107, 158, 0.12), transparent 42%);
   filter: blur(8px);
   z-index: -1;
+  animation: finalAuraBreath 4.6s ease-in-out infinite;
+  will-change: transform, opacity;
 }
+.final-pulse-rings {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 0;
+  width: min(72vw, 680px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+.final-pulse-rings span {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 185, 224, 0.2);
+  box-shadow: 0 0 30px rgba(255, 79, 163, 0.08), inset 0 0 28px rgba(157, 78, 221, 0.06);
+  opacity: 0;
+  animation: finalRingWave 4.8s ease-out infinite;
+}
+.final-pulse-rings span:nth-child(2) { animation-delay: 1.6s; }
+.final-pulse-rings span:nth-child(3) { animation-delay: 3.2s; }
 .final-orbit {
   position: absolute;
   inset: 50% auto auto 50%;
   z-index: 1;
   width: 1px;
   height: 1px;
-  animation: heartPulse 6.2s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+  animation: finalOrbitBreath 5.4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
@@ -2639,9 +2664,11 @@ input[type="range"] {
   background: transparent;
   border: 0;
   box-shadow: none;
-  opacity: 0.55;
+  opacity: 0.42;
   filter: none;
   text-shadow: 0 0 12px rgba(255,79,163,0.8);
+  animation: finalOrbitTwinkle 2.8s ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
 }
 .final-orbit span:nth-child(3n) { color: var(--pink); }
 .final-orbit span:nth-child(3n + 2) { color: var(--rose); }
@@ -2654,6 +2681,18 @@ input[type="range"] {
   line-height: 1.48;
   color: rgba(255, 248, 252, 0.9);
   text-shadow: 0 0 28px rgba(255, 79, 163, 0.24);
+}
+.final-text p {
+  margin: 0;
+  white-space: pre-line;
+}
+.final-text p + p {
+  margin-top: 1.3em;
+}
+.final-text p:last-child {
+  color: var(--white);
+  font-weight: 650;
+  text-shadow: 0 0 24px rgba(255,79,163,0.52);
 }
 .heart-action {
   min-width: 210px;
@@ -2670,11 +2709,29 @@ input[type="range"] {
     linear-gradient(135deg, rgba(255, 248, 252, 0.12), rgba(255, 248, 252, 0.035)),
     radial-gradient(circle at 20% 50%, rgba(255, 79, 163, 0.18), transparent 44%);
   background-size: 170% 170%, 170% 170%;
-  animation: softColorFlow 8.5s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  animation:
+    softColorFlow 8.5s ease-in-out infinite,
+    finalButtonBreathe 2.5s ease-in-out infinite;
   box-shadow: 0 18px 52px rgba(255, 79, 163, 0.14), inset 0 1px 0 rgba(255,255,255,0.1);
   backdrop-filter: blur(14px);
   text-shadow: 0 0 20px rgba(255,79,163,0.55);
   will-change: transform, background-position;
+}
+.heart-action::before {
+  content: "";
+  position: absolute;
+  inset: -30% auto -30% -38%;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.42), transparent);
+  transform: skewX(-18deg);
+  animation: finalButtonShine 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.heart-action svg {
+  animation: finalHeartBeat 1.7s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255,79,163,0.72));
 }
 .confetti-layer {
   position: absolute;
@@ -2849,6 +2906,9 @@ input[type="range"] {
 
 @media (max-width: 900px) {
   .side-nav { display: none; }
+  .final-section {
+    padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  }
   .letter-shell {
     grid-template-columns: 1fr;
     align-items: start;
