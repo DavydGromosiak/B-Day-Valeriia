@@ -8,9 +8,12 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
 export function WishConstellation({ tr, ui }: Props) {
-  const [opened, setOpened] = useLocalStorage<number[]>("opened-birthday-wishes-v1", []);
-  const [activeId, setActiveId] = useState(opened[opened.length - 1] ?? birthdayWishes[0].id);
-  const activeWish = useMemo(() => birthdayWishes.find((wish) => wish.id === activeId) ?? birthdayWishes[0], [activeId]);
+  const [opened, setOpened] = useLocalStorage<number[]>("opened-birthday-wishes-v2", []);
+  const [activeId, setActiveId] = useState<number | null>(null);
+  const activeWish = useMemo(
+    () => birthdayWishes.find((wish) => wish.id === activeId) ?? null,
+    [activeId]
+  );
   const openedSet = useMemo(() => new Set(opened), [opened]);
   const allOpened = opened.length === birthdayWishes.length;
 
@@ -23,7 +26,7 @@ export function WishConstellation({ tr, ui }: Props) {
 
   const reset = () => {
     setOpened([]);
-    setActiveId(birthdayWishes[0].id);
+    setActiveId(null);
   };
 
   return (
@@ -42,7 +45,7 @@ export function WishConstellation({ tr, ui }: Props) {
         <div className="wish-sky" data-romantic="true">
           {birthdayWishes.map((wish, index) => {
             const isOpened = openedSet.has(wish.id);
-            const isActive = activeWish.id === wish.id;
+            const isActive = activeWish?.id === wish.id;
             return (
               <motion.button
                 key={wish.id}
@@ -62,24 +65,49 @@ export function WishConstellation({ tr, ui }: Props) {
           })}
         </div>
 
-        <motion.article className="wish-card" layout>
+        <motion.article className={`wish-card ${activeWish ? "is-revealed" : "is-sealed"}`} layout>
           <AnimatePresence mode="wait">
-            <motion.div
-              key={activeWish.id}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.22 }}
-            >
-              <span>{tr(ui.wishNumber)} {String(activeWish.id).padStart(2, "0")}</span>
-              <h3>{tr(activeWish.title)}</h3>
-              <p>{tr(activeWish.text)}</p>
-            </motion.div>
+            {activeWish ? (
+              <motion.div
+                className="wish-message"
+                key={activeWish.id}
+                initial={{ opacity: 0, rotateX: -72, y: -18, scale: 0.94 }}
+                animate={{ opacity: 1, rotateX: 0, y: 0, scale: 1 }}
+                exit={{ opacity: 0, rotateX: 40, y: 12, scale: 0.97 }}
+                transition={{ duration: 0.42, ease: [0.2, 0.8, 0.2, 1] }}
+              >
+                <span>{tr(ui.wishNumber)} {String(activeWish.id).padStart(2, "0")}</span>
+                <h3>{tr(activeWish.title)}</h3>
+                <p>{tr(activeWish.text)}</p>
+              </motion.div>
+            ) : (
+              <motion.div
+                className="wish-sealed"
+                key="sealed-wish"
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9, y: 14 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div
+                  className="wish-seal"
+                  animate={{ scale: [1, 1.06, 1], rotate: [0, 3, 0, -3, 0] }}
+                  transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Star size={28} />
+                </motion.div>
+                <span>{tr(ui.wishesSealedKicker)}</span>
+                <h3>{tr(ui.wishesSealedTitle)}</h3>
+                <p>{tr(ui.wishesSealedText)}</p>
+              </motion.div>
+            )}
           </AnimatePresence>
-          <button className="icon-text-button wish-reset" onClick={reset}>
-            <RotateCcw size={16} />
-            {tr(ui.wishesReset)}
-          </button>
+          {opened.length > 0 && (
+            <button className="icon-text-button wish-reset" onClick={reset}>
+              <RotateCcw size={16} />
+              {tr(ui.wishesReset)}
+            </button>
+          )}
         </motion.article>
       </div>
 

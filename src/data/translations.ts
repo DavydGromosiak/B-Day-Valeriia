@@ -153,6 +153,21 @@ export const t = {
   wishesProgress: { ru: "открыто звёзд", en: "stars opened", de: "Sterne geöffnet" },
   wishesOpenStar: { ru: "Открыть звезду", en: "Open star", de: "Stern öffnen" },
   wishNumber: { ru: "желание", en: "wish", de: "Wunsch" },
+  wishesSealedKicker: {
+    ru: "маленькое послание",
+    en: "a little message",
+    de: "eine kleine Nachricht"
+  },
+  wishesSealedTitle: {
+    ru: "Выбери свою первую звезду",
+    en: "Choose your first star",
+    de: "Wähle deinen ersten Stern"
+  },
+  wishesSealedText: {
+    ru: "Каждая звезда хранит отдельное пожелание для тебя. Нажми на любую — и записка раскроется здесь ✨",
+    en: "Every star holds a different wish for you. Choose any one, and its little note will unfold here ✨",
+    de: "Jeder Stern bewahrt einen eigenen Wunsch für dich. Tippe auf einen, und seine kleine Nachricht öffnet sich hier ✨"
+  },
   wishesReset: { ru: "Открыть заново", en: "Open again", de: "Noch einmal öffnen" },
   wishesCompleteTitle: {
     ru: "Все 15 звёзд открыты",

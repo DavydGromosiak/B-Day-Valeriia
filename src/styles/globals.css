@@ -1826,6 +1826,52 @@ input[type="range"] {
     linear-gradient(145deg, rgba(255, 248, 252, 0.12), rgba(255, 248, 252, 0.045));
   box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.1);
   backdrop-filter: blur(20px);
+  perspective: 900px;
+}
+
+.wish-card.is-sealed {
+  border-style: dashed;
+  border-color: rgba(255, 185, 224, 0.22);
+}
+
+.wish-message {
+  transform-origin: 50% 0;
+  backface-visibility: hidden;
+}
+
+.wish-sealed {
+  min-height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.wish-seal {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  color: var(--white);
+  border: 1px solid rgba(255, 185, 224, 0.34);
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 248, 252, 0.3), transparent 32%),
+    linear-gradient(145deg, rgba(255, 79, 163, 0.34), rgba(157, 78, 221, 0.32));
+  box-shadow:
+    0 0 34px rgba(255, 79, 163, 0.24),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.wish-sealed h3 {
+  max-width: 340px;
+  margin: 2px 0 4px;
+}
+
+.wish-sealed p {
+  max-width: 350px;
 }
 
 .wish-card::before {
