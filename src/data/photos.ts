@@ -9,7 +9,7 @@ export type PhotoItem = {
 
 const l = (ru: string, en: string, de: string): LocalizedString => ({ ru, en, de });
 
-export const photoCount = 63;
+export const photoCount = 73;
 
 const defaultAlt = l("Твоя фотография", "Your photo", "Dein Foto");
 const defaultCaption = l(
@@ -200,10 +200,113 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
       "Unser gemeinsames Foto, das mir wirklich sehr gefällt 🧸💜"
     ),
     objectPosition: "center 42%"
+  },
+  64: {
+    src: "/photos/64.jpg",
+    alt: l("Лера с Мирусей на скамейке", "Valeriia with Mirusya on a bench", "Valeriia mit Mirusya auf einer Bank"),
+    caption: l(
+      "Вы с Мирусей под деревьями, а сердечко руками делает этот кадр особенно тёплым 💜",
+      "You and Mirusya under the trees, and the heart made with your hands makes this photo especially warm 💜",
+      "Du und Mirusya unter den Bäumen, und das Herz mit deinen Händen macht dieses Foto besonders warm 💜"
+    ),
+    objectPosition: "center 42%"
+  },
+  65: {
+    src: "/photos/65.jpg",
+    alt: l("Лера на камне с видом на долину", "Valeriia on a rock overlooking the valley", "Valeriia auf einem Felsen mit Blick ins Tal"),
+    caption: l(
+      "Мне нравится, как ты обернулась к камере, а за тобой осталось всё огромное летнее пространство",
+      "I love how you turned toward the camera while the whole wide summer landscape stretches out behind you",
+      "Ich mag, wie du dich zur Kamera umdrehst, während sich hinter dir die ganze weite Sommerlandschaft öffnet"
+    ),
+    objectPosition: "center 44%"
+  },
+  66: {
+    src: "/photos/66.jpg",
+    alt: l("Лера любуется видом с высоты", "Valeriia enjoying the view from above", "Valeriia genießt die Aussicht von oben"),
+    caption: l(
+      "Ты смотришь на долину, а Виталий на заднем плане добавил фотографии немного настроения 😄",
+      "You are looking over the valley, while Vitalii adds a little extra personality in the background 😄",
+      "Du schaust über das Tal, während Vitalii dem Foto im Hintergrund noch etwas Stimmung gibt 😄"
+    ),
+    objectPosition: "center 44%"
+  },
+  67: {
+    src: "/photos/67.jpg",
+    alt: l("Лера на деревянной лестнице", "Valeriia on a wooden ladder", "Valeriia auf einer Holzleiter"),
+    caption: l(
+      "Очень живой летний кадр: ты забралась наверх и, конечно, успела показать два сердечка руками 🫶🏻",
+      "Such a lively summer photo: you climbed all the way up and still managed to make two hearts with your hands 🫶🏻",
+      "Ein richtig lebendiges Sommerfoto: Du bist ganz nach oben geklettert und hast trotzdem noch zwei Herzen mit den Händen gezeigt 🫶🏻"
+    ),
+    objectPosition: "center 36%"
+  },
+  68: {
+    src: "/photos/68.jpg",
+    alt: l("Лера сидит на камне среди виноградников", "Valeriia sitting on a rock among vineyards", "Valeriia sitzt auf einem Felsen zwischen Weinbergen"),
+    caption: l(
+      "Солнце, зелёные склоны и твой взгляд через плечо — фотография получилась очень красивой и спокойной",
+      "Sunlight, green hills, and your look over your shoulder make this photo feel both beautiful and calm",
+      "Sonne, grüne Hügel und dein Blick über die Schulter machen dieses Foto gleichzeitig schön und ruhig"
+    ),
+    objectPosition: "center 45%"
+  },
+  69: {
+    src: "/photos/69.jpg",
+    alt: l("Лера с Еленой, Виталием и Мирусей", "Valeriia with Elena, Vitalii, and Mirusya", "Valeriia mit Elena, Vitalii und Mirusya"),
+    caption: l(
+      "Тёплая семейная фотография с Еленой, Виталием и Мирусей на фоне красивого летнего вида 💜",
+      "A warm family photo with Elena, Vitalii, and Mirusya against a beautiful summer view 💜",
+      "Ein warmes Familienfoto mit Elena, Vitalii und Mirusya vor einer wunderschönen Sommerlandschaft 💜"
+    ),
+    objectPosition: "center 42%"
+  },
+  70: {
+    src: "/photos/70.jpg",
+    alt: l("Летний портрет Леры на камне", "A summer portrait of Valeriia on a rock", "Ein Sommerporträt von Valeriia auf einem Felsen"),
+    caption: l(
+      "Здесь особенно нравится твой спокойный взгляд и то, как красиво вокруг тебя уходят вдаль виноградники",
+      "I especially like your calm look here and how beautifully the vineyards stretch into the distance around you",
+      "Hier mag ich besonders deinen ruhigen Blick und wie schön sich die Weinberge um dich herum in die Ferne ziehen"
+    ),
+    objectPosition: "center 45%"
+  },
+  71: {
+    src: "/photos/71.jpg",
+    alt: l("Лера отдыхает на тёплом камне", "Valeriia resting on a sun-warmed rock", "Valeriia ruht sich auf einem sonnenwarmen Felsen aus"),
+    caption: l(
+      "Тихий кадр сверху, в котором ты просто сидишь и отдыхаешь среди солнца, камней и зелени",
+      "A quiet photo from above, where you are simply sitting and resting among sunlight, rocks, and greenery",
+      "Ein ruhiges Foto von oben, auf dem du einfach zwischen Sonne, Felsen und Grün sitzt und dich ausruhst"
+    ),
+    objectPosition: "center 42%"
+  },
+  72: {
+    src: "/photos/72.jpg",
+    alt: l("Солнечное селфи Леры у бассейна", "Valeriia's sunny selfie by the pool", "Valeriias sonniges Selfie am Schwimmbad"),
+    caption: l(
+      "Солнечное селфи у бассейна: большие очки, лёгкое настроение и ты, которая снова получилась шикарно ☀️",
+      "A sunny poolside selfie: big sunglasses, an easy mood, and you looking wonderful again ☀️",
+      "Ein sonniges Selfie am Schwimmbad: große Sonnenbrille, lockere Stimmung und du siehst wieder wunderschön aus ☀️"
+    ),
+    objectPosition: "center 34%"
+  },
+  73: {
+    src: "/photos/73.jpg",
+    alt: l("Зеркальное фото Леры в движении", "A mirror photo of Valeriia in motion", "Ein Spiegelfoto von Valeriia in Bewegung"),
+    caption: l(
+      "Немного размытый кадр в движении, но именно поэтому он выглядит живым и совсем не постановочным",
+      "A slightly blurred photo in motion, which is exactly why it feels alive and completely unstaged",
+      "Ein leicht verschwommenes Foto in Bewegung, das gerade deshalb lebendig und überhaupt nicht gestellt wirkt"
+    ),
+    objectPosition: "center 38%"
   }
 };
 
-const photoOrder = [photoCount, ...Array.from({ length: photoCount - 1 }, (_, index) => index + 1)];
+const photoOrder = [
+  63,
+  ...Array.from({ length: photoCount }, (_, index) => index + 1).filter((id) => id !== 63)
+];
 
 // Наша первая совместная фотография открывает альбом, остальные сохраняют прежний порядок.
 export const photos: PhotoItem[] = photoOrder.map((id, index) => {
