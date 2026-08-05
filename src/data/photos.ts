@@ -235,9 +235,9 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     src: "/photos/67.jpg",
     alt: l("Лера на деревянной лестнице", "Valeriia on a wooden ladder", "Valeriia auf einer Holzleiter"),
     caption: l(
-      "Очень живой летний кадр: ты забралась наверх и, конечно, успела показать два сердечка руками 🫶🏻",
-      "Such a lively summer photo: you climbed all the way up and still managed to make two hearts with your hands 🫶🏻",
-      "Ein richtig lebendiges Sommerfoto: Du bist ganz nach oben geklettert und hast trotzdem noch zwei Herzen mit den Händen gezeigt 🫶🏻"
+      "Красивый летний кадр: ты сидишь на деревянной лестнице среди зелени, а яркое солнце и синее небо делают фотографию особенно лёгкой и живой ☀️",
+      "A beautiful summer photo: you are sitting on a wooden ladder surrounded by greenery, while the bright sun and blue sky make the whole picture feel light and lively ☀️",
+      "Ein schönes Sommerfoto: Du sitzt auf einer Holzleiter mitten im Grünen, und die helle Sonne und der blaue Himmel lassen das ganze Bild leicht und lebendig wirken ☀️"
     ),
     objectPosition: "center 36%"
   },
