@@ -2295,6 +2295,7 @@ input[type="range"] {
   width: min(100%, 760px);
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 88px;
   padding: clamp(26px, 4.8vw, 56px);
   border-radius: 30px;
   background:
@@ -2366,6 +2367,26 @@ input[type="range"] {
 .opened-letter p {
   position: relative;
   z-index: 1;
+}
+
+.letter-body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.3rem;
+}
+
+.letter-body h3 {
+  margin: clamp(22px, 4vw, 38px) 0 0;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3.6vw, 2.4rem);
+  line-height: 1.14;
+  text-shadow: 0 0 24px rgba(255, 79, 163, 0.2);
+}
+
+.letter-body h3:first-child {
+  margin-top: 0;
 }
 
 .letter-closing {

@@ -52,11 +52,12 @@ const letterUi = {
 export function BirthdayLetter({ tr }: Props) {
   const [open, setOpen] = useState(false);
   const openedLetterRef = useRef<HTMLElement | null>(null);
+  const letterBlocks = tr(birthdayLetter.body).split(/\n{2,}/);
 
   useEffect(() => {
     if (!open) return;
     const timer = window.setTimeout(() => {
-      openedLetterRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      openedLetterRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 260);
     return () => window.clearTimeout(timer);
   }, [open]);
@@ -118,7 +119,13 @@ export function BirthdayLetter({ tr }: Props) {
                   </button>
                 </div>
                 <h2>{tr(birthdayLetter.title)}</h2>
-                <p>{tr(birthdayLetter.body)}</p>
+                <div className="letter-body">
+                  {letterBlocks.map((block, index) => block.startsWith("## ") ? (
+                    <h3 key={`${block}-${index}`}>{block.slice(3)}</h3>
+                  ) : (
+                    <p key={`${block}-${index}`}>{block}</p>
+                  ))}
+                </div>
                 <strong className="letter-closing">{tr(birthdayLetter.closing)}</strong>
               </motion.article>
             )}
