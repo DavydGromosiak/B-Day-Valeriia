@@ -3835,20 +3835,85 @@ input[type="range"] {
     width: auto;
   }
   .photo-heart-stage {
+    width: min(100%, 370px);
     height: auto;
-    min-height: 0;
+    min-height: 330px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    place-items: stretch;
-    padding-top: 4px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(6, auto);
+    gap: 3px;
+    place-items: center;
+    align-content: center;
+    padding: 16px 2px 8px;
+    filter: drop-shadow(0 18px 30px rgba(255, 79, 163, 0.16));
   }
-  .photo-tile {
-    position: static;
+
+  .photo-heart-stage::before {
+    content: "";
+    position: absolute;
+    inset: 8% 5% 3%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 79, 163, 0.16), transparent 66%);
+    pointer-events: none;
+  }
+
+  .photo-heart-stage .photo-tile,
+  .photo-heart-stage.is-dense .photo-tile {
+    position: relative;
     width: 100%;
-    aspect-ratio: 0.8;
+    max-width: 48px;
+    aspect-ratio: 0.78;
+    padding: 3px;
+    border-radius: 8px;
     transform: none !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.32), 0 0 12px rgba(255,79,163,0.13);
   }
+
+  .photo-heart-stage .photo-tile img,
+  .photo-heart-stage .photo-tile .photo-placeholder,
+  .photo-heart-stage.is-dense .photo-tile img,
+  .photo-heart-stage.is-dense .photo-tile .photo-placeholder {
+    border-radius: 6px;
+  }
+
+  .photo-heart-stage .photo-tile:nth-child(4n + 1) { rotate: -4deg; }
+  .photo-heart-stage .photo-tile:nth-child(4n + 2) { rotate: 3deg; }
+  .photo-heart-stage .photo-tile:nth-child(4n + 3) { rotate: -2deg; }
+  .photo-heart-stage .photo-tile:nth-child(4n) { rotate: 4deg; }
+
+  .photo-heart-stage .photo-tile:nth-child(n + 28) { display: none; }
+
+  .photo-heart-stage .photo-tile:nth-child(1) { grid-column: 2; grid-row: 1; }
+  .photo-heart-stage .photo-tile:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .photo-heart-stage .photo-tile:nth-child(3) { grid-column: 5; grid-row: 1; }
+  .photo-heart-stage .photo-tile:nth-child(4) { grid-column: 6; grid-row: 1; }
+
+  .photo-heart-stage .photo-tile:nth-child(5) { grid-column: 1; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(6) { grid-column: 2; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(7) { grid-column: 3; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(8) { grid-column: 4; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(9) { grid-column: 5; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(10) { grid-column: 6; grid-row: 2; }
+  .photo-heart-stage .photo-tile:nth-child(11) { grid-column: 7; grid-row: 2; }
+
+  .photo-heart-stage .photo-tile:nth-child(12) { grid-column: 1; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(13) { grid-column: 2; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(14) { grid-column: 3; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(15) { grid-column: 4; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(16) { grid-column: 5; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(17) { grid-column: 6; grid-row: 3; }
+  .photo-heart-stage .photo-tile:nth-child(18) { grid-column: 7; grid-row: 3; }
+
+  .photo-heart-stage .photo-tile:nth-child(19) { grid-column: 2; grid-row: 4; }
+  .photo-heart-stage .photo-tile:nth-child(20) { grid-column: 3; grid-row: 4; }
+  .photo-heart-stage .photo-tile:nth-child(21) { grid-column: 4; grid-row: 4; }
+  .photo-heart-stage .photo-tile:nth-child(22) { grid-column: 5; grid-row: 4; }
+  .photo-heart-stage .photo-tile:nth-child(23) { grid-column: 6; grid-row: 4; }
+
+  .photo-heart-stage .photo-tile:nth-child(24) { grid-column: 3; grid-row: 5; }
+  .photo-heart-stage .photo-tile:nth-child(25) { grid-column: 4; grid-row: 5; }
+  .photo-heart-stage .photo-tile:nth-child(26) { grid-column: 5; grid-row: 5; }
+  .photo-heart-stage .photo-tile:nth-child(27) { grid-column: 4; grid-row: 6; }
   .compliment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lightbox-prev { left: 18px; }
   .lightbox-next { right: 18px; }
