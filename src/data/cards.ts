@@ -28,6 +28,7 @@ const signature = l("Твой Давид 💜", "Your Davyd 💜", "Dein Davyd �
 const shapes: FeelingCard["shape"][] = ["photo", "postcard", "envelope", "book"];
 
 const formatRussianCardText = (text: string, cardId: number) => {
+  if (cardId === 63) return text.trim();
   const messageStyle = text
     .replace(/\.\s+(?=[А-ЯЁ])/g, "\n")
     .replace(/\.(?=\s|$)/g, "")
@@ -1908,13 +1909,161 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
   }
 };
 
+const reunionStory = {
+  title: {
+    en: "Sometimes life has a remarkable way of bringing back the people who truly belong beside us 💜",
+    de: "Manchmal bringt das Leben uns auf erstaunliche Weise die Menschen zurück, die wirklich an unsere Seite gehören 💜"
+  },
+  text: {
+    en: `## How everything began again
+
+I did not choose this photograph by accident, and there is a reason I placed it first.
+
+To me, it is not just a sweet picture of us together. When I look at it, I think about how unexpectedly everything between us changed. Not long ago, we had barely spoken for almost a year, and now we have photographs together, memories, and a whole story that I want to preserve.
+
+This photograph does not have to be the most beautiful or perfect one. It matters to me because it is real and it is ours. Here we are simply together, and this is where I want to begin the whole story of us 💜
+
+Sometimes life has a remarkable way of bringing back the people who truly belong beside us.
+
+In spring last year, we completely stopped talking.
+
+Summer passed, then autumn and almost the whole winter… With time, I stopped thinking that our conversations might ever begin again.
+
+But in February, you unexpectedly wrote to me.
+
+We did not start talking all the time immediately, but after a while I wrote to you myself, and that was when everything truly began again.
+
+Do you remember how we messaged each other until almost the middle of the night?
+
+After such a long silence, talking to you again felt surprisingly easy. It was as if that huge break between us had never happened, as if we had simply continued a conversation that had once paused.
+
+Around the same time, I started reading a book about Japanese mythology again and remembered a legend about the red thread of fate.
+
+According to this legend, people who are meant to meet and play an important part in each other's lives are connected by an invisible red thread.
+
+It can stretch across an enormous distance, become tangled, and almost disappear from view. People can take different paths, lose each other, and go a long time without speaking, but the thread itself never breaks.
+
+Sooner or later, it leads them back to each other.
+
+I do not know whether anything like that truly exists, but after we returned to each other's lives, I often remembered this legend and thought about us.
+
+We stopped talking completely, almost a year passed, and then only a few messages were enough for our story to begin again.
+
+Only this time, everything was different.
+
+We began learning about each other again, talking more, laughing, meeting, and sharing our thoughts, worries, and ordinary moments from life.
+
+Slowly, our conversations became more than just conversations.
+
+It became important to me to know how your day went, what made you happy, what upset you, and how you were feeling. I began waiting for our meetings, missing you, and noticing how deeply you had become part of my life again.
+
+Then you became someone without whom it is now difficult for me to imagine my ordinary days.
+
+Sometimes I think about how strange and beautiful everything turned out.
+
+Once, we simply stopped talking and could have remained people from each other's past forever. But for some reason, life decided differently.
+
+Perhaps our red thread never disappeared at all.
+
+Maybe it only became a little tangled, led us along different paths for a while, and then connected us again exactly when we were ready to get to know each other all over again.
+
+That is why this photograph comes first.
+
+It reminds me not only of a moment when we were together, but of the whole path that brought us there. A year earlier, this photograph might never have existed, and now it has become part of our shared story.
+
+And who knows…
+
+Maybe in 10, 20, or even 50 years, we will open this website again, look at this photograph, and remember how everything once began again with a few messages in February.
+
+We will remember how, after almost a year of silence, we started talking again, slowly grew closer, and did not yet understand how important we would become to each other.
+
+Then I will look at you and say:
+
+**“It turns out our red thread really never broke” ❤️**
+
+I love you, my beloved Valeriia 💜🫶🏻`,
+    de: `## Wie alles neu begann
+
+Ich habe dieses Foto nicht zufällig ausgewählt und an die erste Stelle gesetzt.
+
+Für mich ist es nicht nur ein süßes Bild, auf dem wir zusammen sind. Wenn ich es ansehe, denke ich daran, wie unerwartet sich alles zwischen uns verändert hat. Vor nicht allzu langer Zeit hatten wir fast ein Jahr kaum Kontakt, und jetzt haben wir gemeinsame Fotos, Erinnerungen und eine ganze Geschichte, die ich bewahren möchte.
+
+Dieses Foto muss nicht das schönste oder perfekteste sein. Es ist mir wichtig, weil es echt ist und uns gehört. Hier sind wir einfach zusammen, und genau damit möchte ich unsere ganze Geschichte beginnen 💜
+
+Manchmal bringt das Leben uns auf erstaunliche Weise die Menschen zurück, die wirklich an unsere Seite gehören.
+
+Im Frühling des letzten Jahres haben wir ganz aufgehört, miteinander zu reden.
+
+Der Sommer verging, dann der Herbst und fast der ganze Winter… Mit der Zeit dachte ich nicht mehr daran, dass unser Kontakt eines Tages wieder anfangen könnte.
+
+Doch im Februar hast du mir ganz unerwartet geschrieben.
+
+Damals haben wir noch nicht sofort ständig miteinander geredet. Aber einige Zeit später habe ich dir selbst geschrieben, und genau danach begann alles wirklich neu.
+
+Erinnerst du dich daran, wie wir bis fast tief in die Nacht geschrieben haben?
+
+Nach diesem langen Schweigen war es erstaunlich leicht, wieder mit dir zu reden. Als hätte es diese riesige Pause zwischen uns nie gegeben, als hätten wir einfach ein Gespräch fortgesetzt, das irgendwann stehen geblieben war.
+
+Ungefähr zur gleichen Zeit begann ich wieder ein Buch über japanische Mythologie zu lesen und erinnerte mich an eine Legende über den roten Faden des Schicksals.
+
+Nach dieser Legende sind Menschen, die sich begegnen und eine wichtige Rolle im Leben des anderen spielen sollen, durch einen unsichtbaren roten Faden verbunden.
+
+Er kann sich über eine riesige Entfernung spannen, sich verknoten und fast unsichtbar werden. Menschen können verschiedene Wege gehen, einander verlieren und lange keinen Kontakt haben, aber der Faden selbst reißt niemals.
+
+Früher oder später führt er sie wieder zueinander.
+
+Ich weiß nicht, ob es so etwas wirklich gibt. Aber nachdem wir wieder in das Leben des anderen zurückgekehrt waren, musste ich oft an diese Legende und an uns denken.
+
+Wir hatten ganz aufgehört zu reden, fast ein Jahr verging, und dann reichten ein paar Nachrichten aus, damit unsere Geschichte neu begann.
+
+Nur war diesmal alles ganz anders.
+
+Wir lernten einander wieder neu kennen, redeten immer mehr, lachten, trafen uns und teilten unsere Gedanken, Sorgen und normalen Momente aus dem Alltag.
+
+Langsam waren unsere Gespräche nicht mehr nur Gespräche.
+
+Es wurde mir wichtig zu wissen, wie dein Tag war, was dich gefreut oder traurig gemacht hat und wie du dich fühlst. Ich begann, auf unsere Treffen zu warten, dich zu vermissen und zu merken, wie sehr du wieder ein Teil meines Lebens geworden bist.
+
+Dann wurdest du zu einem Menschen, ohne den ich mir meine normalen Tage heute nur schwer vorstellen kann.
+
+Manchmal denke ich darüber nach, wie seltsam und schön sich alles entwickelt hat.
+
+Früher hatten wir einfach aufgehört zu reden und hätten für immer Menschen aus der Vergangenheit des anderen bleiben können. Aber das Leben hat sich aus irgendeinem Grund anders entschieden.
+
+Vielleicht ist unser roter Faden die ganze Zeit nie verschwunden.
+
+Vielleicht hatte er sich nur ein wenig verknotet, führte uns eine Zeit lang auf verschiedene Wege und verband uns dann wieder genau in dem Moment, in dem wir bereit waren, einander neu kennenzulernen.
+
+Genau deshalb steht dieses Foto an erster Stelle.
+
+Es erinnert mich nicht nur an den Moment, in dem wir zusammen waren, sondern auch an den ganzen Weg, der uns dorthin geführt hat. Noch ein Jahr zuvor hätte dieses Bild vielleicht niemals entstehen können, und jetzt ist es ein Teil unserer gemeinsamen Geschichte.
+
+Und wer weiß…
+
+Vielleicht öffnen wir diese Website in 10, 20 oder sogar 50 Jahren wieder, sehen dieses Foto an und erinnern uns daran, wie damals mit ein paar Nachrichten im Februar alles neu begann.
+
+Wir werden uns daran erinnern, wie wir nach fast einem Jahr Stille wieder miteinander redeten, uns langsam näherkamen und noch gar nicht wussten, wie wichtig wir füreinander werden würden.
+
+Dann werde ich dich ansehen und sagen:
+
+**„Es sieht so aus, als wäre unser roter Faden wirklich nie gerissen“ ❤️**
+
+Ich liebe dich, meine geliebte Valeriia 💜🫶🏻`
+  }
+};
+
 const builtCards: FeelingCard[] = photoCardSeeds.map((card, index) => ({
   id: card.id,
   category: card.category,
-  title: { ...card.title, ru: russianCardWishCopy[card.id]?.title ?? card.title.ru },
+  title: {
+    ...card.title,
+    ru: russianCardWishCopy[card.id]?.title ?? card.title.ru,
+    ...(card.id === 63 ? reunionStory.title : {})
+  },
   text: {
     ...card.text,
-    ru: formatRussianCardText(russianCardWishCopy[card.id]?.text ?? card.text.ru, card.id)
+    ru: formatRussianCardText(russianCardWishCopy[card.id]?.text ?? card.text.ru, card.id),
+    ...(card.id === 63 ? reunionStory.text : {})
   },
   image: `/photos/${String(card.id).padStart(2, "0")}.jpg`,
   objectPosition: card.objectPosition ?? (card.id % 3 === 0 ? "center 30%" : "center"),

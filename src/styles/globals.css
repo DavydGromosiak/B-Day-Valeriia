@@ -1497,6 +1497,32 @@ input[type="range"] {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.12rem;
 }
+.postcard-message {
+  display: grid;
+  gap: 1.1rem;
+}
+.postcard-message h4 {
+  margin: 8px 0 2px;
+  color: var(--purple-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.2;
+  text-shadow: 0 0 22px rgba(199, 125, 255, 0.24);
+}
+.postcard-emphasis {
+  display: block;
+  padding: 16px 18px;
+  border-left: 2px solid var(--rose);
+  border-radius: 0 12px 12px 0;
+  color: var(--white);
+  background: linear-gradient(90deg, rgba(255, 79, 163, 0.13), transparent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+.postcard-signature {
+  color: var(--white);
+}
 .postcard-modal > .modal-close,
 .lightbox > .modal-close {
   position: absolute;

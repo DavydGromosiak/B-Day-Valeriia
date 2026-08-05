@@ -30,6 +30,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
   if (!card) return null;
   const index = cards.findIndex((item) => item.id === card.id);
   const move = (step: number) => onSelect(cards[(index + step + cards.length) % cards.length]);
+  const messageBlocks = tr(card.text).split(/\n{2,}/);
 
   return (
     <AnimatePresence>
@@ -59,8 +60,20 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
               transition={{ duration: 0.24 }}
             >
               <h3>{tr(card.title)}</h3>
-              <p>{tr(card.text)}</p>
-              <strong>{tr(card.signature)}</strong>
+              <div className="postcard-message">
+                {messageBlocks.map((block, blockIndex) => {
+                  if (block.startsWith("## ")) {
+                    return <h4 key={`${block}-${blockIndex}`}>{block.slice(3)}</h4>;
+                  }
+
+                  if (block.startsWith("**") && block.endsWith("**")) {
+                    return <strong className="postcard-emphasis" key={`${block}-${blockIndex}`}>{block.slice(2, -2)}</strong>;
+                  }
+
+                  return <p key={`${block}-${blockIndex}`}>{block}</p>;
+                })}
+              </div>
+              <strong className="postcard-signature">{tr(card.signature)}</strong>
             </motion.div>
           </AnimatePresence>
           <div className="postcard-actions">
