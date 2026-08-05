@@ -65,7 +65,11 @@ export function WishConstellation({ tr, ui }: Props) {
           })}
         </div>
 
-        <motion.article className={`wish-card ${activeWish ? "is-revealed" : "is-sealed"}`} layout>
+        <motion.article
+          className={`wish-card ${activeWish ? "is-revealed" : "is-sealed"}`}
+          data-wish-number={activeWish ? String(activeWish.id).padStart(2, "0") : ""}
+          layout
+        >
           <AnimatePresence mode="wait">
             {activeWish ? (
               <motion.div
@@ -76,9 +80,29 @@ export function WishConstellation({ tr, ui }: Props) {
                 exit={{ opacity: 0, rotateX: 40, y: 12, scale: 0.97 }}
                 transition={{ duration: 0.42, ease: [0.2, 0.8, 0.2, 1] }}
               >
-                <span>{tr(ui.wishNumber)} {String(activeWish.id).padStart(2, "0")}</span>
+                <div className="wish-message-head">
+                  <motion.div
+                    className="wish-message-icon"
+                    initial={{ scale: 0.6, rotate: -28 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ delay: 0.12, type: "spring", stiffness: 230, damping: 16 }}
+                  >
+                    <Star size={22} fill="currentColor" />
+                  </motion.div>
+                  <span>{tr(ui.wishNumber)} {String(activeWish.id).padStart(2, "0")}</span>
+                  <strong>{String(activeWish.id).padStart(2, "0")} / 15</strong>
+                </div>
                 <h3>{tr(activeWish.title)}</h3>
+                <div className="wish-message-divider" aria-hidden="true">
+                  <i />
+                  <Sparkles size={15} />
+                  <i />
+                </div>
                 <p>{tr(activeWish.text)}</p>
+                <div className="wish-message-progress">
+                  <span>{tr(ui.wishesProgress)}</span>
+                  <b>{String(opened.length).padStart(2, "0")} / 15</b>
+                </div>
               </motion.div>
             ) : (
               <motion.div
