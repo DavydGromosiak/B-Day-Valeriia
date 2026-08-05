@@ -1,5 +1,6 @@
 import { LocalizedString } from "./translations";
-import { russianCardEmojis, russianCardWishCopy } from "./cardRussianWishCopy";
+import { russianCardWishCopy } from "./cardRussianWishCopy";
+import { cardPersonalNotes } from "./cardPersonalNotes";
 
 export type CardCategory = "birthday" | "love" | "moments" | "secret" | "family";
 
@@ -26,16 +27,6 @@ const l = (ru: string, en: string, de: string): LocalizedString => ({ ru, en, de
 
 const signature = l("Твой Давид 💜", "Your Davyd 💜", "Dein Davyd 💜");
 const shapes: FeelingCard["shape"][] = ["photo", "postcard", "envelope", "book"];
-
-const formatRussianCardText = (text: string, cardId: number) => {
-  if (cardId === 63) return text.trim();
-  const messageStyle = text
-    .replace(/\.\s+(?=[А-ЯЁ])/g, "\n")
-    .replace(/\.(?=\s|$)/g, "")
-    .trim();
-  const emoji = russianCardEmojis[cardId - 1] ?? "🫶🏻";
-  return messageStyle.endsWith("🫶🏻") ? messageStyle : `${messageStyle} ${emoji}`;
-};
 
 // EDIT HERE: здесь можно заменить любой текст под конкретную фотографию Леры.
 // Важно: 29 и 58 — мама Елена, 25 — Лера с папой Виталием и Мирусей, 37 — Мируся.
@@ -2062,7 +2053,7 @@ const builtCards: FeelingCard[] = photoCardSeeds.map((card, index) => ({
   },
   text: {
     ...card.text,
-    ru: formatRussianCardText(russianCardWishCopy[card.id]?.text ?? card.text.ru, card.id),
+    ...(cardPersonalNotes[card.id] ?? {}),
     ...(card.id === 63 ? reunionStory.text : {})
   },
   image: `/photos/${String(card.id).padStart(2, "0")}.jpg`,

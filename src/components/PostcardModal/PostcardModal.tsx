@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { FeelingCard } from "../../data/cards";
 import { LocalizedString } from "../../data/translations";
@@ -31,6 +31,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
   const index = cards.findIndex((item) => item.id === card.id);
   const move = (step: number) => onSelect(cards[(index + step + cards.length) % cards.length]);
   const messageBlocks = tr(card.text).split(/\n{2,}/);
+  const noteLabel = tr({ ru: "Личная заметка", en: "A personal note", de: "Eine persönliche Notiz" });
 
   return (
     <AnimatePresence>
@@ -59,26 +60,32 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.24 }}
             >
-              <h3>{tr(card.title)}</h3>
-              <div className="postcard-message">
-                {messageBlocks.map((block, blockIndex) => {
-                  if (block.startsWith("## ")) {
-                    return <h4 key={`${block}-${blockIndex}`}>{block.slice(3)}</h4>;
-                  }
-
-                  if (block.startsWith("**") && block.endsWith("**")) {
-                    return <strong className="postcard-emphasis" key={`${block}-${blockIndex}`}>{block.slice(2, -2)}</strong>;
-                  }
-
-                  return <p key={`${block}-${blockIndex}`}>{block}</p>;
-                })}
+              <div className="postcard-heading">
+                <span className="postcard-note-label"><Heart size={14} fill="currentColor" /> {noteLabel}</span>
+                <span className="postcard-counter">{String(index + 1).padStart(2, "0")} / {String(cards.length).padStart(2, "0")}</span>
+                <h3>{tr(card.title)}</h3>
               </div>
-              <strong className="postcard-signature">{tr(card.signature)}</strong>
+              <div className={`postcard-note-card ${card.id === 63 ? "is-story" : ""}`}>
+                <div className="postcard-message">
+                  {messageBlocks.map((block, blockIndex) => {
+                    if (block.startsWith("## ")) {
+                      return <h4 key={`${block}-${blockIndex}`}>{block.slice(3)}</h4>;
+                    }
+
+                    if (block.startsWith("**") && block.endsWith("**")) {
+                      return <strong className="postcard-emphasis" key={`${block}-${blockIndex}`}>{block.slice(2, -2)}</strong>;
+                    }
+
+                    return <p key={`${block}-${blockIndex}`}>{block}</p>;
+                  })}
+                </div>
+                <strong className="postcard-signature">{tr(card.signature)}</strong>
+              </div>
             </motion.div>
           </AnimatePresence>
           <div className="postcard-actions">
-            <button type="button" className="ghost-button" onClick={() => move(-1)}>{tr(ui.previous)}</button>
-            <button type="button" className="ghost-button" onClick={() => move(1)}>{tr(ui.next)}</button>
+            <button type="button" className="ghost-button" onClick={() => move(-1)}><ChevronLeft size={18} />{tr(ui.previous)}</button>
+            <button type="button" className="ghost-button" onClick={() => move(1)}>{tr(ui.next)}<ChevronRight size={18} /></button>
           </div>
         </motion.article>
       </motion.div>
