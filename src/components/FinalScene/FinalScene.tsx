@@ -8,14 +8,14 @@ import { LocalizedString } from "../../data/translations";
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
 const finalPhotoPaths = [
-  "/photos/59.jpg",
+  "/photos/72.jpg",
   "/photos/65.jpg",
+  "/photos/63.jpg",
   "/photos/64.jpg",
   "/photos/69.jpg",
-  "/photos/61.jpg",
-  "/photos/72.jpg",
-  "/photos/67.jpg",
-  "/photos/68.jpg",
+  "/photos/55.jpg",
+  "/photos/36.jpg",
+  "/photos/27.jpg",
 ];
 
 export function FinalScene({ tr, ui }: Props) {
