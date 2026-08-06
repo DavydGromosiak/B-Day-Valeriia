@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Our universe mix">
+  <defs>
+    <radialGradient id="space" cx="35%" cy="25%" r="85%">
+      <stop offset="0" stop-color="#a74793"/>
+      <stop offset="0.48" stop-color="#3b1e4d"/>
+      <stop offset="1" stop-color="#0b0712"/>
+    </radialGradient>
+    <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ff78bb"/>
+      <stop offset="1" stop-color="#9d4edd"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <rect width="320" height="320" rx="58" fill="url(#space)"/>
+  <circle cx="68" cy="67" r="2.5" fill="#fff7fb" opacity=".85"/>
+  <circle cx="253" cy="73" r="3" fill="#ff9dcc" opacity=".8"/>
+  <circle cx="265" cy="228" r="2" fill="#fff7fb" opacity=".7"/>
+  <circle cx="85" cy="249" r="2.5" fill="#dca6ff" opacity=".75"/>
+  <circle cx="160" cy="158" r="68" fill="#ff4fa3" opacity=".18" filter="url(#glow)"/>
+  <path d="M160 222c-11-11-69-48-69-91 0-25 18-43 42-43 14 0 24 7 27 16 4-9 14-16 28-16 24 0 41 18 41 43 0 43-57 80-69 91Z" fill="url(#heart)"/>
+  <path d="M160 205c-9-9-51-38-51-70 0-17 12-29 28-29 12 0 20 7 23 16 4-9 12-16 24-16 16 0 28 12 28 29 0 32-43 61-52 70Z" fill="#fff7fb" opacity=".22"/>
+  <text x="160" y="276" fill="#fff7fb" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" text-anchor="middle">OUR UNIVERSE</text>
+</svg>

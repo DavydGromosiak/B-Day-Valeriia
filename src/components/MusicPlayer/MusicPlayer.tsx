@@ -80,6 +80,39 @@ export function MusicPlayer({ language, shouldStart }: Props) {
   }, [audioFailed, shouldStart]);
 
   useEffect(() => {
+    if (!shouldStart) return;
+
+    let finalSectionObserver: IntersectionObserver | null = null;
+    const finaleIndex = musicTracks.findIndex((item) => item.id === "turning-page");
+
+    const watchFinalSection = () => {
+      const finalSection = document.getElementById("final");
+      if (!finalSection || finaleIndex < 0 || finalSectionObserver) return false;
+
+      finalSectionObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          setTrackIndex((current) => current === finaleIndex ? current : finaleIndex);
+        }
+      }, { threshold: 0.45 });
+      finalSectionObserver.observe(finalSection);
+      return true;
+    };
+
+    const pageObserver = new MutationObserver(() => {
+      if (watchFinalSection()) pageObserver.disconnect();
+    });
+
+    if (!watchFinalSection()) {
+      pageObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    return () => {
+      pageObserver.disconnect();
+      finalSectionObserver?.disconnect();
+    };
+  }, [shouldStart]);
+
+  useEffect(() => {
     const startFromGiftClick = () => {
       const audio = audioRef.current;
       if (!audio || audioFailed) return;
