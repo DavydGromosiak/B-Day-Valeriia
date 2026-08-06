@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Heart, X } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { FeelingCard } from "../../data/cards";
 import { LocalizedString } from "../../data/translations";
 import { SmartImage } from "../PhotoHeart/SmartImage";
@@ -15,7 +15,21 @@ type Props = {
 };
 
 export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props) {
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
+  const resetContentScroll = useCallback(() => {
+    const content = contentRef.current;
+    if (!content) return;
+    content.scrollTop = 0;
+    content.scrollLeft = 0;
+  }, []);
+
+  const bindContentRef = useCallback((node: HTMLDivElement | null) => {
+    contentRef.current = node;
+    if (!node) return;
+    node.scrollTop = 0;
+    node.scrollLeft = 0;
+  }, []);
 
   useEffect(() => {
     const close = (event: KeyboardEvent) => event.key === "Escape" && onClose();
@@ -24,12 +38,21 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
   }, [onClose]);
 
   useEffect(() => {
-    contentRef.current?.scrollTo({ top: 0 });
-  }, [card?.id]);
+    resetContentScroll();
+    const frame = window.requestAnimationFrame(resetContentScroll);
+    const timeout = window.setTimeout(resetContentScroll, 320);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeout);
+    };
+  }, [card?.id, resetContentScroll]);
 
   if (!card) return null;
   const index = cards.findIndex((item) => item.id === card.id);
-  const move = (step: number) => onSelect(cards[(index + step + cards.length) % cards.length]);
+  const move = (step: number) => {
+    resetContentScroll();
+    onSelect(cards[(index + step + cards.length) % cards.length]);
+  };
   const messageBlocks = tr(card.text).split(/\n{2,}/);
   const noteLabel = tr({ ru: "Личная заметка", en: "A personal note", de: "Eine persönliche Notiz" });
 
@@ -52,7 +75,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
           </AnimatePresence>
           <AnimatePresence mode="wait">
             <motion.div
-              ref={contentRef}
+              ref={bindContentRef}
               className="postcard-content"
               key={`content-${card.id}`}
               initial={{ opacity: 0, y: 16 }}
