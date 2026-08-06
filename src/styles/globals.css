@@ -3582,6 +3582,16 @@ input[type="range"] {
   }
 }
 
+/* Keep the language switcher away from the docked player on tablets and
+   narrow laptop windows. */
+@media (max-width: 1100px) {
+  .top-controls,
+  .main-topbar {
+    left: 18px;
+    transform: none;
+  }
+}
+
 @media (max-width: 900px) {
   .side-nav { display: none; }
   .final-section {
@@ -3733,6 +3743,12 @@ input[type="range"] {
     z-index: 2;
     padding: 8px 0 0;
     background: linear-gradient(180deg, transparent, rgba(22, 18, 29, 0.78) 44%);
+  }
+}
+
+@media (min-width: 561px) and (max-width: 590px) {
+  .site-mixer.is-docked {
+    top: 72px;
   }
 }
 
