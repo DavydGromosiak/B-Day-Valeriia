@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, BookOpen, Heart, MailOpen, Sparkles, X } from "lucide-react";
+import { ArrowDown, BookOpen, Feather, Heart, MailOpen, Sparkles, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { birthdayLetter } from "../../data/birthdayLetter";
 import { LocalizedString } from "../../data/translations";
@@ -23,7 +23,7 @@ const letterUi = {
     de: "Hier habe ich meine herzlichste Geburtstagsnachricht versteckt. Öffne den Umschlag, dann erscheint der Brief."
   },
   sealedFor: {
-    ru: "для Леруси",
+    ru: "для Любимой Леры",
     en: "for Valeriia",
     de: "für Valeriia"
   },
@@ -46,6 +46,11 @@ const letterUi = {
     ru: "письмо открыто",
     en: "letter opened",
     de: "brief geöffnet"
+  },
+  sender: {
+    ru: "от Давида · для Любимой Леры",
+    en: "from Davyd · for Valeriia",
+    de: "von Davyd · für Valeriia"
   },
   contents: {
     ru: "Главы письма",
@@ -197,89 +202,97 @@ export function BirthdayLetter({ tr }: Props) {
                 <span className="envelope-action"><MailOpen size={18} /> {tr(letterUi.open)}</span>
               </motion.button>
             ) : (
-              <motion.article
+              <motion.div
                 key="opened-letter"
-                ref={openedLetterRef}
-                className="main-letter opened-letter"
+                className="opened-envelope-stage"
                 initial={{ opacity: 0, y: 56, rotateX: 10, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 24, scale: 0.96 }}
                 transition={{ type: "spring", damping: 21, stiffness: 120 }}
               >
-                <div className="letter-paper-top">
-                  <span>{tr(letterUi.opened)}</span>
-                  <button className="letter-close" onClick={() => setOpen(false)} aria-label={tr(letterUi.close)}>
-                    <X size={16} /> {tr(letterUi.close)}
-                  </button>
+                <div className="opened-letter-seal" aria-hidden="true">
+                  <Heart size={20} fill="currentColor" />
                 </div>
-                <div className="letter-reading-progress" aria-label={`${tr(letterUi.readingProgress)} ${Math.round(readingProgress * 100)}%`}>
-                  <span>{tr(letterUi.readingProgress)}</span>
-                  <i><b style={{ transform: `scaleX(${readingProgress})` }} /></i>
-                  <strong>{Math.round(readingProgress * 100)}%</strong>
-                </div>
-                <header className="letter-title-block">
-                  <span><Heart size={16} fill="currentColor" /> 15</span>
-                  <h2>{tr(birthdayLetter.title)}</h2>
-                </header>
-                <div className="letter-intro-copy">
-                  {introBlocks.map((block, index) => <p key={`${block}-${index}`}>{block}</p>)}
-                </div>
-
-                <nav className="letter-chapter-nav" aria-label={tr(letterUi.contents)}>
-                  <div className="letter-chapter-nav-title">
-                    <BookOpen size={17} />
-                    <span>{tr(letterUi.contents)}</span>
+                <article ref={openedLetterRef} className="main-letter opened-letter">
+                  <div className="letter-paper-top">
+                    <div className="letter-sender">
+                      <Feather size={18} aria-hidden="true" />
+                      <span>{tr(letterUi.opened)}</span>
+                      <strong>{tr(letterUi.sender)}</strong>
+                    </div>
+                    <button className="letter-close" onClick={() => setOpen(false)} aria-label={tr(letterUi.close)}>
+                      <X size={16} /> {tr(letterUi.close)}
+                    </button>
                   </div>
-                  <div className="letter-chapter-links">
+                  <div className="letter-reading-progress" aria-label={`${tr(letterUi.readingProgress)} ${Math.round(readingProgress * 100)}%`}>
+                    <span>{tr(letterUi.readingProgress)}</span>
+                    <i><b style={{ transform: `scaleX(${readingProgress})` }} /></i>
+                    <strong>{Math.round(readingProgress * 100)}%</strong>
+                  </div>
+                  <header className="letter-title-block">
+                    <span><Heart size={16} fill="currentColor" /> 15</span>
+                    <h2>{tr(birthdayLetter.title)}</h2>
+                  </header>
+                  <div className="letter-intro-copy">
+                    {introBlocks.map((block, index) => <p key={`${block}-${index}`}>{block}</p>)}
+                  </div>
+
+                  <nav className="letter-chapter-nav" aria-label={tr(letterUi.contents)}>
+                    <div className="letter-chapter-nav-title">
+                      <BookOpen size={17} />
+                      <span>{tr(letterUi.contents)}</span>
+                    </div>
+                    <div className="letter-chapter-links">
+                      {chapters.map((chapter, index) => (
+                        <button
+                          key={chapter.title}
+                          className={activeChapter === index ? "active" : ""}
+                          onClick={() => scrollToChapter(index)}
+                          aria-current={activeChapter === index ? "step" : undefined}
+                          title={chapter.title}
+                        >
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+                          <strong>{chapter.title}</strong>
+                        </button>
+                      ))}
+                    </div>
+                  </nav>
+
+                  <div className="letter-body">
                     {chapters.map((chapter, index) => (
-                      <button
+                      <motion.section
                         key={chapter.title}
-                        className={activeChapter === index ? "active" : ""}
-                        onClick={() => scrollToChapter(index)}
-                        aria-current={activeChapter === index ? "step" : undefined}
-                        title={chapter.title}
+                        ref={(node) => { chapterRefs.current[index] = node; }}
+                        className={`letter-chapter ${activeChapter === index ? "is-active" : ""}`}
+                        initial={{ opacity: 0, y: 26 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.08 }}
+                        transition={{ duration: 0.55, ease: [0.2, 0.8, 0.2, 1] }}
                       >
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <strong>{chapter.title}</strong>
-                      </button>
+                        <div className="letter-chapter-heading">
+                          <span>{tr(letterUi.chapter)} {String(index + 1).padStart(2, "0")}</span>
+                          <h3>{chapter.title}</h3>
+                        </div>
+                        <div className="letter-chapter-copy">
+                          {chapter.paragraphs.map((paragraph, paragraphIndex) => (
+                            <p key={`${paragraph}-${paragraphIndex}`}>{paragraph}</p>
+                          ))}
+                        </div>
+                        {index < chapters.length - 1 && (
+                          <button className="letter-next-chapter" onClick={() => scrollToChapter(index + 1)}>
+                            <span>{tr(letterUi.nextChapter)}</span>
+                            <ArrowDown size={17} />
+                          </button>
+                        )}
+                      </motion.section>
                     ))}
                   </div>
-                </nav>
-
-                <div className="letter-body">
-                  {chapters.map((chapter, index) => (
-                    <motion.section
-                      key={chapter.title}
-                      ref={(node) => { chapterRefs.current[index] = node; }}
-                      className={`letter-chapter ${activeChapter === index ? "is-active" : ""}`}
-                      initial={{ opacity: 0, y: 26 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.08 }}
-                      transition={{ duration: 0.55, ease: [0.2, 0.8, 0.2, 1] }}
-                    >
-                      <div className="letter-chapter-heading">
-                        <span>{tr(letterUi.chapter)} {String(index + 1).padStart(2, "0")}</span>
-                        <h3>{chapter.title}</h3>
-                      </div>
-                      <div className="letter-chapter-copy">
-                        {chapter.paragraphs.map((paragraph, paragraphIndex) => (
-                          <p key={`${paragraph}-${paragraphIndex}`}>{paragraph}</p>
-                        ))}
-                      </div>
-                      {index < chapters.length - 1 && (
-                        <button className="letter-next-chapter" onClick={() => scrollToChapter(index + 1)}>
-                          <span>{tr(letterUi.nextChapter)}</span>
-                          <ArrowDown size={17} />
-                        </button>
-                      )}
-                    </motion.section>
-                  ))}
-                </div>
-                <div className="letter-closing">
-                  <Heart size={22} fill="currentColor" aria-hidden="true" />
-                  <strong>{tr(birthdayLetter.closing)}</strong>
-                </div>
-              </motion.article>
+                  <div className="letter-closing">
+                    <Heart size={22} fill="currentColor" aria-hidden="true" />
+                    <strong>{tr(birthdayLetter.closing)}</strong>
+                  </div>
+                </article>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

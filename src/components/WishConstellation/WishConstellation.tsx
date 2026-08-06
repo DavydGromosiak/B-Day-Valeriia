@@ -3,12 +3,11 @@ import { RotateCcw, Sparkles, Star } from "lucide-react";
 import { CSSProperties, useMemo, useState } from "react";
 import { birthdayWishes } from "../../data/wishConstellation";
 import { LocalizedString } from "../../data/translations";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
 export function WishConstellation({ tr, ui }: Props) {
-  const [opened, setOpened] = useLocalStorage<number[]>("opened-birthday-wishes-v2", []);
+  const [opened, setOpened] = useState<number[]>([]);
   const [activeId, setActiveId] = useState<number | null>(null);
   const activeWish = useMemo(
     () => birthdayWishes.find((wish) => wish.id === activeId) ?? null,

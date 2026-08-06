@@ -8,8 +8,10 @@ vite-dev.log
 vite-dev.err.log
 *.log
 .idea/
+.netlify/
 .agents/
 Valeriia Foto/
 *.zip
 index.js
 qa/
+.codex-*

@@ -89,6 +89,22 @@ export function MusicPlayer({ language, shouldStart }: Props) {
     return () => window.removeEventListener("birthday-start-music", startFromGiftClick);
   }, [audioFailed]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const mobile = window.matchMedia("(max-width: 700px)");
+    if (!mobile.matches) return;
+
+    const openedAtScrollY = window.scrollY;
+    const collapseOnScroll = () => {
+      const distance = Math.abs(window.scrollY - openedAtScrollY);
+      if (distance >= 8) setOpen(false);
+    };
+
+    window.addEventListener("scroll", collapseOnScroll, { passive: true });
+    return () => window.removeEventListener("scroll", collapseOnScroll);
+  }, [open]);
+
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio || audioFailed) return;

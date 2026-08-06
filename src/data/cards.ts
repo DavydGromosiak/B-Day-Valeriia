@@ -38,7 +38,7 @@ const photoCardSeeds: PhotoCardSeed[] = [
     category: "birthday",
     title: l("Начну с самого простого", "Let me start simply", "Ich fange ganz einfach an"),
     text: l(
-      `Лерусь, с 15-летием тебя 💜
+      `Лера, с 15-летием тебя 💜
 
 Не знаю, почему именно это фото хочется поставить первым. Наверное, потому что вы с Nefeli тут немного смешные, живые и совсем не пытаетесь сделать идеальный кадр.
 
@@ -580,7 +580,7 @@ Ich mag diese Eigenschaft sehr. Nicht alles im Leben muss laut sein, manchmal re
     category: "family",
     title: l("Ты с Виталием и Мирусей", "You with Vitalii and Mirusya", "Du mit Vitalii und Mirusya"),
     text: l(
-      `Лерусь, здесь ты с папой Виталием и Мирусей, и на эту фотографию правда приятно смотреть.
+      `Лера, здесь ты с папой Виталием и Мирусей, и на эту фотографию правда приятно смотреть.
 
 Папа целует тебя в голову, Мируся прижалась рядом, а за вами вообще невероятный вид.
 
@@ -1463,7 +1463,7 @@ Und beides bist einfach du.`
 
 Спасибо тебе за все эти чуть больше полугода, за каждый наш разговор, каждую улыбку и каждый момент рядом
 
-Люблю тебя, моя любимая Леруся 💜🫶🏻`,
+Люблю тебя, моя любимая 💜🫶🏻`,
       `After a long time when we barely talked, you came back into my life
 
 And now, for a little over six months, we have been talking again, laughing, and sharing our thoughts, worries, and all kinds of moments from our lives
@@ -1512,7 +1512,7 @@ Ich liebe dich, meine geliebte Valeriia 💜🫶🏻`
 const naturalRussianCopy: Record<number, { title: string; text: string }> = {
   1: {
     title: "Начну вот с этой",
-    text: `Лерусь, с 15-летием тебя 💜
+    text: `Лера, с 15-летием тебя 💜
 
 Мне почему-то хочется начать именно с этой фотки. Вы с Nefeli тут вообще не пытались сделать что-то серьёзное, ещё и эта принцесса влезла ровно посередине 😅
 
@@ -1660,7 +1660,7 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
   },
   25: {
     title: "Вы здесь такие родные",
-    text: `Лерусь, эта семейная фотография правда очень тёплая.
+    text: `Лера, эта семейная фотография правда очень тёплая.
 
 Папа целует тебя в голову, Мируся прижалась рядом, а вокруг такой вид, что можно долго рассматривать. Но главное всё равно не горы. Главное — как вы стоите вместе.
 
@@ -1973,7 +1973,7 @@ const reunionStory = {
 
 **«Получается, наша красная нить всё-таки никогда не разрывалась» ❤️**
 
-Люблю тебя, моя Леруся 💜🫶🏻`,
+Люблю тебя, моя любимая 💜🫶🏻`,
     en: `## How everything began again
 
 I did not choose this photograph by accident, and there is a reason I placed it first.

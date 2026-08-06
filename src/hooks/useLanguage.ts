@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { siteConfig } from "../config/siteConfig";
 import { Language, LocalizedString, t } from "../data/translations";
 import { useLocalStorage } from "./useLocalStorage";
@@ -12,6 +12,10 @@ function detectLanguage(): Language {
 
 export function useLanguage() {
   const [language, setLanguage] = useLocalStorage<Language>("birthday-language", detectLanguage());
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const translate = useMemo(() => {
     return (value: LocalizedString) => value[language] ?? value.ru;

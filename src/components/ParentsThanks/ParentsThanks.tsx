@@ -10,6 +10,7 @@ type Props = {
 
 export function ParentsThanks({ tr }: Props) {
   const [open, setOpen] = useState(false);
+  const letterParagraphs = tr(parentsThanks.letter).split(/\n{2,}/).filter(Boolean);
 
   return (
     <section id="parents" className="page-section parents-section">
@@ -31,7 +32,7 @@ export function ParentsThanks({ tr }: Props) {
           <p>{tr(parentsThanks.subtitle)}</p>
         </div>
 
-        <div className="parents-layout">
+        <div className={`parents-layout ${open ? "is-letter-open" : ""}`}>
           <motion.aside
             className="parents-note-panel"
             data-romantic="true"
@@ -58,9 +59,23 @@ export function ParentsThanks({ tr }: Props) {
                 exit={{ opacity: 0, x: 24, scale: 0.98 }}
                 transition={{ duration: 0.32 }}
               >
-                <Sparkles size={22} />
-                <p>{tr(parentsThanks.letter)}</p>
-                <strong>{tr(parentsThanks.signature)}</strong>
+                <div className="parents-letter-top">
+                  <span><HeartHandshake size={18} /> {tr(parentsThanks.kicker)}</span>
+                  <Sparkles size={20} aria-hidden="true" />
+                </div>
+                <header className="parents-letter-recipient">
+                  <span>{tr(parentsThanks.constellation)}</span>
+                  <h3>{tr(parentsThanks.recipient)}</h3>
+                </header>
+                <div className="parents-letter-copy">
+                  {letterParagraphs.map((paragraph, index) => (
+                    <p key={`${paragraph}-${index}`}>{paragraph}</p>
+                  ))}
+                </div>
+                <footer className="parents-letter-signature">
+                  <i aria-hidden="true" />
+                  <strong>{tr(parentsThanks.signature)}</strong>
+                </footer>
               </motion.article>
             )}
           </AnimatePresence>

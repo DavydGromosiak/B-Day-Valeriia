@@ -11,12 +11,12 @@ export const languages: { code: Language; label: string }[] = [
 
 export const t = {
   protocolLine: {
-    ru: "[birthday.protocol]\nБережно собираю маленькую вселенную для Леруси...",
+    ru: "[birthday.protocol]\nБережно собираю маленькую вселенную для Валерии...",
     en: "[birthday.protocol]\nGently assembling a little universe for Valeriia...",
     de: "[birthday.protocol]\nEin kleines Universum für Valeriia wird liebevoll erschaffen..."
   },
   introHeadline: {
-    ru: "Леруся, я собрал для тебя маленькую вселенную",
+    ru: "Любимая, я собрал для тебя маленькую вселенную",
     en: "Valeriia, I made a little universe for you",
     de: "Valeriia, ich habe ein kleines Universum für dich geschaffen"
   },
@@ -93,6 +93,7 @@ export const t = {
     de: "Briefe / Postkarten / kleine Geschichten"
   },
   allCards: { ru: "Все", en: "All", de: "Alle" },
+  showMoreCards: { ru: "Показать ещё", en: "Show more", de: "Mehr anzeigen" },
   songShelfTeaser: {
     ru: "Открыть секретную музыкальную полку",
     en: "Open the secret music shelf",
@@ -180,7 +181,7 @@ export const t = {
     de: "Und trotzdem ist das nur ein kleiner Teil von dem, was ich dir wünsche: dass du öfter lächelst, an dich glaubst und dich sehr, sehr geliebt fühlst 💜"
   },
   finalText: {
-    ru: "В твой 15-й день рождения я мог бы написать ещё тысячу причин\nсоздать ещё сотню открыток\nи подобрать ещё миллион красивых слов\n\nНо всё равно не смог бы полностью объяснить,\nнасколько сильно ты мне дорога\n\nПоэтому скажу самое главное\n\nЯ люблю тебя, Лер 💜",
+    ru: "В твой 15-й день рождения я мог бы написать ещё тысячу причин\nсоздать ещё сотню открыток\nи подобрать ещё миллион красивых слов\n\nНо всё равно не смог бы полностью объяснить,\nнасколько сильно ты мне дорога\n\nПоэтому скажу самое главное\n\nЯ люблю тебя, Лера 💜",
     en: "On your 15th birthday, I could write another thousand reasons\ncreate a hundred more letters\nand find a million beautiful words\n\nBut I still could not fully explain\nhow much you mean to me\n\nSo I will say the most important thing\n\nI love you, Valeriia 💜",
     de: "Zu deinem 15. Geburtstag könnte ich noch tausend Gründe aufschreiben\nnoch hundert Briefe schreiben\nund eine Million schöne Worte finden\n\nTrotzdem könnte ich nie vollständig erklären,\nwie viel du mir bedeutest\n\nDeshalb sage ich nur das Wichtigste\n\nIch liebe dich, Valeriia 💜"
   },
