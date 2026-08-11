@@ -1921,7 +1921,7 @@ const reunionStory = {
 
 Прошло лето, затем осень и наступила зима… Со временем я уже перестал думать о том, что однажды наше общение может начаться снова.
 
-Но 30 декабря 2025 года ты неожиданно написала мне.
+Но 30 ноября 2025 года ты неожиданно написала мне.
 
 После этого мы снова ненадолго перестали общаться. Но с самого начала января я хотел написать тебе сам — просто не знал, как подступиться, и мне было неловко начинать разговор без повода.
 
@@ -1967,7 +1967,7 @@ const reunionStory = {
 
 И кто знает…
 
-Может быть, через 10, 20 или даже 50 лет мы снова откроем этот сайт, посмотрим на эту фотографию и вспомним, как всё началось заново с твоего сообщения 30 декабря 2025 года и моего немного нелепого сообщения о травме 27 января.
+Может быть, через 10, 20 или даже 50 лет мы снова откроем этот сайт, посмотрим на эту фотографию и вспомним, как всё началось заново с твоего сообщения 30 ноября 2025 года и моего немного нелепого сообщения о травме 27 января.
 
 Вспомним, как после почти года тишины снова начали разговаривать, постепенно становились ближе и ещё даже не понимали, насколько важными станем друг для друга.
 
@@ -1990,7 +1990,7 @@ In spring last year, we completely stopped talking.
 
 Summer passed, then autumn, and winter arrived… With time, I stopped thinking that our conversations might ever begin again.
 
-But on December 30, 2025, you unexpectedly wrote to me.
+But on November 30, 2025, you unexpectedly wrote to me.
 
 After that, we stopped talking again for a little while. From the beginning of January, I wanted to write to you myself, but I did not know how to approach you, and I felt awkward starting a conversation without a reason.
 
@@ -2036,7 +2036,7 @@ It reminds me not only of a moment when we were together, but of the whole path 
 
 And who knows…
 
-Maybe in 10, 20, or even 50 years, we will open this website again, look at this photograph, and remember how everything began again with your message on December 30, 2025, and my slightly silly message about the injury on January 27.
+Maybe in 10, 20, or even 50 years, we will open this website again, look at this photograph, and remember how everything began again with your message on November 30, 2025, and my slightly silly message about the injury on January 27.
 
 We will remember how, after almost a year of silence, we started talking again, slowly grew closer, and did not yet understand how important we would become to each other.
 
@@ -2059,7 +2059,7 @@ Im Frühling des letzten Jahres haben wir ganz aufgehört, miteinander zu reden.
 
 Der Sommer verging, dann der Herbst, und der Winter begann… Mit der Zeit dachte ich nicht mehr daran, dass unser Kontakt eines Tages wieder anfangen könnte.
 
-Doch am 30. Dezember 2025 hast du mir ganz unerwartet geschrieben.
+Doch am 30. November 2025 hast du mir ganz unerwartet geschrieben.
 
 Danach hatten wir für eine kurze Zeit wieder keinen Kontakt. Seit Anfang Januar wollte ich dir selbst schreiben, wusste aber nicht, wie ich mich dir nähern sollte, und es war mir unangenehm, ohne einen Anlass ein Gespräch anzufangen.
 
@@ -2105,7 +2105,7 @@ Es erinnert mich nicht nur an den Moment, in dem wir zusammen waren, sondern auc
 
 Und wer weiß…
 
-Vielleicht öffnen wir diese Website in 10, 20 oder sogar 50 Jahren wieder, sehen dieses Foto an und erinnern uns daran, wie alles mit deiner Nachricht vom 30. Dezember 2025 und meiner etwas albernen Nachricht über die Verletzung am 27. Januar neu begann.
+Vielleicht öffnen wir diese Website in 10, 20 oder sogar 50 Jahren wieder, sehen dieses Foto an und erinnern uns daran, wie alles mit deiner Nachricht vom 30. November 2025 und meiner etwas albernen Nachricht über die Verletzung am 27. Januar neu begann.
 
 Wir werden uns daran erinnern, wie wir nach fast einem Jahr Stille wieder miteinander redeten, uns langsam näherkamen und noch gar nicht wussten, wie wichtig wir füreinander werden würden.
 

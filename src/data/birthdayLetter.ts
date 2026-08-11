@@ -18,7 +18,7 @@ export const birthdayLetter: { title: LocalizedString; body: LocalizedString; cl
 
 Помнишь наш первый долгий разговор после того, как мы снова начали общаться?
 
-Всё началось 30 декабря 2025 года, когда ты написала мне. После этого мы снова ненадолго перестали общаться.
+Всё началось 30 ноября 2025 года, когда ты написала мне. После этого мы снова ненадолго перестали общаться.
 
 С самого начала января я хотел написать тебе, но не знал, как подступиться. Мне было неловко начинать разговор без повода, хотя желание снова с тобой общаться никуда не исчезало.
 
@@ -94,7 +94,7 @@ export const birthdayLetter: { title: LocalizedString; body: LocalizedString; cl
 
 Спасибо за все моменты, когда ты была рядом, даже если сама не понимала, насколько сильно мне в тот момент помогла.
 
-И отдельное спасибо за то, что ты написала мне 30 декабря 2025 года. Пусть после этого мы снова ненадолго перестали общаться, именно твоё сообщение напомнило мне, как сильно я хотел вернуть наше общение.
+И отдельное спасибо за то, что ты написала мне 30 ноября 2025 года. Пусть после этого мы снова ненадолго перестали общаться, именно твоё сообщение напомнило мне, как сильно я хотел вернуть наше общение.
 
 Возможно, тогда для нас это выглядело как обычное сообщение и обычный разговор. Но теперь я понимаю, что именно из таких простых моментов иногда начинается что-то, что полностью меняет жизнь человека.
 
@@ -154,7 +154,7 @@ export const birthdayLetter: { title: LocalizedString; body: LocalizedString; cl
 
 Мне хочется, чтобы однажды, через 10, 20 или даже 50 лет, мы снова открыли эту страницу и вспомнили всё, с чего начиналась наша история.
 
-Вспомнили твоё сообщение 30 декабря 2025 года и тот вечер 27 января, когда я наконец решился написать тебе под своим немного нелепым предлогом о травме, а потом мы переписывались почти до глубокой ночи.
+Вспомнили твоё сообщение 30 ноября 2025 года и тот вечер 27 января, когда я наконец решился написать тебе под своим немного нелепым предлогом о травме, а потом мы переписывались почти до глубокой ночи.
 
 Вспомнили наши первые долгие разговоры, встречи, шутки, переживания, милые сообщения и все те обычные моменты, которые постепенно стали для нас особенными.
 
@@ -198,7 +198,7 @@ export const birthdayLetter: { title: LocalizedString; body: LocalizedString; cl
 
 Спасибо тебе за то, что ты есть в моей жизни.
 
-Спасибо за то, что сообщения 30 декабря и 27 января не остались просто короткими разговорами, а стали началом нашей новой истории.
+Спасибо за то, что сообщения 30 ноября и 27 января не остались просто короткими разговорами, а стали началом нашей новой истории.
 
 Я очень сильно тебя люблю и безумно рад, что именно ты стала моей девушкой.
 
@@ -213,7 +213,7 @@ There was a time when we did not talk for a long while and each lived our own li
 
 Do you remember our first long conversation after we started talking again?
 
-It began on December 30, 2025, when you wrote to me. After that, we stopped talking again for a little while.
+It began on November 30, 2025, when you wrote to me. After that, we stopped talking again for a little while.
 
 From the beginning of January, I wanted to write to you, but I did not know how to approach you. I felt awkward starting a conversation without a reason, even though the wish to talk to you again never went away.
 
@@ -281,7 +281,7 @@ Thank you for caring about my goals, training, studies, and everything that matt
 
 Thank you for every moment when you were there, even if you did not realize how much you helped me then.
 
-And a special thank you for writing to me on December 30, 2025. Even though we stopped talking again for a little while afterward, your message reminded me how much I wanted our conversations back.
+And a special thank you for writing to me on November 30, 2025. Even though we stopped talking again for a little while afterward, your message reminded me how much I wanted our conversations back.
 
 Maybe back then it felt like an ordinary message and an ordinary conversation. But now I understand that simple moments like that can sometimes begin something that completely changes a person's life.
 
@@ -339,7 +339,7 @@ Now I am sitting here creating this website for you, trying to preserve at least
 
 I want us to open this page again one day, in 10, 20, or even 50 years, and remember how our story began.
 
-To remember your message on December 30, 2025, and that evening on January 27 when I finally found the courage to write to you with my slightly silly excuse about the injury, after which we talked until late at night.
+To remember your message on November 30, 2025, and that evening on January 27 when I finally found the courage to write to you with my slightly silly excuse about the injury, after which we talked until late at night.
 
 To remember our first long conversations, meetings, jokes, worries, sweet messages, and all those ordinary moments that slowly became special to us.
 
@@ -383,7 +383,7 @@ Stay just as incredible, kind, beautiful, sincere, strong, and truly special as 
 
 Thank you for being in my life.
 
-Thank you that our messages on December 30 and January 27 did not remain short conversations, but became the beginning of our new story.
+Thank you that our messages on November 30 and January 27 did not remain short conversations, but became the beginning of our new story.
 
 I love you so much, and I am incredibly happy that you are my girlfriend.
 
@@ -398,7 +398,7 @@ Eine Zeit lang hatten wir lange keinen Kontakt und lebten jeder sein eigenes Leb
 
 Erinnerst du dich an unser erstes langes Gespräch, nachdem wir wieder Kontakt hatten?
 
-Alles begann am 30. Dezember 2025, als du mir geschrieben hast. Danach hatten wir für eine kurze Zeit wieder keinen Kontakt.
+Alles begann am 30. November 2025, als du mir geschrieben hast. Danach hatten wir für eine kurze Zeit wieder keinen Kontakt.
 
 Seit Anfang Januar wollte ich dir schreiben, wusste aber nicht, wie ich mich dir nähern sollte. Es war mir unangenehm, ohne einen Anlass ein Gespräch anzufangen, obwohl der Wunsch, wieder mit dir zu reden, nie verschwunden war.
 
@@ -466,7 +466,7 @@ Danke, dass du dich für meine Ziele, mein Training, meine Schule und alles inte
 
 Danke für alle Momente, in denen du bei mir warst, auch wenn du selbst vielleicht nicht gemerkt hast, wie sehr du mir damals geholfen hast.
 
-Und ein besonderes Danke dafür, dass du mir am 30. Dezember 2025 geschrieben hast. Auch wenn wir danach für eine kurze Zeit wieder keinen Kontakt hatten, erinnerte mich deine Nachricht daran, wie sehr ich unsere Gespräche zurückhaben wollte.
+Und ein besonderes Danke dafür, dass du mir am 30. November 2025 geschrieben hast. Auch wenn wir danach für eine kurze Zeit wieder keinen Kontakt hatten, erinnerte mich deine Nachricht daran, wie sehr ich unsere Gespräche zurückhaben wollte.
 
 Vielleicht wirkte es damals wie eine normale Nachricht und ein normales Gespräch. Heute verstehe ich aber, dass aus solchen einfachen Momenten manchmal etwas beginnt, das das Leben eines Menschen völlig verändert.
 
@@ -524,7 +524,7 @@ Und jetzt sitze ich hier und gestalte diese Website für dich, weil ich wenigste
 
 Ich wünsche mir, dass wir diese Seite eines Tages, in 10, 20 oder sogar 50 Jahren, wieder öffnen und uns daran erinnern, wie unsere Geschichte begann.
 
-Dass wir uns an deine Nachricht vom 30. Dezember 2025 und an den Abend des 27. Januar erinnern, an dem ich mich mit meinem etwas albernen Vorwand wegen der Verletzung endlich getraut habe, dir zu schreiben, und wir danach bis tief in die Nacht geredet haben.
+Dass wir uns an deine Nachricht vom 30. November 2025 und an den Abend des 27. Januar erinnern, an dem ich mich mit meinem etwas albernen Vorwand wegen der Verletzung endlich getraut habe, dir zu schreiben, und wir danach bis tief in die Nacht geredet haben.
 
 Dass wir uns an unsere ersten langen Gespräche, Treffen, Witze, Sorgen, lieben Nachrichten und all die normalen Momente erinnern, die für uns langsam etwas Besonderes wurden.
 
@@ -568,7 +568,7 @@ Bleib so unglaublich, lieb, schön, ehrlich, stark und wirklich besonders, wie d
 
 Danke, dass du in meinem Leben bist.
 
-Danke, dass unsere Nachrichten vom 30. Dezember und 27. Januar nicht nur kurze Gespräche blieben, sondern der Anfang unserer neuen Geschichte wurden.
+Danke, dass unsere Nachrichten vom 30. November und 27. Januar nicht nur kurze Gespräche blieben, sondern der Anfang unserer neuen Geschichte wurden.
 
 Ich liebe dich sehr und bin unglaublich glücklich, dass gerade du meine Freundin geworden bist.
 
