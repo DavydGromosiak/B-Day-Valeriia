@@ -78,8 +78,8 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     caption: l("Красивый кадр с цветами, который тоже хочется сохранить", "A beautiful flower shot worth keeping too", "Ein schönes Blumenfoto, das man auch behalten möchte")
   },
   25: {
-    alt: l("Лера с папой Виталием и Мирусей", "Valeriia with her father Vitalii and Mirusya", "Valeriia mit ihrem Vater Vitalii und Mirusya"),
-    caption: l("Ты с папой Виталием и Мирусей на фоне гор и воды", "You with your father Vitalii and Mirusya, with mountains and water behind you", "Du mit deinem Vater Vitalii und Mirusya vor Bergen und Wasser"),
+    alt: l("Лера с папой и Мирусей", "Valeriia with her father and Mirusya", "Valeriia mit ihrem Vater und Mirusya"),
+    caption: l("Ты с папой и Мирусей на фоне гор и воды", "You with your father and Mirusya, with mountains and water behind you", "Du mit deinem Vater und Mirusya vor Bergen und Wasser"),
     objectPosition: "center 38%"
   },
   27: {
@@ -87,8 +87,8 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     caption: l("Кадр с Юлей в магазине — обычный момент, но очень живой", "A photo with Julia in a store — an ordinary but very lively moment", "Ein Foto mit Julia in einem Laden — ein normaler, aber sehr lebendiger Moment")
   },
   29: {
-    alt: l("Мама Елена среди цветов", "Mom Elena among flowers", "Mama Elena zwischen Blüten"),
-    caption: l("Твоя мама Елена среди белых цветов", "Your mom Elena among white flowers", "Deine Mama Elena zwischen weißen Blüten"),
+    alt: l("Мама Леры среди цветов", "Valeriia's mother among flowers", "Valeriias Mama zwischen Blüten"),
+    caption: l("Твоя мама среди белых цветов", "Your mother among white flowers", "Deine Mama zwischen weißen Blüten"),
     objectPosition: "center 38%"
   },
   30: {
@@ -148,8 +148,8 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     caption: l("Ты, Юля и настроение конца весны, которое сразу видно", "You, Julia, and that late-spring mood you can see right away", "Du, Julia und diese Spätfrühlingsstimmung, die man sofort sieht")
   },
   58: {
-    alt: l("Мама Елена под цветущим деревом", "Mom Elena under a blossoming tree", "Mama Elena unter einem blühenden Baum"),
-    caption: l("Твоя мама Елена под белыми цветами", "Your mom Elena under white flowers", "Deine Mama Elena unter weißen Blüten"),
+    alt: l("Мама Леры под цветущим деревом", "Valeriia's mother under a blossoming tree", "Valeriias Mama unter einem blühenden Baum"),
+    caption: l("Твоя мама под белыми цветами", "Your mother under white flowers", "Deine Mama unter weißen Blüten"),
     objectPosition: "center 42%"
   },
   59: {
@@ -226,9 +226,9 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
     src: "/photos/66.jpg",
     alt: l("Лера любуется видом с высоты", "Valeriia enjoying the view from above", "Valeriia genießt die Aussicht von oben"),
     caption: l(
-      "Ты смотришь на долину, а Виталий на заднем плане добавил фотографии немного настроения 😄",
-      "You are looking over the valley, while Vitalii adds a little extra personality in the background 😄",
-      "Du schaust über das Tal, während Vitalii dem Foto im Hintergrund noch etwas Stimmung gibt 😄"
+      "Ты смотришь на долину, а твой папа на заднем плане добавил фотографии немного настроения 😄",
+      "You are looking over the valley, while your father adds a little extra personality in the background 😄",
+      "Du schaust über das Tal, während dein Vater dem Foto im Hintergrund noch etwas Stimmung gibt 😄"
     ),
     objectPosition: "center 44%"
   },
@@ -254,11 +254,11 @@ const specialPhotos: Record<number, Partial<PhotoItem>> = {
   },
   69: {
     src: "/photos/69.jpg",
-    alt: l("Лера с Еленой, Виталием и Мирусей", "Valeriia with Elena, Vitalii, and Mirusya", "Valeriia mit Elena, Vitalii und Mirusya"),
+    alt: l("Лера с родителями и Мирусей", "Valeriia with her parents and Mirusya", "Valeriia mit ihren Eltern und Mirusya"),
     caption: l(
-      "Тёплая семейная фотография с Еленой, Виталием и Мирусей на фоне красивого летнего вида 💜",
-      "A warm family photo with Elena, Vitalii, and Mirusya against a beautiful summer view 💜",
-      "Ein warmes Familienfoto mit Elena, Vitalii und Mirusya vor einer wunderschönen Sommerlandschaft 💜"
+      "Тёплая семейная фотография с твоими родителями и Мирусей на фоне красивого летнего вида 💜",
+      "A warm family photo with your parents and Mirusya against a beautiful summer view 💜",
+      "Ein warmes Familienfoto mit deinen Eltern und Mirusya vor einer wunderschönen Sommerlandschaft 💜"
     ),
     objectPosition: "center 42%"
   },
@@ -342,8 +342,8 @@ const augustMemories: PhotoItem[] = [
   },
   {
     src: "/photos/august-2026/lera-with-elena-greenhouse.jpg",
-    alt: l("Лера с мамой Еленой в оранжерее", "Lera with her mom Elena in the greenhouse", "Lera mit ihrer Mama Elena im Gewächshaus"),
-    caption: l("Тёплая фотография с мамой Еленой среди цветов и летнего света", "A warm photo with mom Elena among flowers and summer light", "Ein warmes Foto mit Mama Elena zwischen Blumen und Sommerlicht"),
+    alt: l("Лера с мамой в оранжерее", "Lera with her mother in the greenhouse", "Lera mit ihrer Mama im Gewächshaus"),
+    caption: l("Тёплая фотография с мамой среди цветов и летнего света", "A warm photo with your mother among flowers and summer light", "Ein warmes Foto mit deiner Mama zwischen Blumen und Sommerlicht"),
     objectPosition: "center 34%"
   },
   {

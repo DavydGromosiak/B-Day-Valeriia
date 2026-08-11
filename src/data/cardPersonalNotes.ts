@@ -124,9 +124,9 @@ export const cardPersonalNotes: Partial<Record<number, LocalizedString>> = {
     de: "Ich mag, dass zwischen deinen Fotos auch solche stillen Kleinigkeiten sind. Du bemerkst Schönes, selbst wenn es nichts von dir verlangt 🌸"
   },
   25: {
-    ru: "От этого снимка становится по-доброму тепло. Мне очень нравится видеть, насколько близки вы с Виталием и Мирусей, и я желаю вам всегда беречь эту близость 💜",
-    en: "This picture gives me such a warm feeling. I love seeing how close you are with Vitalii and Mirusya, and I hope you always protect that bond 💜",
-    de: "Dieses Bild fühlt sich einfach warm an. Ich sehe gern, wie nah du Vitalii und Mirusya bist, und wünsche euch, dass ihr diese Nähe immer bewahrt 💜"
+    ru: "От этого снимка становится по-доброму тепло. Мне очень нравится видеть, насколько близки вы с папой и Мирусей, и я желаю вам всегда беречь эту близость 💜",
+    en: "This picture gives me such a warm feeling. I love seeing how close you are with your father and Mirusya, and I hope you always protect that bond 💜",
+    de: "Dieses Bild fühlt sich einfach warm an. Ich sehe gern, wie nah du deinem Vater und Mirusya bist, und wünsche euch, dass ihr diese Nähe immer bewahrt 💜"
   },
   26: {
     ru: "Ты умеешь выглядеть красиво даже в самом обычном месте, и меня это каждый раз немного удивляет. Хотя, наверное, уже пора перестать удивляться 😉",
@@ -144,9 +144,9 @@ export const cardPersonalNotes: Partial<Record<number, LocalizedString>> = {
     de: "Du wirkst hier etwas nachdenklich, und ich mag diese ruhige Seite an dir. Bei mir musst du nicht immer lächeln, ich liebe dich mit jeder Stimmung"
   },
   29: {
-    ru: "В Елене здесь чувствуется столько спокойствия и тепла. Мне приятно понимать, что рядом с тобой есть такая замечательная мама, которая всегда сможет поддержать 🌸",
-    en: "Elena looks so calm and warm here. It makes me happy to know that you have such a wonderful mother who can always support you 🌸",
-    de: "Elena wirkt hier so ruhig und herzlich. Es freut mich zu wissen, dass du so eine wunderbare Mama hast, die dich immer unterstützen kann 🌸"
+    ru: "В твоей маме здесь чувствуется столько спокойствия и тепла. Мне приятно понимать, что рядом с тобой есть такой замечательный человек, который всегда сможет поддержать 🌸",
+    en: "Your mother looks so calm and warm here. It makes me happy to know that you have such a wonderful mother who can always support you 🌸",
+    de: "Deine Mama wirkt hier so ruhig und herzlich. Es freut mich zu wissen, dass du so eine wunderbare Mama hast, die dich immer unterstützen kann 🌸"
   },
   30: {
     ru: "Эта фотография напоминает мне ненадолго остановиться и просто посмотреть вокруг. Надеюсь, у тебя всегда будет время на такие спокойные маленькие паузы",
@@ -289,9 +289,9 @@ export const cardPersonalNotes: Partial<Record<number, LocalizedString>> = {
     de: "Ich mag, wie selbstbewusst du hier wirkst. Ich wünsche mir, dass du selbst öfter das schöne und starke Mädchen siehst, das ich in dir sehe ❤️‍🔥"
   },
   58: {
-    ru: "Елена здесь выглядит очень светло и спокойно. Сразу понятно, откуда в тебе столько тепла и внутренней силы, моя хорошая 🌸",
-    en: "Elena looks so bright and calm here. It is easy to see where so much of your warmth and inner strength comes from 🌸",
-    de: "Elena wirkt hier so hell und ruhig. Man versteht sofort, woher so viel von deiner Wärme und inneren Stärke kommt 🌸"
+    ru: "Твоя мама здесь выглядит очень светло и спокойно. Сразу понятно, откуда в тебе столько тепла и внутренней силы, моя хорошая 🌸",
+    en: "Your mother looks so bright and calm here. It is easy to see where so much of your warmth and inner strength comes from 🌸",
+    de: "Deine Mama wirkt hier so hell und ruhig. Man versteht sofort, woher so viel von deiner Wärme und inneren Stärke kommt 🌸"
   },
   59: {
     ru: "У тебя здесь такой спокойный взгляд, что я снова немного завис. Одно из тех фото, где хочется просто смотреть и ничего лишнего не придумывать 💜",

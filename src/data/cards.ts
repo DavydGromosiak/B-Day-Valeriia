@@ -29,7 +29,7 @@ const signature = l("Твой Давид 💜", "Your Davyd 💜", "Dein Davyd �
 const shapes: FeelingCard["shape"][] = ["photo", "postcard", "envelope", "book"];
 
 // EDIT HERE: здесь можно заменить любой текст под конкретную фотографию Леры.
-// Важно: 29 и 58 — мама Елена, 25 — Лера с папой Виталием и Мирусей, 37 — Мируся.
+// Важно: 29 и 58 — мама Леры, 25 — Лера с папой и Мирусей, 37 — Мируся.
 // Фото с Юлей: 2, 5, 7, 8, 9, 15, 17, 27, 33, 40, 49, 50, 54, 55, 56.
 // Фото с Nefeli: 1, 3, 13, 16. Фото с Юлей и Nefeli: 19, 32, 34.
 const photoCardSeeds: PhotoCardSeed[] = [
@@ -578,21 +578,21 @@ Ich mag diese Eigenschaft sehr. Nicht alles im Leben muss laut sein, manchmal re
   {
     id: 25,
     category: "family",
-    title: l("Ты с Виталием и Мирусей", "You with Vitalii and Mirusya", "Du mit Vitalii und Mirusya"),
+    title: l("Ты с папой и Мирусей", "You with your father and Mirusya", "Du mit deinem Vater und Mirusya"),
     text: l(
-      `Лера, здесь ты с папой Виталием и Мирусей, и на эту фотографию правда приятно смотреть.
+      `Лера, здесь ты с папой и Мирусей, и на эту фотографию правда приятно смотреть.
 
 Папа целует тебя в голову, Мируся прижалась рядом, а за вами вообще невероятный вид.
 
 Не хочу писать слишком громко. Просто скажу, что у тебя замечательные папа и мама, и мне очень приятно видеть вас вместе`,
       `Valeriia, this is a very warm family photo.
 
-You are with your father, Vitalii, and Mirusya, with mountains and water around you. The photo feels safe and close.
+You are with your father and Mirusya, with mountains and water around you. The photo feels safe and close.
 
 It is nice for me to see that you have a family like this. And honestly, I can tell that you were raised with warmth.`,
       `Valeriia, das ist ein sehr warmes Familienfoto.
 
-Du bist mit deinem Vater Vitalii und Mirusya zusammen, um euch herum Berge und Wasser. Das Foto strahlt Geborgenheit und Nähe aus.
+Du bist mit deinem Vater und Mirusya zusammen, um euch herum Berge und Wasser. Das Foto strahlt Geborgenheit und Nähe aus.
 
 Es ist schön für mich zu sehen, dass du so eine Familie hast. Und ehrlich, man merkt dir an, dass du mit Wärme groß geworden bist.`
     ),
@@ -668,19 +668,19 @@ Ich mag, dass du nicht nur lustig und hell bist, sondern auch so ruhig sein kann
   {
     id: 29,
     category: "family",
-    title: l("Елена среди цветов", "Elena among flowers", "Elena zwischen Blüten"),
+    title: l("Твоя мама среди цветов", "Your mother among flowers", "Deine Mama zwischen Blüten"),
     text: l(
-      `Твоя мама Елена здесь очень красивая. Белая одежда, цветущее дерево и спокойный взгляд — всё так хорошо совпало.
+      `Твоя мама здесь очень красивая. Белая одежда, цветущее дерево и спокойный взгляд — всё так хорошо совпало.
 
 И я сейчас не пытаюсь написать какой-то идеальный комплимент.
 
 Просто у тебя правда замечательная мама. А ещё замечательный папа. Думаю, ты и сама знаешь, как тебе с ними повезло 💜`,
-      `In this photo, your mom Elena looks very beautiful.
+      `In this photo, your mother looks very beautiful.
 
 White flowers, light clothes, and a calm look. The photo has a gentle elegance that is hard to explain.
 
 And you know, it is really nice to think that you have such a wonderful mom. I can feel part of that warmth in you too.`,
-      `Auf diesem Foto sieht deine Mama Elena sehr schön aus.
+      `Auf diesem Foto sieht deine Mama sehr schön aus.
 
 Weiße Blüten, helle Kleidung und ein ruhiger Blick. Das Foto hat eine sanfte Eleganz, die schwer zu erklären ist.
 
@@ -1324,23 +1324,23 @@ Du bist für mich wirklich etwas ganz Besonderes. Nicht perfekt wie eine Postkar
   {
     id: 58,
     category: "family",
-    title: l("Елена, у тебя великолепная мама", "Elena, your wonderful mom", "Elena, deine wundervolle Mama"),
+    title: l("У тебя великолепная мама", "Your wonderful mother", "Deine wundervolle Mama"),
     text: l(
-      `Это ещё одна фотография твоей мамы Елены среди цветущих веток.
+      `Это ещё одна фотография твоей мамы среди цветущих веток.
 
 Она здесь выглядит очень красиво и спокойно. И теперь я понимаю, от кого тебе достались некоторые черты.
 
 Скажу просто: у тебя замечательные мама и папа. Спасибо им за то, что они воспитали такую дочь 💜`,
-      `Here is your mom Elena again, and the photo is very beautiful.
+      `Here is your mother again, and the photo is very beautiful.
 
 The blooming branches, the light outfit, the calm look. It feels full of warmth and femininity.
 
-And I want to say this simply: Elena and Vitalii are wonderful parents. I can see how much love, care, and strength there is in your family. Maybe that is why there is so much good in you.`,
-      `Hier ist wieder deine Mama Elena, und das Foto ist sehr schön.
+And I want to say this simply: your mother and father are wonderful parents. I can see how much love, care, and strength there is in your family. Maybe that is why there is so much good in you.`,
+      `Hier ist wieder deine Mama, und das Foto ist sehr schön.
 
 Die blühenden Zweige, das helle Outfit, der ruhige Blick. Es wirkt voller Wärme und Weiblichkeit.
 
-Und ich möchte es einfach sagen: Elena und Vitalii sind wundervolle Eltern. Man sieht, wie viel Liebe, Fürsorge und Stärke es in deiner Familie gibt. Vielleicht ist deshalb so viel Gutes in dir.`
+Und ich möchte es einfach sagen: Deine Mama und dein Papa sind wundervolle Eltern. Man sieht, wie viel Liebe, Fürsorge und Stärke es in deiner Familie gibt. Vielleicht ist deshalb so viel Gutes in dir.`
     ),
     objectPosition: "center 42%"
   },
@@ -1686,7 +1686,7 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
   },
   29: {
     title: "Твоя мама среди цветов",
-    text: `Твоя мама Елена здесь правда очень красивая. Белая одежда, цветущие ветки и такой спокойный взгляд — всё совпало.
+    text: `Твоя мама здесь правда очень красивая. Белая одежда, цветущие ветки и такой спокойный взгляд — всё совпало.
 
 И это не комплимент ради красивой подписи. У тебя действительно замечательные мама и папа. Думаю, ты и сама знаешь, как тебе с ними повезло 💜`
   },
@@ -1862,7 +1862,7 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
   },
   58: {
     title: "Ещё одна фотография твоей мамы",
-    text: `Елена здесь опять среди цветущих веток, и фотография получилась очень красивой.
+    text: `Твоя мама здесь опять среди цветущих веток, и фотография получилась очень красивой.
 
 А ещё теперь понятно, откуда у тебя некоторые черты. Скажу без длинной речи: у тебя замечательные мама и папа. И я правда благодарен им за такую дочь 💜`
   },
