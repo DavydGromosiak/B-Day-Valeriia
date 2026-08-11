@@ -1919,11 +1919,13 @@ const reunionStory = {
 
 Весной прошлого года мы полностью перестали общаться.
 
-Прошло лето, затем осень и почти вся зима… Со временем я уже перестал думать о том, что однажды наше общение может начаться снова.
+Прошло лето, затем осень и наступила зима… Со временем я уже перестал думать о том, что однажды наше общение может начаться снова.
 
-Но в феврале ты неожиданно написала мне.
+Но 30 декабря 2025 года ты неожиданно написала мне.
 
-Тогда мы ещё не начали постоянно общаться, но спустя некоторое время я написал тебе сам — и именно после этого всё по-настоящему началось заново.
+После этого мы снова ненадолго перестали общаться. Но с самого начала января я хотел написать тебе сам — просто не знал, как подступиться, и мне было неловко начинать разговор без повода.
+
+27 января я всё-таки написал тебе под предлогом своей травмы. Да, повод был не самым удачным и даже немного нелепым, но именно тогда подвернулась та маленькая возможность снова начать разговор, которой мне так не хватало. И после этого всё по-настоящему началось заново.
 
 Помнишь, как мы переписывались почти до глубокой ночи?
 
@@ -1965,7 +1967,7 @@ const reunionStory = {
 
 И кто знает…
 
-Может быть, через 10, 20 или даже 50 лет мы снова откроем этот сайт, посмотрим на эту фотографию и вспомним, как когда-то всё началось заново с нескольких сообщений в феврале.
+Может быть, через 10, 20 или даже 50 лет мы снова откроем этот сайт, посмотрим на эту фотографию и вспомним, как всё началось заново с твоего сообщения 30 декабря 2025 года и моего немного нелепого сообщения о травме 27 января.
 
 Вспомним, как после почти года тишины снова начали разговаривать, постепенно становились ближе и ещё даже не понимали, насколько важными станем друг для друга.
 
@@ -1986,11 +1988,13 @@ Sometimes life has a remarkable way of bringing back the people who truly belong
 
 In spring last year, we completely stopped talking.
 
-Summer passed, then autumn and almost the whole winter… With time, I stopped thinking that our conversations might ever begin again.
+Summer passed, then autumn, and winter arrived… With time, I stopped thinking that our conversations might ever begin again.
 
-But in February, you unexpectedly wrote to me.
+But on December 30, 2025, you unexpectedly wrote to me.
 
-We did not start talking all the time immediately, but after a while I wrote to you myself, and that was when everything truly began again.
+After that, we stopped talking again for a little while. From the beginning of January, I wanted to write to you myself, but I did not know how to approach you, and I felt awkward starting a conversation without a reason.
+
+On January 27, I finally wrote to you using my injury as an excuse. Yes, it was not the best reason and it was even a little silly, but it gave me the small opening I had been missing. That was when everything truly began again.
 
 Do you remember how we messaged each other until almost the middle of the night?
 
@@ -2032,7 +2036,7 @@ It reminds me not only of a moment when we were together, but of the whole path 
 
 And who knows…
 
-Maybe in 10, 20, or even 50 years, we will open this website again, look at this photograph, and remember how everything once began again with a few messages in February.
+Maybe in 10, 20, or even 50 years, we will open this website again, look at this photograph, and remember how everything began again with your message on December 30, 2025, and my slightly silly message about the injury on January 27.
 
 We will remember how, after almost a year of silence, we started talking again, slowly grew closer, and did not yet understand how important we would become to each other.
 
@@ -2053,11 +2057,13 @@ Manchmal bringt das Leben uns auf erstaunliche Weise die Menschen zurück, die w
 
 Im Frühling des letzten Jahres haben wir ganz aufgehört, miteinander zu reden.
 
-Der Sommer verging, dann der Herbst und fast der ganze Winter… Mit der Zeit dachte ich nicht mehr daran, dass unser Kontakt eines Tages wieder anfangen könnte.
+Der Sommer verging, dann der Herbst, und der Winter begann… Mit der Zeit dachte ich nicht mehr daran, dass unser Kontakt eines Tages wieder anfangen könnte.
 
-Doch im Februar hast du mir ganz unerwartet geschrieben.
+Doch am 30. Dezember 2025 hast du mir ganz unerwartet geschrieben.
 
-Damals haben wir noch nicht sofort ständig miteinander geredet. Aber einige Zeit später habe ich dir selbst geschrieben, und genau danach begann alles wirklich neu.
+Danach hatten wir für eine kurze Zeit wieder keinen Kontakt. Seit Anfang Januar wollte ich dir selbst schreiben, wusste aber nicht, wie ich mich dir nähern sollte, und es war mir unangenehm, ohne einen Anlass ein Gespräch anzufangen.
+
+Am 27. Januar habe ich dir schließlich unter dem Vorwand meiner Verletzung geschrieben. Ja, der Anlass war nicht besonders gut und sogar ein wenig albern, aber er gab mir die kleine Gelegenheit, die mir gefehlt hatte. Genau danach begann alles wirklich neu.
 
 Erinnerst du dich daran, wie wir bis fast tief in die Nacht geschrieben haben?
 
@@ -2099,7 +2105,7 @@ Es erinnert mich nicht nur an den Moment, in dem wir zusammen waren, sondern auc
 
 Und wer weiß…
 
-Vielleicht öffnen wir diese Website in 10, 20 oder sogar 50 Jahren wieder, sehen dieses Foto an und erinnern uns daran, wie damals mit ein paar Nachrichten im Februar alles neu begann.
+Vielleicht öffnen wir diese Website in 10, 20 oder sogar 50 Jahren wieder, sehen dieses Foto an und erinnern uns daran, wie alles mit deiner Nachricht vom 30. Dezember 2025 und meiner etwas albernen Nachricht über die Verletzung am 27. Januar neu begann.
 
 Wir werden uns daran erinnern, wie wir nach fast einem Jahr Stille wieder miteinander redeten, uns langsam näherkamen und noch gar nicht wussten, wie wichtig wir füreinander werden würden.
 
