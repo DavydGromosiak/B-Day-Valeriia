@@ -115,10 +115,10 @@ export const t = {
   listenOnSpotify: { ru: "Открыть в Spotify", en: "Open on Spotify", de: "Auf Spotify öffnen" },
   listenOnYoutube: { ru: "Открыть на YouTube", en: "Open on YouTube", de: "Auf YouTube öffnen" },
   categories: {
-    birthday: { ru: "Поздравления", en: "Birthday wishes", de: "Glückwünsche" },
-    love: { ru: "Почему я тебя люблю", en: "Why I love you", de: "Warum ich dich liebe" },
-    moments: { ru: "Твои фото, которые мне понравились", en: "Your photos I loved", de: "Deine Fotos, die ich besonders mag" },
-    secret: { ru: "Секретные письма", en: "Secret letters", de: "Geheime Briefe" },
+    birthday: { ru: "Пожелания для тебя", en: "Wishes for you", de: "Wünsche für dich" },
+    love: { ru: "Почему ты мне дорога", en: "Why you mean so much to me", de: "Warum du mir so viel bedeutest" },
+    moments: { ru: "Друзья и воспоминания", en: "Friends and memories", de: "Freunde und Erinnerungen" },
+    secret: { ru: "Наша история", en: "Our story", de: "Unsere Geschichte" },
     family: { ru: "Семья", en: "Family", de: "Familie" }
   },
   openCard: { ru: "Открыть открытку", en: "Open card", de: "Karte öffnen" },

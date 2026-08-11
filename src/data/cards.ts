@@ -1438,7 +1438,7 @@ Und beides bist einfach du.`
   },
   {
     id: 63,
-    category: "love",
+    category: "secret",
     title: l(
       "Иногда жизнь удивительно возвращает нам людей, которые должны быть рядом 💜",
       "Sometimes life has a surprising way of bringing back the people who are meant to be close 💜",
@@ -1902,9 +1902,9 @@ const naturalRussianCopy: Record<number, { title: string; text: string }> = {
 
 const reunionStory = {
   title: {
-    ru: "Иногда жизнь удивительным образом возвращает нам людей, которые действительно должны быть рядом 💜",
-    en: "Sometimes life has a remarkable way of bringing back the people who truly belong beside us 💜",
-    de: "Manchmal bringt das Leben uns auf erstaunliche Weise die Menschen zurück, die wirklich an unsere Seite gehören 💜"
+    ru: "Как наша история началась заново 💜",
+    en: "How our story began again 💜",
+    de: "Wie unsere Geschichte neu begann 💜"
   },
   text: {
     ru: `## С чего всё началось заново
@@ -2137,8 +2137,128 @@ const builtCards: FeelingCard[] = photoCardSeeds.map((card, index) => ({
   shape: shapes[index % shapes.length]
 }));
 
-// Наша первая совместная фотография открывает библиотеку, остальные идут в прежнем порядке.
-export const cards: FeelingCard[] = [
-  ...builtCards.filter((card) => card.id === 63),
-  ...builtCards.filter((card) => card.id !== 63)
+const familyCards: FeelingCard[] = [
+  {
+    id: 64,
+    category: "family",
+    title: l("Вы с Мирусей — две части одного дома", "You and Mirusya — two parts of one home", "Du und Mirusya – zwei Teile eines Zuhauses"),
+    text: l(
+      `Мне нравится эта фотография не только из-за сердечка, которое вы сложили руками.
+
+В том, как ты обнимаешь Мирусю, чувствуется настоящая сестринская близость: иногда шумная и смешная, но очень родная.
+
+Хочу, чтобы вы всегда оставались друг для друга людьми, к которым можно прийти с любой радостью и любой проблемой. Берегите эту связь — она правда особенная 💜`,
+      `I love this photo not only because of the heart you made with your hands.
+
+The way you hold Mirusya shows a real bond between sisters: sometimes noisy and funny, but always deeply familiar.
+
+I hope you will always be the people each other can come to with any joy or any problem. This bond is truly special 💜`,
+      `Ich mag dieses Foto nicht nur wegen des Herzens, das ihr mit euren Händen formt.
+
+Wie du Mirusya im Arm hältst, zeigt echte Nähe zwischen Schwestern: manchmal laut und lustig, aber immer vertraut.
+
+Ich wünsche euch, dass ihr mit jeder Freude und jedem Problem zueinander kommen könnt. Diese Verbindung ist wirklich besonders 💜`
+    ),
+    image: "/photos/64.jpg",
+    objectPosition: "center 42%",
+    signature,
+    shape: "photo"
+  },
+  {
+    id: 66,
+    category: "family",
+    title: l("Папа рядом — даже когда случайно попал в кадр", "Your father is close — even when he wandered into the photo", "Dein Papa ist nah – selbst wenn er zufällig ins Bild kommt"),
+    text: l(
+      `Ты спокойно смотришь на долину, а твой папа на заднем плане добавляет фотографии немного семейного юмора 😅
+
+Мне нравится, что даже такой случайный момент напоминает: рядом с тобой есть папа, с которым можно путешествовать, смеяться и сохранять общие истории.
+
+Пусть у вас впереди будет ещё много мест, которые вы увидите вместе, и фотографий, над которыми потом будете улыбаться 💜`,
+      `You are quietly looking over the valley while your father adds a little family humour in the background 😅
+
+I like how even this accidental moment is a reminder that you have a father to travel, laugh, and make memories with.
+
+I hope there will be many more places for you to discover together and photos that will make you smile later 💜`,
+      `Du schaust ruhig über das Tal, während dein Papa dem Foto im Hintergrund etwas Familienhumor gibt 😅
+
+Selbst dieser zufällige Moment erinnert daran, dass du einen Papa hast, mit dem du reisen, lachen und Erinnerungen sammeln kannst.
+
+Ich wünsche euch noch viele gemeinsame Orte und Fotos, über die ihr später lächeln werdet 💜`
+    ),
+    image: "/photos/66.jpg",
+    objectPosition: "center 44%",
+    signature,
+    shape: "postcard"
+  },
+  {
+    id: 69,
+    category: "family",
+    title: l("Ваша семья в одном тёплом кадре", "Your family in one warm photograph", "Eure Familie in einem warmen Foto"),
+    text: l(
+      `Мне особенно нравится эта фотография, потому что здесь рядом все: твоя мама, твой папа, ты и Мируся.
+
+За красивым видом я вижу главное — семью, которая путешествует вместе, поддерживает друг друга и умеет сохранять общие моменты.
+
+Пусть у вас всегда остаётся это чувство дома, даже когда вы далеко от него. И пусть впереди будет ещё много таких семейных дней 💜`,
+      `I especially love this photograph because everyone is together: your mother, your father, you, and Mirusya.
+
+Beyond the beautiful view, I see what matters most — a family that travels together, supports one another, and keeps shared moments.
+
+May that feeling of home always stay with you, even when you are far away from it. I hope many more family days like this are ahead 💜`,
+      `Ich mag dieses Foto besonders, weil hier alle zusammen sind: deine Mama, dein Papa, du und Mirusya.
+
+Hinter der schönen Aussicht sehe ich das Wichtigste – eine Familie, die gemeinsam reist, einander unterstützt und Erinnerungen bewahrt.
+
+Möge dieses Gefühl von Zuhause euch immer begleiten, auch wenn ihr weit weg seid. Ich wünsche euch noch viele solche Familientage 💜`
+    ),
+    image: "/photos/69.jpg",
+    objectPosition: "center 42%",
+    signature,
+    shape: "book"
+  },
+  {
+    id: 74,
+    category: "family",
+    title: l("Летний день с мамой", "A summer day with your mother", "Ein Sommertag mit deiner Mama"),
+    text: l(
+      `Вы с мамой здесь такие живые и настоящие. Вокруг цветы и летний свет, но больше всего эту фотографию украшает то, как легко вам рядом друг с другом.
+
+Мне приятно видеть вашу близость и понимать, что рядом с тобой есть мама, с которой можно делиться обычными днями и превращать их в тёплые воспоминания.
+
+Пусть между вами всегда сохраняются доверие, забота и возможность говорить обо всём 💜`,
+      `You and your mother look so lively and genuine here. There are flowers and summer light all around, but what makes the photo special is how comfortable you are together.
+
+It makes me happy to see your closeness and to know that you have a mother with whom ordinary days can become warm memories.
+
+May trust, care, and the freedom to talk about anything always remain between you 💜`,
+      `Du und deine Mama wirkt hier so lebendig und echt. Um euch herum sind Blumen und Sommerlicht, doch besonders schön ist, wie vertraut ihr miteinander seid.
+
+Es freut mich, eure Nähe zu sehen und zu wissen, dass gewöhnliche Tage mit deiner Mama zu warmen Erinnerungen werden können.
+
+Mögen Vertrauen, Fürsorge und die Möglichkeit, über alles zu sprechen, immer zwischen euch bleiben 💜`
+    ),
+    image: "/photos/august-2026/lera-with-elena-greenhouse.jpg",
+    objectPosition: "center 34%",
+    signature,
+    shape: "photo"
+  }
 ];
+
+// The library is intentionally curated: the complete, unfiltered collection stays in the photo reel.
+const curatedCardIds = [
+  63,
+  69, 25, 64, 74, 29, 37, 66, 58,
+  2, 3, 7, 19, 32, 40, 55, 56,
+  57, 5, 21, 35,
+  6, 10, 14, 18, 41, 48
+] as const;
+
+const cardsById = new Map<number, FeelingCard>([
+  ...builtCards,
+  ...familyCards
+].map((card) => [card.id, card]));
+
+export const cards: FeelingCard[] = curatedCardIds.flatMap((id) => {
+  const card = cardsById.get(id);
+  return card ? [card] : [];
+});
