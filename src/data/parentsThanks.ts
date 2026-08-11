@@ -79,51 +79,51 @@ export const parentsThanks: {
   },
   values: [
     {
-      title: { ru: "За её доброту", en: "For her kindness", de: "Für ihre Güte" },
+      title: { ru: "Спасибо за её доброту", en: "Thank you for her kindness", de: "Danke für ihre Güte" },
       text: {
-        ru: "В ней есть мягкость, которую невозможно не заметить.",
-        en: "There is a softness in her that is impossible not to notice.",
-        de: "In ihr ist eine Sanftheit, die man nicht übersehen kann."
+        ru: "Спасибо, что воспитали в Лере мягкость, искренность и умение бережно относиться к людям.",
+        en: "Thank you for raising Valeriia to be gentle, sincere, and considerate toward other people.",
+        de: "Danke, dass Sie Valeriia zu einem sanften, aufrichtigen und rücksichtsvollen Menschen erzogen haben."
       }
     },
     {
-      title: { ru: "За её характер", en: "For her character", de: "Für ihren Charakter" },
+      title: { ru: "Спасибо за её характер", en: "Thank you for her character", de: "Danke für ihren Charakter" },
       text: {
-        ru: "За то, что она живая, настоящая и умеет быть собой.",
-        en: "For being lively, genuine, and completely herself.",
-        de: "Dafür, dass sie lebendig und echt ist und ganz sie selbst sein kann."
+        ru: "Спасибо, что помогли ей вырасти сильной, настоящей и не бояться оставаться собой.",
+        en: "Thank you for helping her grow into someone strong, genuine, and unafraid to be herself.",
+        de: "Danke, dass Sie ihr geholfen haben, stark und aufrichtig zu werden und keine Angst davor zu haben, sie selbst zu sein."
       }
     },
     {
-      title: { ru: "За её тепло", en: "For her warmth", de: "Für ihre Wärme" },
+      title: { ru: "Спасибо за её тепло", en: "Thank you for her warmth", de: "Danke für ihre Wärme" },
       text: {
-        ru: "Рядом с ней обычные моменты становятся светлее.",
-        en: "Ordinary moments feel brighter when she is near.",
-        de: "Gewöhnliche Momente werden heller, wenn sie in der Nähe ist."
+        ru: "Спасибо за любовь и заботу, благодаря которым Лера умеет согревать даже самые обычные моменты.",
+        en: "Thank you for the love and care that taught Valeriia to bring warmth even to the most ordinary moments.",
+        de: "Danke für die Liebe und Fürsorge, durch die Valeriia selbst gewöhnlichen Momenten Wärme schenken kann."
       }
     },
     {
-      title: { ru: "За её сердце", en: "For her heart", de: "Für ihr Herz" },
+      title: { ru: "Спасибо за её большое сердце", en: "Thank you for her caring heart", de: "Danke für ihr großes Herz" },
       text: {
-        ru: "За то, как она умеет заботиться и чувствовать.",
-        en: "For the way she knows how to care and feel.",
-        de: "Dafür, wie aufmerksam sie fühlt und für andere da ist."
+        ru: "Спасибо, что научили её слушать, поддерживать и замечать, когда близкому человеку нужна помощь.",
+        en: "Thank you for teaching her to listen, support, and notice when someone close to her needs help.",
+        de: "Danke, dass Sie ihr beigebracht haben zuzuhören, zu unterstützen und zu erkennen, wenn ein nahestehender Mensch Hilfe braucht."
       }
     },
     {
-      title: { ru: "За её свет", en: "For her light", de: "Für ihr Licht" },
+      title: { ru: "Спасибо за её свет", en: "Thank you for her light", de: "Danke für ihr Licht" },
       text: {
-        ru: "В ней есть что-то, что хочется беречь.",
-        en: "There is something in her that makes you want to protect her.",
-        de: "In ihr ist etwas, das man behüten möchte."
+        ru: "Спасибо за её улыбку, жизнелюбие и ту светлую энергию, которой она делится с окружающими.",
+        en: "Thank you for her smile, her love of life, and the bright energy she shares with the people around her.",
+        de: "Danke für ihr Lächeln, ihre Lebensfreude und die helle Energie, die sie mit den Menschen um sie herum teilt."
       }
     },
     {
-      title: { ru: "За Леру", en: "For Valeriia", de: "Für Valeriia" },
+      title: { ru: "Спасибо вам за Леру", en: "Thank you for Valeriia", de: "Danke für Valeriia" },
       text: {
-        ru: "За такую замечательную дочь и такого дорогого человека.",
-        en: "For such a wonderful daughter and such a precious person.",
-        de: "Für eine so wunderbare Tochter und einen so kostbaren Menschen."
+        ru: "За замечательную дочь и дорогого мне человека. Я искренне ценю всё, что вы в неё вложили.",
+        en: "For a wonderful daughter and someone so precious to me. I sincerely value everything you have given her.",
+        de: "Für eine wunderbare Tochter und einen Menschen, der mir sehr viel bedeutet. Ich schätze aufrichtig alles, was Sie ihr mitgegeben haben."
       }
     }
   ]
