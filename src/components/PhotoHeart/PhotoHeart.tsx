@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp, Play } from "lucide-react";
 import { useState } from "react";
 import { photos, PhotoItem } from "../../data/photos";
 import { LocalizedString } from "../../data/translations";
@@ -21,13 +22,14 @@ function photoPoint(i: number, total: number) {
 
 export function PhotoHeart({ tr, ui }: Props) {
   const [active, setActive] = useState<PhotoItem | null>(null);
+  const [expanded, setExpanded] = useState(false);
   const reduced = useReducedMotion();
 
   return (
     <section id="photos" className="page-section photo-section">
       <p className="section-kicker">{tr(ui.photosKicker)}</p>
       <h2>{tr(ui.photosTitle)}</h2>
-      <div className={`photo-heart-stage ${photos.length > 28 ? "is-dense" : ""}`} data-romantic="true">
+      <div className={`photo-heart-stage ${photos.length > 28 ? "is-dense" : ""} ${expanded ? "is-expanded" : ""}`} data-romantic="true">
         {photos.map((photo, i) => {
           const p = photoPoint(i, photos.length);
           return (
@@ -42,11 +44,24 @@ export function PhotoHeart({ tr, ui }: Props) {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.04, duration: 0.85, type: "spring", damping: 18 }}
             >
-              <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
+              {photo.mediaType === "video" ? (
+                <>
+                  <video src={photo.src} aria-label={tr(photo.alt)} preload="metadata" muted playsInline />
+                  <span className="photo-video-badge" aria-hidden="true"><Play size={16} fill="currentColor" /></span>
+                </>
+              ) : (
+                <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
+              )}
             </motion.button>
           );
         })}
       </div>
+      <button type="button" className="photo-expand-button" onClick={() => setExpanded((value) => !value)}>
+        {expanded
+          ? tr({ ru: "Собрать обратно в сердце", en: "Fold back into a heart", de: "Zurück zum Herz" })
+          : tr({ ru: `Показать всю фотоленту · ${photos.length}`, en: `Show the full photo reel · ${photos.length}`, de: `Ganze Fotoreihe zeigen · ${photos.length}` })}
+        {expanded ? <ChevronUp size={17} /> : <ChevronDown size={17} />}
+      </button>
       <PhotoLightbox photo={active} photos={photos} tr={tr} ui={ui} onClose={() => setActive(null)} onSelect={setActive} />
     </section>
   );

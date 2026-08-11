@@ -1662,15 +1662,35 @@ input[type="range"] {
   border-radius: 12px;
   box-shadow: 0 14px 34px rgba(0,0,0,0.34), 0 0 22px rgba(255,79,163,0.16);
 }
-.photo-tile img, .photo-tile .photo-placeholder {
+.photo-tile img, .photo-tile video, .photo-tile .photo-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 .photo-heart-stage.is-dense .photo-tile img,
+.photo-heart-stage.is-dense .photo-tile video,
 .photo-heart-stage.is-dense .photo-tile .photo-placeholder {
   border-radius: 8px;
+}
+.photo-video-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  translate: -50% -50%;
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
+  color: white;
+  background: rgba(40, 14, 40, 0.7);
+  box-shadow: 0 0 20px rgba(255,79,163,0.55);
+  pointer-events: none;
+}
+.photo-expand-button {
+  display: none;
 }
 .photo-placeholder {
   display: grid;
@@ -1696,11 +1716,14 @@ input[type="range"] {
   place-items: center;
   min-width: 0;
 }
-.lightbox-media img, .lightbox-media .photo-placeholder {
+.lightbox-media img, .lightbox-media video, .lightbox-media .photo-placeholder {
   width: 100%;
   max-height: 76vh;
   object-fit: contain;
   border-radius: 18px;
+}
+.lightbox-media video {
+  background: #08050d;
 }
 .lightbox p { margin: 16px 10px 4px; text-align: center; color: var(--muted); }
 .lightbox-media > .lightbox-prev,
@@ -4167,8 +4190,10 @@ input[type="range"] {
   }
 
   .photo-heart-stage .photo-tile img,
+  .photo-heart-stage .photo-tile video,
   .photo-heart-stage .photo-tile .photo-placeholder,
   .photo-heart-stage.is-dense .photo-tile img,
+  .photo-heart-stage.is-dense .photo-tile video,
   .photo-heart-stage.is-dense .photo-tile .photo-placeholder {
     border-radius: 6px;
   }
@@ -4179,6 +4204,34 @@ input[type="range"] {
   .photo-heart-stage .photo-tile:nth-child(4n) { rotate: 4deg; }
 
   .photo-heart-stage .photo-tile:nth-child(n + 28) { display: none; }
+
+  .photo-heart-stage.is-expanded {
+    min-height: 0;
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    gap: 5px 3px;
+    padding-top: 20px;
+  }
+
+  .photo-heart-stage.is-expanded .photo-tile {
+    display: block;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .photo-expand-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 11px 16px;
+    border: 1px solid rgba(255, 185, 224, 0.28);
+    border-radius: 999px;
+    color: rgba(255, 240, 249, 0.92);
+    background: linear-gradient(135deg, rgba(255,79,163,0.18), rgba(157,78,221,0.16));
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+  }
 
   .photo-heart-stage .photo-tile:nth-child(1) { grid-column: 2; grid-row: 1; }
   .photo-heart-stage .photo-tile:nth-child(2) { grid-column: 3; grid-row: 1; }

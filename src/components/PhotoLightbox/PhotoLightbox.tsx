@@ -50,7 +50,11 @@ export function PhotoLightbox({ photo, photos, tr, ui, onClose, onSelect }: Prop
             <X size={19} />
           </button>
           <div className="lightbox-media" style={{ position: "relative" }}>
-            <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
+            {photo.mediaType === "video" ? (
+              <video key={photo.src} src={photo.src} aria-label={tr(photo.alt)} controls playsInline preload="metadata" />
+            ) : (
+              <SmartImage src={photo.src} alt={tr(photo.alt)} objectPosition={photo.objectPosition} placeholder={tr(ui.photoPlaceholder)} />
+            )}
             <button
               type="button"
               className="icon-button lightbox-prev"

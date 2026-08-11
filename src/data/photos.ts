@@ -5,6 +5,7 @@ export type PhotoItem = {
   alt: LocalizedString;
   caption: LocalizedString;
   objectPosition: string;
+  mediaType?: "image" | "video";
 };
 
 const l = (ru: string, en: string, de: string): LocalizedString => ({ ru, en, de });
@@ -309,7 +310,7 @@ const photoOrder = [
 ];
 
 // Наша первая совместная фотография открывает альбом, остальные сохраняют прежний порядок.
-export const photos: PhotoItem[] = photoOrder.map((id, index) => {
+const originalPhotos: PhotoItem[] = photoOrder.map((id, index) => {
   const special = specialPhotos[id];
 
   return {
@@ -319,3 +320,62 @@ export const photos: PhotoItem[] = photoOrder.map((id, index) => {
     objectPosition: special?.objectPosition ?? (index % 3 === 0 ? "center 30%" : "center")
   };
 });
+
+const augustMemories: PhotoItem[] = [
+  {
+    src: "/photos/august-2026/lera-japanese-garden-sun.jpg",
+    alt: l("Лера в солнечном японском саду", "Lera in a sunny Japanese garden", "Lera in einem sonnigen japanischen Garten"),
+    caption: l("Солнечный день, японский сад и ты — очень красивый момент этого лета", "A sunny day, a Japanese garden, and you — such a beautiful summer moment", "Ein sonniger Tag, ein japanischer Garten und du – ein wunderschöner Sommermoment"),
+    objectPosition: "center 40%"
+  },
+  {
+    src: "/photos/august-2026/lera-greenhouse-flowers.jpg",
+    alt: l("Лера среди цветов в оранжерее", "Lera among flowers in the greenhouse", "Lera zwischen Blumen im Gewächshaus"),
+    caption: l("Ты среди цветов — спокойная, красивая и настоящая", "You among the flowers — calm, beautiful, and completely yourself", "Du zwischen den Blumen – ruhig, wunderschön und ganz du selbst"),
+    objectPosition: "center 36%"
+  },
+  {
+    src: "/photos/august-2026/lera-japanese-garden-gate.jpg",
+    alt: l("Лера у ворот японского сада", "Lera by the Japanese garden gate", "Lera am Tor des japanischen Gartens"),
+    caption: l("Тихий кадр у ворот сада, который хочется сохранить в нашей фотоленте", "A quiet moment by the garden gate that belongs in our photo reel", "Ein ruhiger Moment am Gartentor, der in unsere Fotoreihe gehört"),
+    objectPosition: "center 42%"
+  },
+  {
+    src: "/photos/august-2026/lera-with-elena-greenhouse.jpg",
+    alt: l("Лера с мамой Еленой в оранжерее", "Lera with her mom Elena in the greenhouse", "Lera mit ihrer Mama Elena im Gewächshaus"),
+    caption: l("Тёплая фотография с мамой Еленой среди цветов и летнего света", "A warm photo with mom Elena among flowers and summer light", "Ein warmes Foto mit Mama Elena zwischen Blumen und Sommerlicht"),
+    objectPosition: "center 34%"
+  },
+  {
+    src: "/photos/august-2026/lera-mirror-selfie.jpg",
+    alt: l("Зеркальное селфи Леры", "Lera's mirror selfie", "Leras Spiegel-Selfie"),
+    caption: l("Ещё один живой кадр обычного дня, который теперь стал воспоминанием", "One more real moment from an ordinary day that has now become a memory", "Noch ein echter Moment aus einem gewöhnlichen Tag, der jetzt eine Erinnerung ist"),
+    objectPosition: "center 40%"
+  },
+  {
+    src: "/photos/august-2026/lera-japanese-garden-video.mp4",
+    alt: l("Летнее видео с Лерой", "A summer video with Lera", "Ein Sommervideo mit Lera"),
+    caption: l("Маленький живой фрагмент этого летнего дня 💜", "A little living piece of this summer day 💜", "Ein kleiner lebendiger Ausschnitt aus diesem Sommertag 💜"),
+    objectPosition: "center",
+    mediaType: "video"
+  }
+];
+
+function shuffleWithSeed<T>(items: T[], seed: number) {
+  const shuffled = [...items];
+  let state = seed >>> 0;
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+    const swapIndex = Math.floor((state / 4294967296) * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+
+  return shuffled;
+}
+
+// Общая фотография всегда открывает альбом, остальные воспоминания перемешаны в постоянном порядке.
+export const photos: PhotoItem[] = [
+  originalPhotos[0],
+  ...shuffleWithSeed([...originalPhotos.slice(1), ...augustMemories], 12082026)
+];
