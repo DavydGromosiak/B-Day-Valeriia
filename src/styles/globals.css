@@ -4089,6 +4089,15 @@ input[type="range"] {
     gap: 14px;
   }
   .wish-progress {
+    grid-row: 1;
+  }
+  .wish-card {
+    grid-row: 2;
+  }
+  .wish-sky {
+    grid-row: 3;
+  }
+  .wish-progress {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;

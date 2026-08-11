@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { RotateCcw, Sparkles, Star } from "lucide-react";
-import { CSSProperties, useMemo, useState } from "react";
+import { CSSProperties, useMemo, useRef, useState } from "react";
 import { birthdayWishes } from "../../data/wishConstellation";
 import { LocalizedString } from "../../data/translations";
 
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
 export function WishConstellation({ tr, ui }: Props) {
+  const cardRef = useRef<HTMLElement | null>(null);
   const [opened, setOpened] = useState<number[]>([]);
   const [activeId, setActiveId] = useState<number | null>(null);
   const activeWish = useMemo(
@@ -20,6 +21,11 @@ export function WishConstellation({ tr, ui }: Props) {
     setActiveId(id);
     if (!openedSet.has(id)) {
       setOpened([...opened, id]);
+    }
+    if (window.innerWidth <= 560) {
+      window.setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 80);
     }
   };
 
@@ -65,6 +71,7 @@ export function WishConstellation({ tr, ui }: Props) {
         </div>
 
         <motion.article
+          ref={cardRef}
           className={`wish-card ${activeWish ? "is-revealed" : "is-sealed"}`}
           data-wish-number={activeWish ? String(activeWish.id).padStart(2, "0") : ""}
           layout
