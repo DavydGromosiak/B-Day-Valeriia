@@ -2128,6 +2128,7 @@ const builtCards: FeelingCard[] = photoCardSeeds.map((card, index) => ({
   text: {
     ...card.text,
     ...(cardPersonalNotes[card.id] ?? {}),
+    ru: russianCardWishCopy[card.id]?.text ?? cardPersonalNotes[card.id]?.ru ?? card.text.ru,
     ...(card.id === 63 ? reunionStory.text : {})
   },
   image: `/photos/${String(card.id).padStart(2, "0")}.jpg`,
