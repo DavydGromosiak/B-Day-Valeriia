@@ -5729,17 +5729,27 @@ input[type="range"] {
 
 .mixer-source {
   width: fit-content;
+  max-width: 100%;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 4px 9px;
+  overflow: hidden;
+  border: 1px solid rgba(255,185,224,0.14);
+  border-radius: 999px;
   color: rgba(255,248,252,0.6);
+  background: rgba(255,248,252,0.045);
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 0.68rem;
   letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mixer-source:hover {
   color: #ffb9df;
+  border-color: rgba(255,185,224,0.28);
+  background: rgba(255,79,163,0.08);
 }
 
 .site-mixer.is-docked .mixer-source {
@@ -6257,11 +6267,20 @@ input[type="range"] {
     max-height: 180px;
   }
 
+  .site-mixer.is-open .mixer-meta > div {
+    flex: 1 1 auto;
+  }
+
+  .site-mixer.is-open .mixer-equalizer {
+    display: none;
+  }
+
   .site-mixer.is-open .mixer-source {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    justify-self: start;
   }
 
   .playlist-preview { padding: 20px 14px; border-radius: 23px; }

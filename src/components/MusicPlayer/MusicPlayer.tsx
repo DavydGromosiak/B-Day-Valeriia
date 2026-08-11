@@ -72,8 +72,9 @@ const copy = {
   shuffle: { ru: "Перемешать", en: "Shuffle", de: "Mischen" },
   repeat: { ru: "Повторять песню", en: "Repeat track", de: "Titel wiederholen" },
   spotify: { ru: "Официальное воспроизведение Spotify", en: "Official Spotify playback", de: "Offizielle Spotify-Wiedergabe" },
-  fallback: { ru: "Резервная копия сайта", en: "Site backup audio", de: "Audio-Sicherung der Website" },
-  useFallback: { ru: "Если Spotify не запускается — включить резерв", en: "If Spotify does not start — use backup", de: "Falls Spotify nicht startet – Sicherung nutzen" },
+  fallback: { ru: "Музыка с сайта", en: "Website audio", de: "Website-Audio" },
+  useFallback: { ru: "Включить музыку с сайта", en: "Play website audio", de: "Website-Audio abspielen" },
+  songs: { ru: "песен", en: "songs", de: "Songs" },
   albumLoading: { ru: "Альбом загружается…", en: "Loading album…", de: "Album wird geladen…" }
 } as const;
 
@@ -465,7 +466,7 @@ export function MusicPlayer({ language, shouldStart }: Props) {
           <div>
             <span><Music2 size={15} /> {tx(copy.madeForYou, language)}</span>
             <h2>{tx(copy.playlist, language)} <Heart size={25} fill="currentColor" /></h2>
-            <p>{musicTracks.length} songs · Spotify Embed</p>
+            <p>{musicTracks.length} {tx(copy.songs, language)} · Spotify</p>
           </div>
           <button type="button" className="playlist-modal-close" onClick={() => setPlaylistOpen(false)} aria-label={tx(copy.close, language)}><X size={22} /></button>
         </header>
