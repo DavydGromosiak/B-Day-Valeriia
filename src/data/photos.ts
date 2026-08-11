@@ -374,8 +374,10 @@ function shuffleWithSeed<T>(items: T[], seed: number) {
   return shuffled;
 }
 
-// Общая фотография всегда открывает альбом, остальные воспоминания перемешаны в постоянном порядке.
+const featuredPhoto = originalPhotos.find((photo) => photo.src === "/photos/48.jpg") ?? originalPhotos[0];
+
+// Любимый портрет всегда открывает альбом, остальные воспоминания перемешаны в постоянном порядке.
 export const photos: PhotoItem[] = [
-  originalPhotos[0],
-  ...shuffleWithSeed([...originalPhotos.slice(1), ...augustMemories], 12082026)
+  featuredPhoto,
+  ...shuffleWithSeed([...originalPhotos.filter((photo) => photo !== featuredPhoto), ...augustMemories], 12082026)
 ];
