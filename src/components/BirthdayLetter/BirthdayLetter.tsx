@@ -6,6 +6,20 @@ import { LocalizedString } from "../../data/translations";
 
 type Props = { tr: (value: LocalizedString) => string };
 
+const LETTER_READING_PROGRESS_KEY = "birthday-letter-reading-progress";
+
+const getSavedReadingProgress = () => {
+  if (typeof window === "undefined") return 0;
+
+  try {
+    const savedPercent = Number(window.localStorage.getItem(LETTER_READING_PROGRESS_KEY));
+    if (!Number.isFinite(savedPercent)) return 0;
+    return Math.min(1, Math.max(0, savedPercent / 100));
+  } catch {
+    return 0;
+  }
+};
+
 const letterUi = {
   kicker: {
     ru: "главное письмо",
@@ -77,7 +91,7 @@ const letterUi = {
 export function BirthdayLetter({ tr }: Props) {
   const [open, setOpen] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
-  const [readingProgress, setReadingProgress] = useState(0);
+  const [readingProgress, setReadingProgress] = useState(getSavedReadingProgress);
   const openedLetterRef = useRef<HTMLElement | null>(null);
   const chapterRefs = useRef<Array<HTMLElement | null>>([]);
   const readingFrameRef = useRef<number | null>(null);
@@ -106,7 +120,6 @@ export function BirthdayLetter({ tr }: Props) {
   useEffect(() => {
     if (!open) {
       setActiveChapter(0);
-      setReadingProgress(0);
       return;
     }
 
@@ -117,7 +130,21 @@ export function BirthdayLetter({ tr }: Props) {
       const rect = letter.getBoundingClientRect();
       const travel = Math.max(rect.height - window.innerHeight * 0.55, 1);
       const progress = Math.min(1, Math.max(0, (window.innerHeight * 0.22 - rect.top) / travel));
-      setReadingProgress(progress);
+      setReadingProgress((previousProgress) => {
+        const furthestProgress = Math.max(previousProgress, progress);
+        const previousPercent = Math.round(previousProgress * 100);
+        const furthestPercent = Math.round(furthestProgress * 100);
+
+        if (furthestPercent > previousPercent) {
+          try {
+            window.localStorage.setItem(LETTER_READING_PROGRESS_KEY, String(furthestPercent));
+          } catch {
+            // The progress remains available for the current visit if storage is unavailable.
+          }
+        }
+
+        return furthestProgress;
+      });
 
       const readingLine = window.innerHeight * 0.38;
       let current = 0;
