@@ -42,7 +42,7 @@ export default function App() {
       <div className="space-background" aria-hidden="true">
         <span /><span /><span />
       </div>
-      <MusicPlayer language={language} shouldStart={musicRequested} />
+      <MusicPlayer language={language} shouldStart={musicRequested} stage={stage} />
       <AnimatePresence mode="wait">
         {stage === "intro" && (
           <IntroScreen key="intro" language={language} setLanguage={setLanguage} tr={translate} ui={ui} onOpen={start} />

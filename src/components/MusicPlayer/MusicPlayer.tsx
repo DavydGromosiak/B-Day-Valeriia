@@ -25,6 +25,7 @@ import { AlbumCover } from "./AlbumCover";
 type Props = {
   language: Language;
   shouldStart: boolean;
+  stage: "intro" | "loading" | "main";
 };
 
 type SpotifyPlaybackEvent = {
@@ -134,7 +135,7 @@ function PlaylistRow({
   );
 }
 
-export function MusicPlayer({ language, shouldStart }: Props) {
+export function MusicPlayer({ language, shouldStart, stage }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const spotifyHostRef = useRef<HTMLDivElement | null>(null);
   const spotifyControllerRef = useRef<SpotifyController | null>(null);
@@ -523,7 +524,13 @@ export function MusicPlayer({ language, shouldStart }: Props) {
 
   return (
     <>
-      <motion.aside className={`site-mixer ${open ? "is-open" : "is-docked"} ${playing ? "is-playing" : ""}`} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} data-romantic="true">
+      <motion.aside
+        className={`site-mixer ${open ? "is-open" : "is-docked"} ${playing ? "is-playing" : ""} is-${stage}-stage`}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        aria-hidden={stage !== "main"}
+        data-romantic="true"
+      >
         <div className="mixer-ambient" aria-hidden="true"><span /><span /><span /></div>
         <div className="mixer-cover"><AlbumCover track={track} eager active={playing} /></div>
         <div className="mixer-body">
