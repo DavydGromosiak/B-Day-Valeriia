@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Play } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { photos, PhotoItem } from "../../data/photos";
 import { LocalizedString } from "../../data/translations";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
@@ -20,10 +20,22 @@ function photoPoint(i: number, total: number) {
   };
 }
 
+function getHeartScale() {
+  if (typeof window === "undefined" || window.innerWidth > 700) return 1;
+  return Math.min(0.62, Math.max(0.48, (window.innerWidth - 32) / 590));
+}
+
 export function PhotoHeart({ tr, ui }: Props) {
   const [active, setActive] = useState<PhotoItem | null>(null);
   const [expanded, setExpanded] = useState(false);
+  const [heartScale, setHeartScale] = useState(getHeartScale);
   const reduced = useReducedMotion();
+
+  useEffect(() => {
+    const updateScale = () => setHeartScale(getHeartScale());
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   return (
     <section id="photos" className="page-section photo-section">
@@ -40,7 +52,12 @@ export function PhotoHeart({ tr, ui }: Props) {
               onClick={() => setActive(photo)}
               aria-label={tr(photo.alt)}
               initial={reduced ? false : { x: 0, y: 0, rotate: i * 3 - 20, opacity: 0 }}
-              whileInView={{ x: reduced ? 0 : p.x, y: reduced ? 0 : p.y, rotate: i % 2 ? 7 : -7, opacity: 1 }}
+              whileInView={{
+                x: p.x * heartScale,
+                y: p.y * heartScale,
+                rotate: i % 2 ? 7 : -7,
+                opacity: 1
+              }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.04, duration: 0.85, type: "spring", damping: 18 }}
             >
