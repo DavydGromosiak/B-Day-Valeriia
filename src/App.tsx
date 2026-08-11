@@ -16,6 +16,7 @@ import { ReasonsSection } from "./components/ReasonsSection/ReasonsSection";
 import { TeddyEasterEgg } from "./components/TeddyEasterEgg/TeddyEasterEgg";
 import { WishConstellation } from "./components/WishConstellation/WishConstellation";
 import { WorldHeart } from "./components/WorldHeart/WorldHeart";
+import { SYNC_MUSIC_TO_HEART_EVENT } from "./config/experienceTiming";
 import { useLanguage } from "./hooks/useLanguage";
 
 type Stage = "intro" | "loading" | "main";
@@ -36,6 +37,11 @@ export default function App() {
     setStage("intro");
   };
 
+  const skipIntro = () => {
+    window.dispatchEvent(new Event(SYNC_MUSIC_TO_HEART_EVENT));
+    setStage("main");
+  };
+
   return (
     <>
       <CustomCursor />
@@ -48,7 +54,7 @@ export default function App() {
           <IntroScreen key="intro" language={language} setLanguage={setLanguage} tr={translate} ui={ui} onOpen={start} />
         )}
         {stage === "loading" && (
-          <ReasonsLoader key="loader" language={language} setLanguage={setLanguage} tr={translate} ui={ui} onComplete={() => setStage("main")} onSkip={() => setStage("main")} />
+          <ReasonsLoader key="loader" language={language} setLanguage={setLanguage} tr={translate} ui={ui} onComplete={() => setStage("main")} onSkip={skipIntro} />
         )}
       </AnimatePresence>
       {stage === "main" && (

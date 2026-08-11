@@ -2,6 +2,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { type CSSProperties, useEffect, useMemo, useState } from "react";
 import { Language, LocalizedString } from "../../data/translations";
 import { reasons } from "../../data/reasons";
+import {
+  HEART_REVEAL_CUE_SECONDS,
+  HEART_REVEAL_EVENT,
+  LOADER_PROGRESS_INTERVAL_MS,
+  SYNC_MUSIC_TO_HEART_EVENT,
+} from "../../config/experienceTiming";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 
 type Props = {
@@ -25,7 +31,7 @@ export function ReasonsLoader({ language, setLanguage, tr, ui, onComplete, onSki
     const skipTimer = window.setTimeout(() => setShowSkip(true), 3000);
     const progressTimer = window.setInterval(() => {
       setProgress((value) => Math.min(value + 1, 100));
-    }, 180);
+    }, LOADER_PROGRESS_INTERVAL_MS);
     const reasonTimer = window.setInterval(() => {
       setReasonIndex((value) => value + 1);
     }, 1250);
@@ -41,9 +47,28 @@ export function ReasonsLoader({ language, setLanguage, tr, ui, onComplete, onSki
     const first = window.setTimeout(() => setFinalStep(1), 800);
     const second = window.setTimeout(() => setFinalStep(2), 2300);
     const third = window.setTimeout(() => setFinalStep(3), 4100);
-    const complete = window.setTimeout(onComplete, 9100);
-    return () => [first, second, third, complete].forEach(window.clearTimeout);
-  }, [progress, onComplete]);
+    return () => [first, second, third].forEach(window.clearTimeout);
+  }, [progress]);
+
+  useEffect(() => {
+    let completed = false;
+    const finish = () => {
+      if (completed) return;
+      completed = true;
+      onComplete();
+    };
+    const recoverAndFinish = () => {
+      window.dispatchEvent(new Event(SYNC_MUSIC_TO_HEART_EVENT));
+      finish();
+    };
+
+    window.addEventListener(HEART_REVEAL_EVENT, finish);
+    const fallback = window.setTimeout(recoverAndFinish, HEART_REVEAL_CUE_SECONDS * 1000 + 6000);
+    return () => {
+      window.removeEventListener(HEART_REVEAL_EVENT, finish);
+      window.clearTimeout(fallback);
+    };
+  }, [onComplete]);
 
   return (
     <section className="story-screen loader-screen">

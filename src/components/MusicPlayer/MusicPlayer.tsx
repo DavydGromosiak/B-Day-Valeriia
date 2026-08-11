@@ -20,6 +20,11 @@ import { createPortal } from "react-dom";
 import { musicTracks, MusicTrack } from "../../data/musicTracks";
 import { Language, t } from "../../data/translations";
 import { useMusicMetadata } from "../../hooks/useMusicMetadata";
+import {
+  HEART_REVEAL_CUE_SECONDS,
+  HEART_REVEAL_EVENT,
+  SYNC_MUSIC_TO_HEART_EVENT,
+} from "../../config/experienceTiming";
 import { AlbumCover } from "./AlbumCover";
 
 type Props = {
@@ -143,6 +148,8 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
   const desiredPlayingRef = useRef(false);
   const startHandledRef = useRef(false);
   const spotifyEndHandledRef = useRef("");
+  const heartRevealSentRef = useRef(false);
+  const heartTimingArmedRef = useRef(false);
   const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(musicTracks[0].duration ?? 0);
@@ -309,6 +316,15 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
     setPlaying(false);
   }, []);
 
+  const seekActiveSource = useCallback((seconds: number) => {
+    if (sourceRef.current === "spotify" && spotifyControllerRef.current) {
+      spotifyControllerRef.current.seek(seconds);
+    } else if (audioRef.current) {
+      audioRef.current.currentTime = seconds;
+    }
+    setCurrentTime(seconds);
+  }, []);
+
   const selectTrack = useCallback((nextIndex: number, autoplay = true) => {
     pausePlayback();
     const normalized = (nextIndex + musicTracks.length) % musicTracks.length;
@@ -366,25 +382,60 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
     };
     const startFromGiftClick = () => {
       startHandledRef.current = true;
-      startPlayback();
+      heartRevealSentRef.current = false;
+      heartTimingArmedRef.current = false;
+      if (trackIndex !== 0) {
+        selectTrack(0, false);
+        desiredPlayingRef.current = true;
+        sourceRef.current = "local";
+        setSource("local");
+        return;
+      }
+      if (audioRef.current) audioRef.current.currentTime = 0;
+      setCurrentTime(0);
+      playLocalFallback();
+    };
+    const syncMusicToHeart = () => {
+      if (trackIndex !== 0) return;
+      desiredPlayingRef.current = true;
+      seekActiveSource(HEART_REVEAL_CUE_SECONDS);
+      if (sourceRef.current === "spotify" && spotifyControllerRef.current) {
+        spotifyControllerRef.current.play();
+      } else {
+        audioRef.current?.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      }
     };
     window.addEventListener("birthday-open-playlist", openPlaylist);
     window.addEventListener("birthday-play-track", playSelected);
     window.addEventListener("birthday-track-ended", ended);
     window.addEventListener("birthday-start-music", startFromGiftClick);
+    window.addEventListener(SYNC_MUSIC_TO_HEART_EVENT, syncMusicToHeart);
     return () => {
       window.removeEventListener("birthday-open-playlist", openPlaylist);
       window.removeEventListener("birthday-play-track", playSelected);
       window.removeEventListener("birthday-track-ended", ended);
       window.removeEventListener("birthday-start-music", startFromGiftClick);
+      window.removeEventListener(SYNC_MUSIC_TO_HEART_EVENT, syncMusicToHeart);
     };
-  }, [moveTrack, pausePlayback, playing, repeat, selectTrack, startPlayback, trackIndex]);
+  }, [moveTrack, pausePlayback, playLocalFallback, playing, repeat, seekActiveSource, selectTrack, startPlayback, trackIndex]);
 
   useEffect(() => {
     if (!shouldStart || startHandledRef.current) return;
     startHandledRef.current = true;
     startPlayback();
   }, [shouldStart, startPlayback]);
+
+  useEffect(() => {
+    if (!shouldStart || track.id !== "golden-hour") return;
+    if (currentTime <= 1.5) {
+      heartTimingArmedRef.current = true;
+      heartRevealSentRef.current = false;
+      return;
+    }
+    if (!heartTimingArmedRef.current || currentTime < HEART_REVEAL_CUE_SECONDS || heartRevealSentRef.current) return;
+    heartRevealSentRef.current = true;
+    window.dispatchEvent(new Event(HEART_REVEAL_EVENT));
+  }, [currentTime, shouldStart, track.id]);
 
   useEffect(() => {
     if (!shouldStart) return;
@@ -436,9 +487,7 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
   const toggle = () => playing ? pausePlayback() : startPlayback();
   const seek = (value: string) => {
     const nextTime = (Number(value) / 100) * duration;
-    if (sourceRef.current === "spotify") spotifyControllerRef.current?.seek(Math.round(nextTime));
-    else if (audioRef.current) audioRef.current.currentTime = nextTime;
-    setCurrentTime(nextTime);
+    seekActiveSource(nextTime);
   };
   const toggleFavourite = (id: string) => setFavourites((current) => {
     const next = new Set(current);
