@@ -1779,6 +1779,12 @@ input[type="range"] {
   background: #5c2578;
 }
 
+.music-section {
+  min-height: 100svh;
+  padding-inline: clamp(18px, 4vw, 56px);
+  background: linear-gradient(180deg, rgba(11, 7, 16, 0.08), rgba(30, 13, 32, 0.32), rgba(11, 7, 16, 0.04));
+}
+
 .photo-heart-stage {
   width: min(100%, 980px);
   height: min(62vh, 590px);

@@ -94,21 +94,6 @@ export const t = {
   },
   allCards: { ru: "Все", en: "All", de: "Alle" },
   showMoreCards: { ru: "Показать ещё", en: "Show more", de: "Mehr anzeigen" },
-  songShelfTeaser: {
-    ru: "Открыть секретную музыкальную полку",
-    en: "Open the secret music shelf",
-    de: "Das geheime Musikfach öffnen"
-  },
-  songShelfTitle: {
-    ru: "Песни, которые звучат как комплименты тебе",
-    en: "Songs that feel like compliments to you",
-    de: "Lieder, die sich wie Komplimente für dich anfühlen"
-  },
-  songShelfNote: {
-    ru: "Здесь не скопированные lyrics, а смысловые урывки из популярных песен: что я в них слышу и почему они напоминают мне о тебе.",
-    en: "These are not copied lyrics, but my own takes on parts of popular songs: what I hear in them and why they remind me of you.",
-    de: "Das sind keine kopierten Songtexte, sondern meine eigenen Gedanken zu Stellen aus bekannten Liedern: was ich darin höre und warum sie mich an dich erinnern."
-  },
   inspiredBy: { ru: "вайб", en: "vibe", de: "Stimmung" },
   songFragmentLabel: { ru: "смысл урывка", en: "meaning of the part", de: "Sinn der Stelle" },
   songWhyLabel: { ru: "почему именно он", en: "why this one", de: "warum genau das" },
