@@ -1533,6 +1533,18 @@ input[type="range"] {
   gap: 18px;
   padding: 36px 12px 24px 0;
 }
+.postcard-content::-webkit-scrollbar {
+  width: 9px;
+}
+.postcard-content::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: rgba(255, 248, 252, 0.055);
+}
+.postcard-content::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(#ff6b9e, #9d4edd) padding-box;
+}
 .postcard-content.has-scroll-cue {
   padding-bottom: 84px;
 }
@@ -1570,7 +1582,7 @@ input[type="range"] {
   display: grid;
   gap: 18px;
   padding: 24px 26px 22px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(255, 248, 252, 0.13);
   border-radius: 16px;
   background:

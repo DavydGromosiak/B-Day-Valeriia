@@ -47,6 +47,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
   useEffect(() => {
     resetContentScroll();
     setContentAtEnd(false);
+    const content = contentRef.current;
     const frame = window.requestAnimationFrame(() => {
       resetContentScroll();
       updateContentScroll();
@@ -55,9 +56,14 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
       resetContentScroll();
       updateContentScroll();
     }, 320);
+    const observer = content && typeof ResizeObserver !== "undefined"
+      ? new ResizeObserver(updateContentScroll)
+      : null;
+    if (content) observer?.observe(content);
     return () => {
       window.cancelAnimationFrame(frame);
       window.clearTimeout(timeout);
+      observer?.disconnect();
     };
   }, [card?.id, resetContentScroll, updateContentScroll]);
 
