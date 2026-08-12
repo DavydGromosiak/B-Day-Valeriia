@@ -27,9 +27,9 @@ const letterUi = {
     de: "hauptbrief"
   },
   heading: {
-    ru: "Письмо, которое хочется открыть не спеша",
-    en: "A letter to take your time with",
-    de: "Ein Brief, den man langsam öffnen möchte"
+    ru: "Самое главное письмо для тебя",
+    en: "The most important letter for you",
+    de: "Der wichtigste Brief für dich"
   },
   note: {
     ru: "Я спрятал здесь самое тёплое поздравление. Нажми на конверт, и он откроется для тебя.",
