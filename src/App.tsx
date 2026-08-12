@@ -11,6 +11,7 @@ import { MusicPlayer } from "./components/MusicPlayer/MusicPlayer";
 import { Navigation } from "./components/Navigation/Navigation";
 import { ParentsThanks } from "./components/ParentsThanks/ParentsThanks";
 import { PhotoHeart } from "./components/PhotoHeart/PhotoHeart";
+import { PoemSection } from "./components/PoemSection/PoemSection";
 import { ReasonsLoader } from "./components/ReasonsLoader/ReasonsLoader";
 import { ReasonsSection } from "./components/ReasonsSection/ReasonsSection";
 import { TeddyEasterEgg } from "./components/TeddyEasterEgg/TeddyEasterEgg";
@@ -67,6 +68,7 @@ export default function App() {
           <ReasonsSection tr={translate} ui={ui} />
           <FeelingsLibrary tr={translate} ui={ui} />
           <PhotoHeart tr={translate} ui={ui} />
+          <PoemSection tr={translate} />
           <ComplimentsSection language={language} tr={translate} ui={ui} />
           <WishConstellation tr={translate} ui={ui} />
           <BirthdayLetter tr={translate} />
