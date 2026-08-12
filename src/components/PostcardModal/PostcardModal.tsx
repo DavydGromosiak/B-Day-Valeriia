@@ -16,15 +16,15 @@ type Props = {
 
 export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props) {
   const contentRef = useRef<HTMLDivElement | null>(null);
-  const [storyCanScroll, setStoryCanScroll] = useState(false);
-  const [storyAtEnd, setStoryAtEnd] = useState(false);
+  const [contentCanScroll, setContentCanScroll] = useState(false);
+  const [contentAtEnd, setContentAtEnd] = useState(false);
 
-  const updateStoryScroll = useCallback(() => {
+  const updateContentScroll = useCallback(() => {
     const content = contentRef.current;
     if (!content) return;
     const canScroll = content.scrollHeight > content.clientHeight + 12;
-    setStoryCanScroll(canScroll);
-    setStoryAtEnd(!canScroll || content.scrollTop + content.clientHeight >= content.scrollHeight - 24);
+    setContentCanScroll(canScroll);
+    setContentAtEnd(!canScroll || content.scrollTop + content.clientHeight >= content.scrollHeight - 24);
   }, []);
 
   const resetContentScroll = useCallback(() => {
@@ -39,8 +39,8 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
     if (!node) return;
     node.scrollTop = 0;
     node.scrollLeft = 0;
-    window.requestAnimationFrame(updateStoryScroll);
-  }, [updateStoryScroll]);
+    window.requestAnimationFrame(updateContentScroll);
+  }, [updateContentScroll]);
 
   useEffect(() => {
     const close = (event: KeyboardEvent) => event.key === "Escape" && onClose();
@@ -50,20 +50,20 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
 
   useEffect(() => {
     resetContentScroll();
-    setStoryAtEnd(false);
+    setContentAtEnd(false);
     const frame = window.requestAnimationFrame(() => {
       resetContentScroll();
-      updateStoryScroll();
+      updateContentScroll();
     });
     const timeout = window.setTimeout(() => {
       resetContentScroll();
-      updateStoryScroll();
+      updateContentScroll();
     }, 320);
     return () => {
       window.cancelAnimationFrame(frame);
       window.clearTimeout(timeout);
     };
-  }, [card?.id, resetContentScroll, updateStoryScroll]);
+  }, [card?.id, resetContentScroll, updateContentScroll]);
 
   if (!card) return null;
   const index = cards.findIndex((item) => item.id === card.id);
@@ -76,7 +76,7 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
   const continueLabel = tr({ ru: "Читать дальше", en: "Keep reading", de: "Weiterlesen" });
   const isStory = card.id === 63;
 
-  const readMore = () => {
+  const scrollFurther = () => {
     const content = contentRef.current;
     if (!content) return;
     content.scrollBy({ top: Math.max(content.clientHeight * 0.72, 280), behavior: "smooth" });
@@ -102,13 +102,13 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
           <AnimatePresence mode="wait">
             <motion.div
               ref={bindContentRef}
-              className={`postcard-content ${isStory ? "is-story-content" : ""}`}
+              className={`postcard-content ${isStory ? "is-story-content" : ""} ${contentCanScroll && !contentAtEnd ? "has-scroll-cue" : ""}`}
               key={`content-${card.id}`}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.24 }}
-              onScroll={isStory ? updateStoryScroll : undefined}
+              onScroll={updateContentScroll}
             >
               <div className="postcard-heading">
                 <span className="postcard-note-label"><Heart size={14} fill="currentColor" /> {noteLabel}</span>
@@ -133,8 +133,8 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
               </div>
             </motion.div>
           </AnimatePresence>
-          {isStory && storyCanScroll && !storyAtEnd && (
-            <button type="button" className="postcard-story-scroll" onClick={readMore}>
+          {contentCanScroll && !contentAtEnd && (
+            <button type="button" className="postcard-story-scroll" onClick={scrollFurther}>
               <span>{continueLabel}</span>
               <ChevronDown size={18} />
             </button>

@@ -2131,7 +2131,9 @@ const builtCards: FeelingCard[] = photoCardSeeds.map((card, index) => ({
     ru: russianCardWishCopy[card.id]?.text ?? cardPersonalNotes[card.id]?.ru ?? card.text.ru,
     ...(card.id === 63 ? reunionStory.text : {})
   },
-  image: `/photos/${String(card.id).padStart(2, "0")}.jpg`,
+  image: card.id === 63
+    ? "/photos/late-spring-2026/our-late-spring-selfie.png"
+    : `/photos/${String(card.id).padStart(2, "0")}.jpg`,
   objectPosition: card.objectPosition ?? (card.id % 3 === 0 ? "center 30%" : "center"),
   signature,
   shape: shapes[index % shapes.length]

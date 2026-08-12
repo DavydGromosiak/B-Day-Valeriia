@@ -1524,6 +1524,9 @@ input[type="range"] {
   gap: 18px;
   padding: 36px 12px 24px 0;
 }
+.postcard-content.has-scroll-cue {
+  padding-bottom: 84px;
+}
 .postcard-heading {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -3986,7 +3989,7 @@ input[type="range"] {
     width: 100%;
     height: calc(100svh - 14px);
     max-height: calc(100svh - 14px);
-    grid-template-rows: minmax(180px, 42svh) minmax(0, 1fr) auto;
+    grid-template-rows: minmax(150px, 34svh) minmax(0, 1fr) auto;
     gap: 12px;
     padding: 12px;
     border-radius: 18px;
@@ -3994,6 +3997,11 @@ input[type="range"] {
   .postcard-content {
     gap: 12px;
     padding: 0 2px 8px;
+    scrollbar-width: auto;
+    scrollbar-color: rgba(255, 93, 161, 0.72) rgba(255, 248, 252, 0.06);
+  }
+  .postcard-content.has-scroll-cue {
+    padding-bottom: 72px;
   }
   .postcard-heading {
     gap: 7px 10px;

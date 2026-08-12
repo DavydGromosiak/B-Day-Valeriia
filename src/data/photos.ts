@@ -361,6 +361,74 @@ const augustMemories: PhotoItem[] = [
   }
 ];
 
+const lateSpringMemories: PhotoItem[] = [
+  {
+    src: "/photos/late-spring-2026/our-late-spring-selfie.png",
+    alt: l("Наша совместная фотография с прогулки", "Our photo together from a walk", "Unser gemeinsames Foto von einem Spaziergang"),
+    caption: l(
+      "Наша совместная фотография — живой и немного смешной момент, который мне особенно хочется сохранить 💜",
+      "Our photo together — a lively and slightly funny moment that I especially want to keep 💜",
+      "Unser gemeinsames Foto – ein lebendiger und etwas lustiger Moment, den ich besonders gern bewahren möchte 💜"
+    ),
+    objectPosition: "center"
+  },
+  {
+    src: "/photos/late-spring-2026/late-spring-tiktok-01.mp4",
+    alt: l("Видео с нашей прогулки в конце весны", "A video from our late-spring walk", "Ein Video von unserem Spaziergang Ende des Frühlings"),
+    caption: l(
+      "Маленькое напоминание о том, как мы гуляли под конец весны и снимали TikTok 💜",
+      "A little reminder of our late-spring walk when we filmed TikToks together 💜",
+      "Eine kleine Erinnerung daran, wie wir Ende des Frühlings spazieren waren und zusammen TikToks gedreht haben 💜"
+    ),
+    objectPosition: "center",
+    mediaType: "video"
+  },
+  {
+    src: "/photos/late-spring-2026/late-spring-tiktok-02.mp4",
+    alt: l("Ещё одно видео с нашей весенней прогулки", "Another video from our spring walk", "Noch ein Video von unserem Frühlingsspaziergang"),
+    caption: l(
+      "Ещё один живой кусочек той прогулки: конец весны, хорошее настроение и наши попытки снять TikTok",
+      "Another lively piece of that walk: late spring, a good mood, and our attempts to film a TikTok",
+      "Noch ein lebendiger Ausschnitt dieses Spaziergangs: spätes Frühjahr, gute Laune und unsere TikTok-Versuche"
+    ),
+    objectPosition: "center",
+    mediaType: "video"
+  },
+  {
+    src: "/photos/late-spring-2026/late-spring-tiktok-03.mp4",
+    alt: l("Весенний TikTok с нашей прогулки", "A spring TikTok from our walk", "Ein Frühlings-TikTok von unserem Spaziergang"),
+    caption: l(
+      "Тот самый конец весны, когда мы просто гуляли, смеялись и сохраняли маленькие моменты на видео",
+      "That late-spring day when we simply walked, laughed, and saved little moments on video",
+      "Dieser Tag am Ende des Frühlings, an dem wir einfach spazieren waren, lachten und kleine Momente auf Video festhielten"
+    ),
+    objectPosition: "center",
+    mediaType: "video"
+  },
+  {
+    src: "/photos/late-spring-2026/late-spring-tiktok-04.mov",
+    alt: l("Момент со съёмки TikTok", "A moment from filming a TikTok", "Ein Moment beim Drehen eines TikToks"),
+    caption: l(
+      "Мне нравится, что теперь в фотоплёнке есть не только фотографии, но и движение, голоса и настроение той прогулки",
+      "I love that the reel now keeps not only photos, but also the movement, voices, and mood of that walk",
+      "Ich mag, dass die Fotoreihe jetzt nicht nur Bilder, sondern auch Bewegung, Stimmen und die Stimmung dieses Spaziergangs bewahrt"
+    ),
+    objectPosition: "center",
+    mediaType: "video"
+  },
+  {
+    src: "/photos/late-spring-2026/late-spring-tiktok-05.mov",
+    alt: l("Последнее видео с весенней прогулки", "The final video from our spring walk", "Das letzte Video von unserem Frühlingsspaziergang"),
+    caption: l(
+      "Ещё одно маленькое напоминание о дне, когда мы гуляли вместе и превращали обычную прогулку в воспоминание 💜",
+      "One more little reminder of the day we walked together and turned an ordinary outing into a memory 💜",
+      "Noch eine kleine Erinnerung an den Tag, an dem wir zusammen spazieren waren und aus einem gewöhnlichen Ausflug eine Erinnerung machten 💜"
+    ),
+    objectPosition: "center",
+    mediaType: "video"
+  }
+];
+
 function shuffleWithSeed<T>(items: T[], seed: number) {
   const shuffled = [...items];
   let state = seed >>> 0;
@@ -374,10 +442,28 @@ function shuffleWithSeed<T>(items: T[], seed: number) {
   return shuffled;
 }
 
+function separateSimilarMemories(items: PhotoItem[], firstSrc: string, secondSrc: string) {
+  const separated = [...items];
+  const firstIndex = separated.findIndex((item) => item.src === firstSrc);
+  const secondIndex = separated.findIndex((item) => item.src === secondSrc);
+  if (firstIndex < 0 || secondIndex < 0 || Math.abs(firstIndex - secondIndex) > 1) return separated;
+
+  const [moving] = separated.splice(secondIndex, 1);
+  const anchorIndex = separated.findIndex((item) => item.src === firstSrc);
+  const targetIndex = Math.min(separated.length, anchorIndex + Math.floor(separated.length / 2));
+  separated.splice(targetIndex, 0, moving);
+  return separated;
+}
+
 const featuredPhoto = originalPhotos.find((photo) => photo.src === "/photos/48.jpg") ?? originalPhotos[0];
+const shuffledMemories = shuffleWithSeed(
+  [...originalPhotos.filter((photo) => photo !== featuredPhoto), ...lateSpringMemories, ...augustMemories],
+  12082026
+);
+const separatedMemories = separateSimilarMemories(shuffledMemories, "/photos/23.jpg", "/photos/39.jpg");
 
 // Любимый портрет всегда открывает альбом, остальные воспоминания перемешаны в постоянном порядке.
 export const photos: PhotoItem[] = [
   featuredPhoto,
-  ...shuffleWithSeed([...originalPhotos.filter((photo) => photo !== featuredPhoto), ...augustMemories], 12082026)
+  ...separatedMemories
 ];
