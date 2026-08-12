@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { PhotoItem } from "../../data/photos";
 import { LocalizedString } from "../../data/translations";
+import { useDialogAccessibility } from "../../hooks/useDialogAccessibility";
 import { SmartImage } from "../PhotoHeart/SmartImage";
 
 type Props = {
@@ -16,9 +17,9 @@ type Props = {
 };
 
 export function PhotoLightbox({ photo, photos, tr, ui, onClose, onSelect }: Props) {
+  const dialogRef = useDialogAccessibility<HTMLDivElement>(Boolean(photo), onClose);
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
       if (photo && event.key === "ArrowRight") move(1);
       if (photo && event.key === "ArrowLeft") move(-1);
     };
@@ -38,8 +39,9 @@ export function PhotoLightbox({ photo, photos, tr, ui, onClose, onSelect }: Prop
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        onMouseDown={(event) => event.currentTarget === event.target && onClose()}
       >
-        <div className="lightbox">
+        <div ref={dialogRef} className="lightbox" role="dialog" aria-modal="true" aria-label={tr(photo.caption)}>
           <button
             type="button"
             className="icon-button modal-close"

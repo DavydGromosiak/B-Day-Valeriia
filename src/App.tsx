@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { useState } from "react";
 import { BirthdayLetter } from "./components/BirthdayLetter/BirthdayLetter";
 import { ComplimentsSection } from "./components/ComplimentsSection/ComplimentsSection";
@@ -8,7 +8,6 @@ import { FinalScene } from "./components/FinalScene/FinalScene";
 import { IntroScreen } from "./components/IntroScreen/IntroScreen";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher";
 import { MusicPlayer } from "./components/MusicPlayer/MusicPlayer";
-import { MusicSection } from "./components/MusicSection/MusicSection";
 import { Navigation } from "./components/Navigation/Navigation";
 import { ParentsThanks } from "./components/ParentsThanks/ParentsThanks";
 import { PhotoHeart } from "./components/PhotoHeart/PhotoHeart";
@@ -45,7 +44,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <CustomCursor />
       <div className="space-background" aria-hidden="true">
         <span /><span /><span />
@@ -70,7 +69,6 @@ export default function App() {
           <FeelingsLibrary tr={translate} ui={ui} />
           <PhotoHeart tr={translate} ui={ui} />
           <PoemSection tr={translate} />
-          <MusicSection tr={translate} />
           <ComplimentsSection language={language} tr={translate} ui={ui} />
           <WishConstellation tr={translate} ui={ui} />
           <BirthdayLetter tr={translate} />
@@ -79,6 +77,6 @@ export default function App() {
           <TeddyEasterEgg tr={translate} ui={ui} />
         </motion.main>
       )}
-    </>
+    </MotionConfig>
   );
 }

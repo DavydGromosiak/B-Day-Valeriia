@@ -94,8 +94,23 @@ export const t = {
   },
   allCards: { ru: "Все", en: "All", de: "Alle" },
   showMoreCards: { ru: "Показать ещё", en: "Show more", de: "Mehr anzeigen" },
+  songShelfTeaser: {
+    ru: "Открыть секретную музыкальную полку",
+    en: "Open the secret music shelf",
+    de: "Das geheime Musikfach öffnen"
+  },
+  songShelfTitle: {
+    ru: "Строчки из песен, в которых я слышу нас",
+    en: "Song lines that remind me of us",
+    de: "Liedzeilen, die mich an uns erinnern"
+  },
+  songShelfNote: {
+    ru: "Короткие строчки из известных романтических песен и то, почему каждая из них напоминает мне о тебе и наших отношениях.",
+    en: "Short lines from well-known romantic songs, and why each one makes me think of Valeriia and our relationship.",
+    de: "Kurze Zeilen aus bekannten romantischen Liedern und warum mich jede davon an Valeriia und unsere Beziehung erinnert."
+  },
   inspiredBy: { ru: "вайб", en: "vibe", de: "Stimmung" },
-  songFragmentLabel: { ru: "смысл урывка", en: "meaning of the part", de: "Sinn der Stelle" },
+  songFragmentLabel: { ru: "строчка из песни", en: "line from the song", de: "Zeile aus dem Lied" },
   songWhyLabel: { ru: "почему именно он", en: "why this one", de: "warum genau das" },
   listenOnSpotify: { ru: "Открыть в Spotify", en: "Open on Spotify", de: "Auf Spotify öffnen" },
   listenOnYoutube: { ru: "Открыть на YouTube", en: "Open on YouTube", de: "Auf YouTube öffnen" },

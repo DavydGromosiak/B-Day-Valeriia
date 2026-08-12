@@ -3,6 +3,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, Heart, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FeelingCard } from "../../data/cards";
 import { LocalizedString } from "../../data/translations";
+import { useDialogAccessibility } from "../../hooks/useDialogAccessibility";
 import { SmartImage } from "../PhotoHeart/SmartImage";
 
 type Props = {
@@ -16,6 +17,7 @@ type Props = {
 
 export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props) {
   const contentRef = useRef<HTMLDivElement | null>(null);
+  const dialogRef = useDialogAccessibility<HTMLElement>(Boolean(card), onClose);
   const [contentCanScroll, setContentCanScroll] = useState(false);
   const [contentAtEnd, setContentAtEnd] = useState(false);
 
@@ -41,12 +43,6 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
     node.scrollLeft = 0;
     window.requestAnimationFrame(updateContentScroll);
   }, [updateContentScroll]);
-
-  useEffect(() => {
-    const close = (event: KeyboardEvent) => event.key === "Escape" && onClose();
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [onClose]);
 
   useEffect(() => {
     resetContentScroll();
@@ -84,8 +80,8 @@ export function PostcardModal({ card, cards, tr, ui, onClose, onSelect }: Props)
 
   return (
     <AnimatePresence>
-      <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        <motion.article className={`postcard-modal ${isStory ? "is-story-modal" : ""}`} initial={{ rotateY: 65, opacity: 0, scale: 0.88 }} animate={{ rotateY: 0, opacity: 1, scale: 1 }} transition={{ type: "spring", damping: 20 }}>
+      <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => event.currentTarget === event.target && onClose()}>
+        <motion.article ref={dialogRef} role="dialog" aria-modal="true" aria-label={tr(card.title)} className={`postcard-modal ${isStory ? "is-story-modal" : ""}`} initial={{ rotateY: 65, opacity: 0, scale: 0.88 }} animate={{ rotateY: 0, opacity: 1, scale: 1 }} transition={{ type: "spring", damping: 20 }}>
           <button type="button" className="icon-button modal-close" onClick={onClose} aria-label={tr(ui.close)}><X size={19} /></button>
           <AnimatePresence mode="wait">
             <motion.div

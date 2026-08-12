@@ -142,6 +142,7 @@ function PlaylistRow({
 
 export function MusicPlayer({ language, shouldStart, stage }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const modalRef = useRef<HTMLElement | null>(null);
   const spotifyHostRef = useRef<HTMLDivElement | null>(null);
   const spotifyControllerRef = useRef<SpotifyController | null>(null);
   const sourceRef = useRef<"spotify" | "local">("spotify");
@@ -473,14 +474,35 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
   useEffect(() => {
     if (!playlistOpen) return;
     const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     document.body.style.overflow = "hidden";
-    const close = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setPlaylistOpen(false);
+    const focusable = () => Array.from(modalRef.current?.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    ) ?? []).filter((element) => element.offsetParent !== null);
+    window.requestAnimationFrame(() => focusable()[0]?.focus());
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setPlaylistOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const elements = focusable();
+      if (!elements.length) return;
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", close);
+    window.addEventListener("keydown", handleKeydown);
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", close);
+      window.removeEventListener("keydown", handleKeydown);
+      previousFocus?.focus();
     };
   }, [playlistOpen]);
 
@@ -509,8 +531,8 @@ export function MusicPlayer({ language, shouldStart, stage }: Props) {
   );
 
   const modal = (
-    <div className={`playlist-modal-backdrop ${playlistOpen ? "is-open" : ""}`} aria-hidden={!playlistOpen}>
-      <section className="playlist-modal" role="dialog" aria-modal="true" aria-label={tx(copy.playlist, language)}>
+    <div className={`playlist-modal-backdrop ${playlistOpen ? "is-open" : ""}`} aria-hidden={!playlistOpen} onMouseDown={(event) => event.currentTarget === event.target && setPlaylistOpen(false)}>
+      <section ref={modalRef} className="playlist-modal" role="dialog" aria-modal="true" aria-label={tx(copy.playlist, language)}>
         <div className="playlist-modal-glow" aria-hidden="true" />
         <header className="playlist-modal-header">
           <div>

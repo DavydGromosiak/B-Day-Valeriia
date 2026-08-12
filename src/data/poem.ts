@@ -61,8 +61,8 @@ export const leraPoem = {
     ),
     localized(
       "Ведь раньше ты была просто Лерой,\nЗнакомым и хорошим человеком для меня.\nА теперь могу совсем спокойно написать:\nТы — моя любимая девушка, моя Леруся, моя 💜",
-      "Before, you were simply Lera,\nSomeone familiar and kind in my life.\nNow I can write these words without hesitation:\nYou are my beloved girlfriend, my Lera, mine 💜",
-      "Früher warst du einfach Lera,\nein vertrauter und lieber Mensch in meinem Leben.\nHeute kann ich ganz ruhig schreiben:\nDu bist meine geliebte Freundin, meine Lera, meine 💜"
+      "Before, you were simply Valeriia,\nSomeone familiar and kind in my life.\nNow I can write these words without hesitation:\nYou are my beloved girlfriend, my Valeriia, mine 💜",
+      "Früher warst du einfach Valeriia,\nein vertrauter und lieber Mensch in meinem Leben.\nHeute kann ich ganz ruhig schreiben:\nDu bist meine geliebte Freundin, meine Valeriia, meine 💜"
     ),
     localized(
       "И сколько впереди ещё случится —\nПрогулок, путешествий, наших дней,\nЯ одного сейчас хочу сильнее:\nЧтоб становилось только больше таких моментов у нас с тобой.",
@@ -81,8 +81,8 @@ export const leraPoem = {
     ),
     localized(
       "И рад, что после стольких поворотов\nВ моей истории теперь есть ты.\nМоя любимая, родная Леруся,\nСпасибо просто за то, что рядом ты. 🧸💜",
-      "And I am glad that after so many turns,\nYou are now part of my story.\nMy beloved, my dearest Lera,\nThank you simply for being here beside me. 🧸💜",
-      "Und ich bin froh, dass nach so vielen Wendungen\nnun du ein Teil meiner Geschichte bist.\nMeine geliebte, meine vertraute Lera,\ndanke einfach dafür, dass du bei mir bist. 🧸💜"
+      "And I am glad that after so many turns,\nYou are now part of my story.\nMy beloved, my dearest Valeriia,\nThank you simply for being here beside me. 🧸💜",
+      "Und ich bin froh, dass nach so vielen Wendungen\nnun du ein Teil meiner Geschichte bist.\nMeine geliebte, meine vertraute Valeriia,\ndanke einfach dafür, dass du bei mir bist. 🧸💜"
     )
   ],
   postscript: localized(

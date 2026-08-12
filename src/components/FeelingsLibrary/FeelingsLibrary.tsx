@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { BookOpen, HeartHandshake, Image, Mail, Sparkles } from "lucide-react";
+import { BookOpen, Disc3, HeartHandshake, Image, Mail, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { CardCategory, cards, FeelingCard } from "../../data/cards";
 import { LocalizedString } from "../../data/translations";
 import { PostcardModal } from "../PostcardModal/PostcardModal";
+import { SongShelf } from "../SongShelf/SongShelf";
 
 type Props = { tr: (value: LocalizedString) => string; ui: Record<string, any> };
 
@@ -13,6 +14,7 @@ const CARDS_PER_PAGE = 16;
 export function FeelingsLibrary({ tr, ui }: Props) {
   const [category, setCategory] = useState<CardCategory | "all">("all");
   const [active, setActive] = useState<FeelingCard | null>(null);
+  const [showSongs, setShowSongs] = useState(false);
   const [visibleCount, setVisibleCount] = useState(CARDS_PER_PAGE);
   const filtered = category === "all" ? cards : cards.filter((card) => card.category === category);
   const visibleCards = filtered.slice(0, visibleCount);
@@ -32,6 +34,11 @@ export function FeelingsLibrary({ tr, ui }: Props) {
           <button key={key} className={category === key ? "active" : ""} onClick={() => selectCategory(key)}>{tr(ui.categories[key])}</button>
         ))}
       </div>
+      <button className={`playlist-trigger ${showSongs ? "active" : ""}`} onClick={() => setShowSongs((value) => !value)} aria-expanded={showSongs} aria-controls="song-shelf">
+        <Disc3 size={18} />
+        {tr(ui.songShelfTeaser)}
+      </button>
+      {showSongs && <div id="song-shelf"><SongShelf tr={tr} ui={ui} /></div>}
       <div className="card-grid">
         {visibleCards.map((card, i) => {
           const Icon = icons[card.category];
